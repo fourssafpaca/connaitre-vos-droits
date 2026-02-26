@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Mémo — Licenciement pour inaptitude</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #203A5E;
+            --red: #8B1B1A;
+            --red-light: #fde8e8;
+            --green: #276749;
+            --green-light: #c6f6d5;
+            --blue-light: #dbeafe;
+            --bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.5;
+            background: #f0f4f8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .memo-page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @media print {
+            body { background: white; }
+            .memo-page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+            }
+        }
+
+        /* === HEADER === */
+        .memo-header {
+            background: linear-gradient(135deg, #203A5E, #2c4a7c);
+            color: white;
+            padding: 20px 28px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .memo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55em;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .memo-header h1 span {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.48em;
+            font-weight: 500;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        .memo-badge {
+            background: var(--red);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.72em;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        /* === CONTENT === */
+        .memo-body {
+            padding: 16px 24px 20px;
+        }
+
+        /* === GOLDEN RULE === */
+        .golden-rule {
+            background: var(--red-light);
+            border: 2px solid var(--red);
+            border-radius: 10px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .golden-rule .icon { font-size: 1.4em; }
+
+        .golden-rule p {
+            font-size: 0.82em;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        .golden-rule p strong {
+            text-transform: uppercase;
+        }
+
+        /* === TWO COLUMNS === */
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        /* === SECTION CARD === */
+        .section-card {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .section-card .title-bar {
+            background: var(--navy);
+            color: white;
+            padding: 6px 14px;
+            font-size: 0.78em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-card .title-bar.red { background: var(--red); }
+        .section-card .title-bar.green { background: var(--green); }
+
+        .section-card .card-body {
+            padding: 10px 14px;
+        }
+
+        .section-card .card-body p,
+        .section-card .card-body li {
+            font-size: 0.75em;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .section-card .card-body ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .section-card .card-body ul li {
+            padding: 3px 0 3px 16px;
+            position: relative;
+        }
+
+        .section-card .card-body ul li::before {
+            content: '→';
+            color: var(--red);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            font-size: 0.85em;
+        }
+
+        /* === TIMELINE MINI === */
+        .mini-timeline {
+            list-style: none;
+        }
+
+        .mini-timeline li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 3.5px 0;
+            font-size: 0.73em;
+        }
+
+        .mini-timeline li::before { content: none !important; display: none; }
+
+        .step-num {
+            width: 20px;
+            height: 20px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72em;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-num.red { background: var(--red); }
+
+        /* === COMPARISON TABLE === */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.72em;
+        }
+
+        .compare-table th {
+            background: var(--navy);
+            color: white;
+            padding: 6px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .compare-table th:first-child {
+            border-radius: 6px 0 0 0;
+        }
+
+        .compare-table th:last-child {
+            border-radius: 0 6px 0 0;
+        }
+
+        .compare-table th.red-header {
+            background: var(--red);
+        }
+
+        .compare-table td {
+            padding: 5px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check { color: var(--green); font-weight: 700; }
+        .cross { color: var(--red); font-weight: 700; }
+        .double { color: var(--red); font-weight: 800; }
+
+        /* === FULL WIDTH SECTION === */
+        .full-width {
+            margin-bottom: 14px;
+        }
+
+        /* === FOOTER === */
+        .memo-footer {
+            background: var(--navy);
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72em;
+        }
+
+        .memo-footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            background: var(--red);
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        /* === RECOURS BOX === */
+        .recours-mini {
+            background: var(--red-light);
+            border: 1.5px solid var(--red);
+            border-radius: 10px;
+            padding: 10px 14px;
+        }
+
+        .recours-mini h4 {
+            font-size: 0.78em;
+            color: var(--red);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .recours-mini p {
+            font-size: 0.72em;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* === KEY NUMBER === */
+        .key-numbers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .key-num {
+            text-align: center;
+            background: var(--blue-light);
+            border-radius: 8px;
+            padding: 8px 6px;
+        }
+
+        .key-num .big {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .key-num .label {
+            font-size: 0.62em;
+            color: var(--text-light);
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="memo-page">
+    <!-- HEADER -->
+    <div class="memo-header">
+        <h1>
+            Licenciement pour inaptitude
+            <span>Fiche mémo à l'usage des salariés — URSSAF PACA</span>
+        </h1>
+        <div class="memo-badge">FICHE<br>MÉMO</div>
+    </div>
+
+    <div class="memo-body">
+
+        <!-- GOLDEN RULE -->
+        <div class="golden-rule">
+            <span class="icon">⚠️</span>
+            <p>Vous êtes concerné(e) par une procédure d'inaptitude ? <strong>Contactez immédiatement votre délégué syndical FO</strong> pour être accompagné(e) à chaque étape.</p>
+        </div>
+
+        <!-- KEY NUMBERS -->
+        <div class="key-numbers">
+            <div class="key-num">
+                <div class="big">15 j</div>
+                <div class="label">pour contester<br>l'avis d'inaptitude</div>
+            </div>
+            <div class="key-num">
+                <div class="big">1 mois</div>
+                <div class="label">pour reclasser<br>ou licencier</div>
+            </div>
+            <div class="key-num">
+                <div class="big">×2</div>
+                <div class="label">indemnité doublée<br>(si origine pro)</div>
+            </div>
+            <div class="key-num">
+                <div class="big">1 an</div>
+                <div class="label">portabilité<br>mutuelle</div>
+            </div>
+        </div>
+
+        <!-- TWO COLUMNS: DEFINITION + PROCEDURE -->
+        <div class="two-cols">
+            <!-- LEFT: DEFINITION -->
+            <div class="section-card">
+                <div class="title-bar">📋 Qu'est-ce que l'inaptitude ?</div>
+                <div class="card-body">
+                    <p style="margin-bottom:6px;">Votre état de santé est devenu <strong>incompatible avec votre poste</strong>. Seul le <strong>médecin du travail</strong> peut vous déclarer inapte (pas votre médecin traitant).</p>
+                    <ul>
+                        <li><strong>Non professionnelle :</strong> maladie, accident hors travail, accident de trajet</li>
+                        <li><strong>Professionnelle :</strong> accident du travail ou maladie professionnelle → indemnités plus élevées</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT: PROCEDURE -->
+            <div class="section-card">
+                <div class="title-bar">📅 La procédure en 8 étapes</div>
+                <div class="card-body">
+                    <ul class="mini-timeline">
+                        <li><span class="step-num">1</span> Visite médicale de reprise</li>
+                        <li><span class="step-num red">2</span> <strong>Avis d'inaptitude</strong> du médecin du travail</li>
+                        <li><span class="step-num">3</span> Recherche de reclassement + consultation CSE</li>
+                        <li><span class="step-num">4</span> Proposition de poste ou notification d'impossibilité</li>
+                        <li><span class="step-num red">5</span> Convocation à <strong>l'entretien préalable</strong></li>
+                        <li><span class="step-num">6</span> Entretien (min. 5 j après convocation) — <strong>faites-vous assister !</strong></li>
+                        <li><span class="step-num">7</span> Notification du licenciement (min. 2 j après entretien)</li>
+                        <li><span class="step-num">8</span> Fin du contrat — <strong>pas de préavis</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TWO COLUMNS: DROITS + RECLASSEMENT -->
+        <div class="two-cols">
+            <div class="section-card">
+                <div class="title-bar green">🛡️ Vos droits</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Assistance :</strong> être accompagné à l'entretien par un représentant syndical ou un salarié</li>
+                        <li><strong>Salaire :</strong> si pas de reclassement/licenciement sous 1 mois → l'employeur reprend le salaire</li>
+                        <li><strong>ITI :</strong> indemnité temporaire d'inaptitude versée par la CPAM (si origine pro)</li>
+                        <li><strong>Contestation :</strong> 15 jours pour contester l'avis devant les Prud'hommes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="title-bar red">🔍 Reclassement : obligation de moyens</div>
+                <div class="card-body">
+                    <p style="margin-bottom:6px;">L'employeur doit rechercher <strong>activement et loyalement</strong> un poste adapté dans l'entreprise et le groupe.</p>
+                    <p style="margin-bottom:6px;">C'est une obligation de <strong>moyens, pas de résultat</strong> : s'il n'y a aucun poste compatible, il peut licencier.</p>
+                    <p style="margin-bottom:8px;">⚠️ S'il ne fait <strong>aucune recherche sérieuse</strong> → licenciement sans cause réelle et sérieuse.</p>
+                    <div style="background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;border-radius:8px;padding:8px 12px;font-size:0.85em;line-height:1.5;">
+                        <strong>🚨 Idée reçue :</strong> en aucun cas l'employeur n'a l'obligation de faire 3 propositions de reclassement. Aucun texte ne fixe de nombre minimum.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="full-width section-card">
+            <div class="title-bar">💰 Indemnités : comparatif</div>
+            <div class="card-body" style="padding:0;">
+                <table class="compare-table">
+                    <tr>
+                        <th style="width:40%;">Indemnité</th>
+                        <th>Non professionnelle</th>
+                        <th class="red-header">Professionnelle (AT/MP)</th>
+                    </tr>
+                    <tr>
+                        <td>Indemnité de licenciement</td>
+                        <td><span class="check">✓</span> Légale ou conventionnelle</td>
+                        <td><span class="double">×2</span> Double de l'indemnité légale</td>
+                    </tr>
+                    <tr>
+                        <td>Indemnité compensatrice de préavis</td>
+                        <td><span class="cross">✗</span> Non due</td>
+                        <td><span class="check">✓</span> Montant équivalent au préavis</td>
+                    </tr>
+                    <tr>
+                        <td>Congés payés non pris</td>
+                        <td><span class="check">✓</span> Oui</td>
+                        <td><span class="check">✓</span> Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Condition d'ancienneté</td>
+                        <td>8 mois minimum</td>
+                        <td>Aucune condition</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- TWO COLUMNS: AFTER + RECOURS -->
+        <div class="two-cols">
+            <div class="section-card">
+                <div class="title-bar">📌 Après le licenciement</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Chômage :</strong> droit à l'ARE après 7 j de carence + éventuels différés</li>
+                        <li><strong>Mutuelle :</strong> portabilité pendant 1 an sans frais</li>
+                        <li><strong>RQTH :</strong> pensez à la demander auprès de la MDPH si votre état le justifie</li>
+                        <li><strong>Reconversion :</strong> mobilisez votre CPF pour une formation adaptée</li>
+                        <li><strong>Retravailler :</strong> oui, c'est possible, dans le respect des préconisations médicales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="recours-mini">
+                    <h4>⚖️ Vos recours</h4>
+                    <p>
+                        <strong>1.</strong> Contestation de l'avis d'inaptitude → Prud'hommes sous 15 j<br>
+                        <strong>2.</strong> Licenciement abusif → si pas de reclassement sérieux ou pas de consultation du CSE<br>
+                        <strong>3.</strong> Licenciement discriminatoire → si fondé sur l'état de santé (nul)<br>
+                        <strong>4.</strong> Faute inexcusable de l'employeur → si manquement à l'obligation de sécurité
+                    </p>
+                </div>
+                <div style="margin-top:10px; background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px; padding:10px 14px;">
+                    <p style="font-size:0.72em; color:#276749;"><strong>💡 Rupture conventionnelle :</strong> possible même en cas d'inaptitude pro, mais attention — les indemnités peuvent être moins favorables. Faites-vous conseiller avant de signer !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="memo-footer" style="flex-direction:column;align-items:center;gap:8px;text-align:center;">
+        <span>Force Ouvrière URSSAF PACA — 2026 — Document d'information</span>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;font-size:0.78em;font-weight:700;color:#fff;">
+            <span>👤 Antoine Chessa</span>
+            <span>👤 Stéphane Imbert</span>
+            <span>👤 Jean-Philippe Musso</span>
+        </div>
+        <span style="font-size:0.72em;color:rgba(255,255,255,0.7);">Vos délégués syndicaux FO — URSSAF PACA</span>
+    </div>
+
+</div>
+</body>
+</html>

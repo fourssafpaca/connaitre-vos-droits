@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FO URSSAF PACA — Vos droits, nos infographies</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #203A5E;
+            --navy-dark: #172a45;
+            --navy-light: #2c5282;
+            --red: #8B1B1A;
+            --red-dark: #6b1413;
+            --bg: #f8fafc;
+            --white: #fff;
+            --text: #1a202c;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        .header {
+            background: rgba(32,58,94,.97);
+            backdrop-filter: blur(12px);
+            padding: 0 24px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            height: 56px;
+            display: flex;
+            align-items: center;
+        }
+        .header-brand {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .header-brand em { color: #d4a0a0; font-style: italic; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            color: #fff;
+            padding: 64px 24px 56px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            opacity: .85;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--red);
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: .85rem;
+            font-weight: 700;
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 20px;
+            margin-top: 36px;
+        }
+        .section-title:first-child { margin-top: 0; }
+
+        .section-empty {
+            background: var(--white);
+            border: 1.5px dashed var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .section-empty p {
+            font-size: .92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* DOC CARD */
+        .doc-card {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.05);
+            transition: all .25s;
+        }
+        .doc-card:hover {
+            border-color: var(--navy-light);
+            box-shadow: 0 4px 16px rgba(32,58,94,.12);
+            transform: translateY(-2px);
+        }
+        .doc-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .doc-card p {
+            font-size: .9rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .doc-links { display: flex; gap: 10px; flex-wrap: wrap; }
+        .doc-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: .85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all .2s;
+        }
+        .link-infographie { background: var(--navy); color: #fff; }
+        .link-infographie:hover { background: var(--navy-dark); }
+        .link-memo { background: #fde8e8; color: var(--red); border: 1px solid #fecaca; }
+        .link-memo:hover { background: #fecaca; }
+
+        /* DELEGATES */
+        .delegates {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .delegates h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        .delegates-names {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .delegate-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--navy);
+            font-size: .95rem;
+        }
+        .delegates .note {
+            font-size: .85rem;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+            color: #fff;
+            padding: 28px 24px;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer p { opacity: .7; font-size: .82rem; margin: 2px 0; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .delegates-names { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-inner">
+        <div class="header-brand">Force <em>Ouvrière</em> — URSSAF PACA</div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Vos droits, nos infographies</h1>
+        <p>Infographies et fiches mémo réalisées par Force Ouvrière pour les salariés de l'URSSAF PACA</p>
+        <span class="hero-badge">✊ Force Ouvrière vous informe et vous défend</span>
+    </div>
+</div>
+
+<div class="main">
+
+    <!-- ACCORDS LOCAUX -->
+    <h2 class="section-title">📋 Accords locaux URSSAF PACA</h2>
+    <div class="section-empty">
+        <p>🚧 Documents en cours de préparation — Retrouvez bientôt ici les infographies sur vos accords locaux (temps de travail, horaire variable, télétravail, déplacements, mobilités durables, transports, GEPPMM, QVCT…)</p>
+    </div>
+
+    <!-- CONVENTION COLLECTIVE -->
+    <h2 class="section-title">📖 Convention collective</h2>
+    <div class="section-empty">
+        <p>🚧 Documents en cours de préparation — Retrouvez bientôt ici les infographies sur les dispositions de la Convention Collective Nationale du 8 février 1957.</p>
+    </div>
+
+    <!-- DROITS & PROCÉDURES -->
+    <h2 class="section-title">⚖️ Droits & procédures</h2>
+
+    <div class="doc-card">
+        <h3>📋 Licenciement pour inaptitude</h3>
+        <p>Procédure complète en 8 étapes, recherche de reclassement, indemnités, recours. Guide détaillé pour comprendre vos droits et être accompagné à chaque étape.</p>
+        <div class="doc-links">
+            <a href="infographies/licenciement-inaptitude.html" class="link-infographie">📄 Infographie complète</a>
+            <a href="fiches-memo/licenciement-inaptitude.html" class="link-memo">📋 Fiche mémo</a>
+        </div>
+    </div>
+
+    <!-- DELEGATES -->
+    <div class="delegates">
+        <h2>✊ Vos délégués syndicaux FO</h2>
+        <div class="delegates-names">
+            <span class="delegate-name">👤 Antoine Chessa</span>
+            <span class="delegate-name">👤 Stéphane Imbert</span>
+            <span class="delegate-name">👤 Jean-Philippe Musso</span>
+        </div>
+        <p class="note">N'hésitez pas à nous contacter — nous sommes là pour vous informer et vous défendre.</p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p><strong>Force Ouvrière — URSSAF PACA</strong></p>
+    <p>Documents d'information syndicale — 2026</p>
+</div>
+
+</body>
+</html>
