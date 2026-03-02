@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Mémo — GEPPMM Parcours Professionnels</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--orange:#c2410c;--orange-light:#ffedd5;--orange-bg:#fff7ed;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 2px 4px rgba(0,0,0,.06)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+
+        .memo{max-width:820px;margin:0 auto;background:var(--white);min-height:100vh;padding:20px}
+
+        /* Header */
+        .header{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:3px solid var(--red);margin-bottom:14px}
+        .header-left h1{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;color:var(--navy);line-height:1.2}
+        .header-left p{font-size:.72rem;color:var(--text-muted);margin-top:2px}
+        .header-logo{width:62px}
+
+        /* Grid */
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        @media(max-width:600px){.grid{grid-template-columns:1fr}}
+        .full-width{grid-column:1/-1}
+
+        /* Boxes */
+        .box{background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border)}
+        .box.success-bg{background:var(--green-bg);border-color:var(--green-light)}
+        .box.purple-bg{background:var(--purple-bg);border-color:var(--purple-light)}
+        .box.orange-bg{background:var(--orange-bg);border-color:var(--orange-light)}
+        .box.warning-bg{background:var(--amber-bg);border-color:var(--amber-light)}
+        .box-title{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+
+        /* Mini list */
+        .mini-list{font-size:.72rem;padding-left:14px;margin:0;color:var(--text-secondary)}.mini-list li{margin:2px 0}
+
+        /* Parcours mini */
+        .parcours-mini{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+        .parcours-mini>div{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px;text-align:center;min-width:58px}
+        .parcours-mini .icon{font-size:1.1rem}
+        .parcours-mini .label{font-size:.6rem;color:var(--navy);font-weight:700}
+
+        /* Dispositifs mini */
+        .dispositifs-mini{display:flex;flex-wrap:wrap;gap:5px}
+        .dispositifs-mini span{background:var(--white);border:1px solid var(--border);padding:4px 10px;border-radius:8px;font-size:.68rem;font-weight:700;color:var(--navy)}
+
+        /* Primes table */
+        .primes-mini{font-size:.7rem}
+        .primes-mini table{width:100%;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden}
+        .primes-mini th{background:var(--navy-dark);color:#fff;padding:5px 8px;text-align:left;font-weight:700;font-size:.68rem}
+        .primes-mini td{background:var(--white);padding:5px 8px;border-bottom:1px solid var(--bg);font-size:.68rem}
+        .primes-mini tr:last-child td{border-bottom:none}
+        .hl{color:var(--red);font-weight:800;font-family:'Playfair Display',serif}
+
+        /* Alert */
+        .alert-mini{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:10px;padding:8px 12px;font-size:.72rem;line-height:1.5}
+
+        /* Footer */
+        .footer-mini{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:8px;border-top:2px solid var(--navy);font-size:.68rem;color:var(--text-muted)}
+        .footer-mini a{color:var(--navy);text-decoration:none;font-weight:600}
+
+        @media print{body{background:#fff}.memo{box-shadow:none;padding:12px}}
+    </style>
+</head>
+<body>
+
+<div class="memo">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>🚀 GEPPMM — Parcours Professionnels</h1>
+            <p>Fiche mémo • URSSAF PACA • Accord GEPPMM 31/05/2024 (4 ans)</p>
+        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' fill='%238B1B1A'%3EFO%3C/text%3E%3Ctext x='5' y='25' font-family='Arial' font-size='12' fill='%238B1B1A' transform='rotate(-90 20 50)'%3EURSSAF PACA%3C/text%3E%3C/svg%3E" alt="FO" class="header-logo">
+    </div>
+
+    <div class="grid">
+        <!-- INTÉGRATION -->
+        <div class="box success-bg full-width">
+            <div class="box-title">👋 Parcours d'intégration</div>
+            <div class="parcours-mini">
+                <div><div class="icon">📞</div><div class="label">Contact avant</div></div>
+                <div><div class="icon">👋</div><div class="label">Accueil J1</div></div>
+                <div><div class="icon">🎮</div><div class="label">Serious Game</div></div>
+                <div><div class="icon">🤝</div><div class="label">Parrain</div></div>
+                <div><div class="icon">📝</div><div class="label">Rapport 1 mois</div></div>
+                <div><div class="icon">💬</div><div class="label">Entretien 6 mois</div></div>
+            </div>
+        </div>
+
+        <!-- ENTRETIENS -->
+        <div class="box purple-bg">
+            <div class="box-title">📋 Vos entretiens</div>
+            <ul class="mini-list">
+                <li><strong>EAEA</strong> : annuel (bilan + objectifs)</li>
+                <li><strong>Entretien Pro</strong> : tous les 2 ans</li>
+                <li><strong>Bilan 6 ans</strong> : récapitulatif parcours</li>
+                <li>EAEA intermédiaire si besoin</li>
+            </ul>
+        </div>
+
+        <!-- COMPÉTENCES -->
+        <div class="box">
+            <div class="box-title">🎓 Développer vos compétences</div>
+            <div class="dispositifs-mini">
+                <span>CPF</span><span>VAE</span><span>Bilan Compétences</span><span>BPI</span><span>PTP</span><span>CEP</span>
+            </div>
+            <p style="font-size:.66rem;color:var(--text-muted);margin-top:6px">💡 Conseil orientation interne par le pôle Dév. RH</p>
+        </div>
+
+        <!-- MOBILITÉ PRIMES -->
+        <div class="box full-width">
+            <div class="box-title">🔄 Primes de mobilité (réorganisations)</div>
+            <div class="primes-mini">
+                <table>
+                    <tr><th>Type</th><th>Prime</th></tr>
+                    <tr><td>Fonctionnelle — Chgt famille pro</td><td class="hl">1 mois salaire</td></tr>
+                    <tr><td>Fonctionnelle — Chgt emploi générique</td><td class="hl">½ mois salaire</td></tr>
+                    <tr><td>Géographique (≥30km ou ≥30min)</td><td class="hl">1 mois salaire</td></tr>
+                    <tr><td>Géographique + déménagement</td><td class="hl">2 mois salaire</td></tr>
+                </table>
+            </div>
+            <p style="font-size:.64rem;color:var(--text-muted);margin-top:5px">+ Frais déménagement • Indemnité double résidence (2 mois) • 1 voyage A/R/mois</p>
+        </div>
+
+        <!-- MOBILITÉ INTERNE -->
+        <div class="box">
+            <div class="box-title">🎯 Mobilité interne</div>
+            <ul class="mini-list">
+                <li>Info sur postes disponibles</li>
+                <li><strong>Immersions</strong> : journées découverte</li>
+                <li>Ateliers CV et entretiens</li>
+                <li>Plateformes tél : priorité après 3 ans</li>
+            </ul>
+        </div>
+
+        <!-- TUTORAT -->
+        <div class="box orange-bg">
+            <div class="box-title">🎓 Tutorat valorisé</div>
+            <ul class="mini-list">
+                <li>Formation tuteur + guide</li>
+                <li>Point spécifique en EAEA</li>
+                <li><strong>Prime</strong> : 7 points/mois (formations avec examen)</li>
+            </ul>
+        </div>
+
+        <!-- MANAGERS -->
+        <div class="box">
+            <div class="box-title">👔 Managers</div>
+            <ul class="mini-list">
+                <li>Ateliers EAEA</li>
+                <li>CODEV entre pairs</li>
+                <li>Accompagnement ciblé (conflits, RPS…)</li>
+            </ul>
+        </div>
+
+        <!-- MANDATÉS -->
+        <div class="box">
+            <div class="box-title">🤝 Salariés mandatés</div>
+            <ul class="mini-list">
+                <li>Mandat sans incidence sur carrière</li>
+                <li>Garantie évolution salariale</li>
+                <li>Protocole 01/02/2008</li>
+            </ul>
+        </div>
+
+        <!-- ALERTE -->
+        <div class="full-width">
+            <div class="alert-mini">
+                <strong>⚠️ Primes mobilité :</strong> uniquement pour réorganisations présentées aux IRP. Mobilités convenance personnelle exclues.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-mini">
+        <div><strong>Force Ouvrière — URSSAF PACA</strong> • Accord GEPPMM • 31 mai 2024 (4 ans)</div>
+        <div style="margin-top:6px;font-weight:700;">👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</div>
+    </div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
