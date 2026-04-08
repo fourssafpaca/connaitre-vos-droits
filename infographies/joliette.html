@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accompagnement Mobilité Joliette — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        /* HERO */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        /* SECTIONS */
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}
+        .section-header{margin-bottom:32px}
+        .section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}
+        .section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}
+        .section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        /* CARDS */
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;display:flex;align-items:flex-start;gap:8px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);flex-shrink:0}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .quad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}@media(max-width:768px){.quad-grid{grid-template-columns:1fr 1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+
+        /* KEY NUMBERS */
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}
+        .key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}
+
+        /* TABLE */
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+
+        /* INFO BOXES */
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.purple{background:var(--purple-bg);border:1.5px solid var(--purple-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        /* FOOTER */
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#contexte" class="nav-top-link">Contexte</a><a href="#organisation" class="nav-top-link">Organisation</a><a href="#transports" class="nav-top-link">Transports</a><a href="#parking" class="nav-top-link">Parking</a><a href="#tunnel" class="nav-top-link">Tunnel</a><a href="#duree" class="nav-top-link">Durée</a></div></div></nav>
+
+<div class="hero"><div class="container hero-content"><div class="hero-badge">🏗️ Projet immobilier Marseille</div><h1>Accompagnement à la mobilité Joliette<span>Les mesures pour les salariés redéployés du site Viton vers La Joliette</span></h1><p class="hero-subtitle">Accord du 25 octobre 2022, durée 3 ans. Toutes les mesures d'accompagnement pour les salariés impactés par le projet immobilier des sites de Marseille.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Vous êtes redéployé(e) sur le site de La Joliette ? <strong>Contactez vos délégués FO</strong> pour connaître toutes les mesures auxquelles vous avez droit.</p></div>
+
+<!-- SECTION 1 : CONTEXTE & CHIFFRES -->
+<section class="section" id="contexte"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Contexte et chiffres clés</h2><p class="section-subtitle">Le projet immobilier du site Viton (20 avenue Viton, 13009 Marseille) entraîne le redéploiement temporaire de salariés vers le site de La Joliette, à 10 km au nord.</p></div>
+
+<div class="key-numbers">
+    <div class="key-num"><div class="value">199</div><div class="label">salariés redéployés<br>Viton → Joliette</div></div>
+    <div class="key-num"><div class="value">300</div><div class="label">effectif projeté<br>site Joliette</div></div>
+    <div class="key-num"><div class="value">3 ans</div><div class="label">durée estimée<br>du redéploiement</div></div>
+    <div class="key-num"><div class="value">Juin 2026</div><div class="label">retour prévu<br>nouveau site Viton</div></div>
+</div>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>🏗️ Le projet</h3><ul><li>Démolition-reconstruction en site occupé</li><li>Nouveau bâtiment : 9 801 m² + 329 places de stationnement</li><li>Démolition anticipée de 2 bâtiments sur 5</li><li>La Joliette = zone de repli pour 200 salariés</li></ul></div>
+    <div class="def-card amber"><h3>⚠️ L'impact pour les salariés</h3><ul><li>Changement de lieu de travail (sud → nord de Marseille)</li><li>Allongement des temps de trajet</li><li>Perte du parking gratuit de Viton</li><li>Modification de l'organisation personnelle (garde d'enfants…)</li></ul></div>
+</div>
+</div></section>
+
+<!-- SECTION 2 : SOUPLESSES ORGANISATIONNELLES -->
+<section class="section" id="organisation"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Les souplesses organisationnelles</h2><p class="section-subtitle">Des mesures pour tous les salariés présents sur le site de La Joliette (pas seulement les redéployés).</p></div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>🏠 Télétravail facilité</h3><ul><li>Augmentation du nombre de jours facilitée</li><li>Dans la formule initialement choisie</li><li>Minimum 2 jours de présence sur site/semaine</li></ul></div>
+    <div class="def-card green"><h3>🕐 Plage horaire étendue</h3><ul><li>Amplitude élargie : <strong>7h — 18h30</strong></li><li>Au lieu de 7h30-18h30 actuellement</li><li>Cumul crédit max 8h / débit max 6h maintenus</li><li>Durée max 10h/jour et min 4h maintenues</li></ul></div>
+    <div class="def-card green"><h3>🌅 Plage fixe du matin aménagée</h3><ul><li>Nouvelle option : <strong>10h — 12h</strong></li><li>En plus des plages existantes (9h-11h ou 9h30-11h30)</li><li>Pour faciliter les déplacements hors heures de pointe</li></ul></div>
+    <div class="def-card green"><h3>👶 Frais de garde d'enfants</h3><ul><li>Prise en charge des frais <strong>supplémentaires</strong> de garde</li><li>Occasionnés par le redéploiement</li><li>Sur justificatifs (anciens / nouveaux contrats)</li><li>Pendant toute la durée de l'accord</li></ul></div>
+</div>
+</div></section>
+
+<!-- SECTION 3 : TRANSPORTS DOUX -->
+<section class="section" id="transports"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Transports : les aides renforcées</h2><p class="section-subtitle">Des mesures spécifiques pour les salariés redéployés sur le site de La Joliette.</p></div>
+
+<div class="tri-grid">
+    <div class="card"><div class="card-title">🚃 Abonnements TC à 90%</div><p>Prise en charge à <strong>90%</strong> des abonnements transport en commun (hebdo, mensuel, annuel, vélo public).</p><p style="margin-top:8px;font-size:.85rem;color:var(--text-muted)"><strong>Conditions :</strong> trajet TC ≥ 1h A/R ET rallongement ≥ 30 min, OU trajet TC ≥ 1h30 A/R.</p></div>
+    <div class="card"><div class="card-title">🚲 Achat mobilité douce</div><p>Contribution employeur à l'achat d'un dispositif de mobilité douce :</p><ul><li>Vélo classique : 50% (max 200€)</li><li>VAE : 50% (max 500€)</li><li>Trottinette élec. : 50% (max 200€)</li><li>Équipement sécurité : max 100€</li></ul></div>
+    <div class="card"><div class="card-title">🌿 FMD assoupli</div><p>Barème aménagé pour les redéployés :</p><ul><li>≥ 100 jours : 500€</li><li>60-99 jours : 300€</li><li>30-59 jours : 200€</li><li>20-29 jours : 100€</li><li>10-19 jours : 50€</li></ul></div>
+</div>
+
+<div class="alert-box"><h4>⚠️ Règles de non-cumul</h4><p>La prise en charge TC à 90% <strong>n'est pas cumulable</strong> avec le parking, les frais réels de parking et les frais de tunnel. Le FMD assoupli n'est pas cumulable avec le parking (hors covoiturage/véhicule électrique) ni le tunnel.</p></div>
+
+</div></section>
+
+<!-- SECTION 4 : PARKING -->
+<section class="section" id="parking"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Stationnement et parking</h2><p class="section-subtitle">Pour les salariés redéployés dont le trajet en voiture est significativement allongé.</p></div>
+
+<div class="def-grid">
+    <div class="card"><div class="card-title">🅿️ Places supplémentaires</div><p>L'employeur s'engage à augmenter le nombre de places dans la limite de <strong>70 bénéficiaires</strong>, soit par location de places à proximité (flex parking), soit par remboursement des frais réels sur justificatifs.</p></div>
+    <div class="card"><div class="card-title">📋 Conditions d'éligibilité</div><ul><li>Trajet voiture ≥ 1h A/R (hors tunnels Prado) ET rallongement ≥ 30 min</li><li>OU trajet voiture ≥ 1h30 A/R</li><li>Exclusion : véhicule de fonction/service</li></ul><p style="margin-top:8px;font-size:.85rem;color:var(--text-muted)">Si les demandes excèdent l'offre, des critères de priorité seront définis avec les organisations syndicales.</p></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⏰</div><div><h4>Durée limitée</h4><p>Cette mesure s'applique pour <strong>18 mois minimum</strong>, jusqu'à la livraison des nouveaux équipements publics (extension tramway, parkings relais), prévue au 1er janvier 2025. Elle sera rééxaminée à cette date.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 5 : TUNNEL -->
+<section class="section" id="tunnel"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Prise en charge des frais de tunnel</h2><p class="section-subtitle">Tunnels Prado-Carénage et Prado Sud pour rejoindre directement le quartier de La Joliette.</p></div>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>✅ Conditions d'éligibilité</h3><ul><li>Trajet voiture ≥ 1h A/R (hors tunnels) ET rallongement ≥ 30 min</li><li>OU trajet voiture ≥ 1h30 A/R</li><li>Exclusion : véhicule de fonction/service</li></ul></div>
+    <div class="def-card green"><h3>➕ Cumuls possibles</h3><ul><li>Cumulable avec le parking et les frais de parking</li><li>Non cumulable avec TC à 90%, FMD assoupli et achat mobilité douce</li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⏰</div><div><h4>Durée limitée identique au parking</h4><p>Mesure applicable <strong>18 mois minimum</strong>, jusqu'à la livraison des équipements publics prévue au 1er janvier 2025.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 6 : DURÉE ET RÉCAP -->
+<section class="section" id="duree"><div class="container"><div class="section-header"><div class="section-number red">6</div><h2 class="section-title">Durée, cumuls et récapitulatif</h2></div>
+
+<table class="styled-table">
+    <thead><tr><th>Mesure</th><th>Durée</th><th>Bénéficiaires</th></tr></thead>
+    <tbody>
+        <tr><td>Télétravail facilité</td><td>3 ans</td><td>Tous (site Joliette)</td></tr>
+        <tr><td>Plage horaire 7h-18h30</td><td>3 ans</td><td>Tous (site Joliette)</td></tr>
+        <tr><td>Plage fixe matin 10h-12h</td><td>3 ans</td><td>Tous (site Joliette)</td></tr>
+        <tr><td>Frais de garde d'enfants</td><td>3 ans</td><td>Redéployés</td></tr>
+        <tr><td>TC à 90%</td><td>3 ans</td><td>Redéployés (conditions trajet)</td></tr>
+        <tr><td>Achat mobilité douce</td><td>3 ans</td><td>Redéployés</td></tr>
+        <tr><td>FMD assoupli</td><td>3 ans</td><td>Redéployés</td></tr>
+        <tr><td>Parking (70 places)</td><td class="hl">18 mois min.</td><td>Redéployés (conditions trajet)</td></tr>
+        <tr><td>Frais de tunnel</td><td class="hl">18 mois min.</td><td>Redéployés (conditions trajet)</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box blue"><div class="icon">📋</div><div><h4>Tableau des cumuls</h4><p><strong>TC 90%</strong> : non cumulable avec parking, frais parking, tunnel.<br><strong>Achat mobilité douce</strong> : non cumulable avec TC 90%, parking, frais parking, tunnel.<br><strong>FMD assoupli</strong> : cumulable avec TC à 50% (plafond 600€) et achat mobilité douce. Non cumulable avec parking (hors covoiturage/VE) et tunnel.<br><strong>Parking</strong> : cumulable avec tunnel. Non cumulable avec TC 90%, FMD, achat mobilité douce.<br><strong>Tunnel</strong> : cumulable avec parking. Non cumulable avec TC 90%, FMD, achat mobilité douce.</p></div></div>
+
+<div class="info-box purple"><div class="icon">🔄</div><div><h4>Mobilité vers Avignon ou Toulon</h4><p>Les demandes de mobilité géographique temporaire vers les sites d'Avignon et Toulon seront examinées et facilitées jusqu'à la livraison du futur site. La Direction maintient le système d'entretiens mobilités à la demande.</p></div></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Accord accompagnement mobilité Joliette • 25 octobre 2022 • Durée 3 ans</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
