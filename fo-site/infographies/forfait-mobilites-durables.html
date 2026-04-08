@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forfait Mobilités Durables — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-dark:#1a5c3a;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+        /* HERO */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-icons{font-size:2.5rem;margin-top:24px;display:flex;gap:20px}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+        /* HIDE OLD NAV-BAR */
+        .nav-bar{display:none}
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--green);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p{font-size:.92rem;color:var(--text-secondary);line-height:1.7}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}.def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}.def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:6px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+        .transport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin:20px 0}.t-item{background:var(--green-bg);border:1.5px solid var(--green-light);border-radius:14px;padding:20px 14px;text-align:center;transition:transform .2s}.t-item:hover{transform:translateY(-3px)}.t-icon{font-size:2.2rem;margin-bottom:8px}.t-label{font-size:.85rem;font-weight:600;color:var(--green-dark)}
+        .big-box{background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;border-radius:16px;padding:36px;text-align:center;margin:24px 0}.big-box .big{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;line-height:1}.big-box .big span{font-size:.4em;vertical-align:middle}.big-box .unit{font-size:1.1rem;opacity:.9;margin-top:8px}
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--green-dark);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--green);font-weight:800;font-size:1.1rem}
+        .cumul-box{background:var(--amber-bg);border:1.5px solid var(--amber-light);border-radius:16px;padding:28px;margin:24px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}.cumul-box .part{background:#fff;border-radius:10px;padding:14px 20px;text-align:center;font-weight:700;color:var(--navy);font-size:1rem}.cumul-box .op{font-size:1.5rem;font-weight:800;color:var(--amber)}.cumul-box .result{background:var(--green-light);color:var(--green-dark);border-radius:10px;padding:14px 20px;font-weight:800;font-size:1.1rem}
+        .checklist{list-style:none;margin:20px 0}.checklist li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--text-secondary)}.checklist li:last-child{border-bottom:none}.ck{width:24px;height:24px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-weight:800;font-size:.8rem}
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green-b{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}.footer .contact{margin-top:16px;opacity:.5;font-size:.78rem}
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}}
+    </style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Éligibilité</a><a href="#s2" class="nav-top-link">Transports</a><a href="#s3" class="nav-top-link">Montants</a><a href="#s4" class="nav-top-link">Cumul</a><a href="#s5" class="nav-top-link">Déclaration</a><a href="#s6" class="nav-top-link">Versement</a></div></div></nav>
+<div class="hero"><div class="container hero-content"><div class="hero-badge">🌿 Écomobilité</div><h1>Le Forfait Mobilités Durables<span>Jusqu'à 600€/an pour vos trajets domicile-travail en mobilité douce</span></h1><p class="hero-subtitle">Accord FMD 2025, durée 3 ans. Favoriser les transports doux et écologiques.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Une question sur le forfait mobilités durables ou vos remboursements ? <strong>Contactez vos délégués FO</strong> pour être accompagné(e).</p></div>
+
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Qui peut en bénéficier ?</h2></div>
+<div class="def-grid"><div class="def-card green"><h3>✅ Vous êtes éligible</h3><ul><li>CDI ou CDD</li><li>Temps plein ou temps partiel</li><li>Stagiaires</li></ul></div><div class="card"><div class="card-title">🏠 Condition</div><p>Le forfait couvre uniquement les trajets <strong>domicile-travail</strong> depuis votre résidence habituelle déclarée à l'employeur.</p></div></div>
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Trajets inter-sites</h4><p>Les déplacements entre lieux de travail sont assurés par l'URSSAF PACA via la flotte automobile.</p></div></div>
+</div></section>
+
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Les modes de transport éligibles</h2></div>
+<div class="transport-grid"><div class="t-item"><div class="t-icon">🚴</div><div class="t-label">Vélo personnel</div></div><div class="t-item"><div class="t-icon">🚗</div><div class="t-label">Covoiturage</div></div><div class="t-item"><div class="t-icon">🛴</div><div class="t-label">Location / libre-service</div></div><div class="t-item"><div class="t-icon">🔌</div><div class="t-label">Autopartage</div></div><div class="t-item"><div class="t-icon">🚃</div><div class="t-label">Transports en commun*</div></div><div class="t-item"><div class="t-icon">⚡</div><div class="t-label">EDPM</div></div></div>
+<p style="font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:8px">* Hors abonnements (pris en charge par ailleurs)</p>
+<div class="alert-box" style="margin-top:20px"><h4>❌ Non éligibles</h4><p>Véhicule de service ou de fonction • Véhicule personnel thermique (hors covoiturage) • Abonnements transports en commun</p></div>
+</div></section>
+
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Combien pouvez-vous recevoir ?</h2></div>
+<div class="big-box"><div class="big">600<span>€</span></div><div class="unit">maximum par an et par salarié</div></div>
+<table class="styled-table"><thead><tr><th>Nb jours d'utilisation/an</th><th>≥ 150</th><th>110–149</th><th>80–109</th><th>50–79</th><th>20–49</th></tr></thead><tbody><tr><td><strong>Montant</strong></td><td class="hl">600€</td><td class="hl">450€</td><td class="hl">300€</td><td class="hl">150€</td><td class="hl">75€</td></tr></tbody></table>
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Minimum requis</h4><p>Il faut au moins <strong>20 jours</strong> d'utilisation par an pour ouvrir droit au forfait.</p></div></div>
+</div></section>
+
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Cumul avec l'abonnement transport</h2></div>
+<div class="cumul-box"><div class="part">FMD 600€ max</div><div class="op">+</div><div class="part">Abonnement TC (part employeur)</div><div class="op">=</div><div class="result">900€ max / an</div></div>
+<div class="alert-box"><h4>❌ Non cumulable avec :</h4><p>Le versement transport de 4€ • Une place de parking nominative • La prise en charge des frais réels de parking</p></div>
+<div class="info-box blue"><div class="icon">📊</div><div><h4>Temps partiel < 50%</h4><p>Si votre temps de travail est inférieur à 50% de la durée légale, le forfait est calculé au prorata.</p></div></div>
+</div></section>
+
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Comment déclarer vos trajets ?</h2><p class="section-subtitle">Pour chaque mode, fournissez une déclaration sur l'honneur mensuelle.</p></div>
+<ul class="checklist">
+<li><span class="ck">✓</span><span><strong>Vélo personnel :</strong> Déclaration sur l'honneur avec dates des trajets</span></li>
+<li><span class="ck">✓</span><span><strong>Covoiturage :</strong> Déclaration conducteur ET passagers. Covoiturage externe → justificatif de plateforme obligatoire</span></li>
+<li><span class="ck">✓</span><span><strong>Location / libre-service :</strong> Déclaration + justificatif d'abonnement ou paiement</span></li>
+<li><span class="ck">✓</span><span><strong>Autopartage :</strong> Déclaration + justificatif d'abonnement ou paiement</span></li>
+<li><span class="ck">✓</span><span><strong>Transports en commun :</strong> Déclaration + justificatifs des titres (hors abonnement)</span></li>
+<li><span class="ck">✓</span><span><strong>EDPM :</strong> Déclaration sur l'honneur avec dates des trajets</span></li>
+</ul>
+<div class="alert-box"><h4>⚠️ Contrôles et sanctions</h4><p>La Direction peut effectuer des contrôles. Toute fausse déclaration expose à des sanctions disciplinaires.</p></div>
+</div></section>
+
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number red">6</div><h2 class="section-title">Quand est versé le forfait ?</h2></div>
+<div class="def-grid"><div class="card"><div class="card-title">📅 Versement annuel</div><p>Le forfait de l'année N est versé en <strong>février de l'année N+1</strong>.</p></div><div class="card"><div class="card-title">🚪 Départ en cours d'année</div><p>En cas de rupture du contrat, le forfait est versé lors de la <strong>liquidation des droits</strong>.</p></div></div>
+<div class="info-box green-b"><div class="icon">🌍</div><div><h4>L'esprit de l'accord</h4><p>Le FMD traduit la volonté de l'URSSAF PACA et des organisations syndicales de favoriser les transports doux pour réduire les émissions de gaz à effet de serre.</p></div></div>
+</div></section>
+
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Accord Forfait Mobilités Durables • 2025 • Durée 3 ans</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>

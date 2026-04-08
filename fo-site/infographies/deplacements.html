@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compensation des temps de déplacement — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+        /* HERO */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 50%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+        /* HIDE OLD NAV-BAR */
+        .nav-bar{display:none}
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p{font-size:.92rem;color:var(--text-secondary);line-height:1.7}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}.tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}.def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:6px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+        .formula-box{background:var(--navy-dark);color:#fff;border-radius:16px;padding:32px;text-align:center;margin:24px 0}.formula-box .eq{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;margin-bottom:10px}.formula-box p{opacity:.8;font-size:.92rem}
+        .example{background:var(--purple-bg);border:1.5px solid var(--purple-light);border-radius:14px;padding:24px;margin:16px 0}.example h4{font-size:.95rem;font-weight:700;color:var(--purple);margin-bottom:12px}.example .flow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0}.example .box{background:#fff;border-radius:8px;padding:10px 16px;text-align:center}.example .box .v{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;color:var(--navy)}.example .box .l{font-size:.75rem;color:var(--text-muted)}.example .op{font-size:1.4rem;font-weight:800;color:var(--purple)}.example .result{font-size:.88rem;color:var(--text-secondary);margin-top:10px}
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.15rem}
+        .checklist{list-style:none;margin:20px 0}.checklist li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--text-secondary)}.checklist li:last-child{border-bottom:none}.ck{width:24px;height:24px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-weight:800;font-size:.8rem}
+        .steps-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;counter-reset:step}@media(max-width:768px){.steps-flow{grid-template-columns:1fr 1fr}}.sf{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px 14px;box-shadow:var(--shadow);position:relative}.sf::before{counter-increment:step;content:counter(step);position:absolute;top:-10px;left:14px;background:var(--navy);color:#fff;width:24px;height:24px;border-radius:50%;font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center}.sf h4{font-size:.88rem;font-weight:700;color:var(--navy);margin:8px 0 4px}.sf p{font-size:.82rem;color:var(--text-secondary)}
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.purple{background:var(--purple-bg);border:1.5px solid var(--purple-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}.footer .contact{margin-top:16px;opacity:.5;font-size:.78rem}
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}}
+    </style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Concernés</a><a href="#s2" class="nav-top-link">Principe</a><a href="#s3" class="nav-top-link">Calcul</a><a href="#s4" class="nav-top-link">Taux</a><a href="#s5" class="nav-top-link">Utilisation</a><a href="#s6" class="nav-top-link">Cas particuliers</a><a href="#s7" class="nav-top-link">Démarches</a></div></div></nav>
+<div class="hero"><div class="container hero-content"><div class="hero-badge">🚗 Déplacements</div><h1>Compensation des temps de déplacement<span>Comment sont compensés vos trajets vers un lieu de travail différent de votre site habituel</span></h1><p class="hero-subtitle">Accord du 1er février 2026, durée 3 ans. Amoindrir la fatigue des déplacements professionnels.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Une question sur la compensation de vos déplacements ? <strong>Contactez vos délégués FO</strong> pour être accompagné(e).</p></div>
+
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Qui est concerné ?</h2></div>
+<div class="def-grid"><div class="def-card green"><h3>✅ Salariés éligibles</h3><ul><li>Tous les salariés CCN Sécurité Sociale</li></ul></div><div class="def-card red-c"><h3>❌ Exclusions</h3><ul><li>Cadres au forfait jours</li><li>Cadres dirigeants</li></ul></div></div>
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Inspecteurs du Recouvrement (hors forfait jours)</h4><p>Les déplacements pour contrôle en région PACA = temps de travail effectif. Les contrôles hors région avec découcher donnent lieu à compensation.</p></div></div>
+</div></section>
+
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Le principe de la compensation</h2><p class="section-subtitle">Lorsque vous vous rendez sur un lieu différent de votre site habituel, le temps de trajet supplémentaire est compensé en repos.</p></div>
+<div class="tri-grid"><div class="card"><div class="card-title">🏠 Trajet habituel</div><p>Domicile → Site d'affectation<br><strong>Pas de compensation</strong></p></div><div class="card"><div class="card-title">🏢 Inter-sites en journée</div><p>Site habituel → Autre site<br><strong>= Temps de travail effectif</strong></p></div><div class="card"><div class="card-title">📍 Lieu inhabituel</div><p>Domicile → Lieu différent<br><strong>= Compensation du surtemps</strong></p></div></div>
+<div class="alert-box"><h4>⚠️ Règle importante</h4><p>Un même temps ne peut pas être à la fois comptabilisé comme temps de travail ET compensé. Seul le surtemps hors horaires de travail est compensé.</p></div>
+</div></section>
+
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Comment calculer le surtemps ?</h2></div>
+<div class="formula-box"><div class="eq">Surtemps = Trajet lieu inhabituel − Trajet habituel</div><p>Le surtemps est calculé via les sites d'itinéraire (Mappy, Google Maps)</p></div>
+<div class="example"><h4>💡 Exemple 1 : Formation à Avignon</h4><div class="flow"><div class="box"><div class="v">1h30</div><div class="l">Trajet → Avignon</div></div><div class="op">−</div><div class="box"><div class="v">30min</div><div class="l">Trajet habituel</div></div><div class="op">=</div><div class="box"><div class="v">1h00</div><div class="l">Surtemps</div></div></div><div class="result">Compensation à 50% → <strong>30 min de repos</strong></div></div>
+<div class="example"><h4>💡 Exemple 2 : Réunion à Nice (A/R)</h4><div class="flow"><div class="box"><div class="v">4h00</div><div class="l">Trajet A/R Nice</div></div><div class="op">−</div><div class="box"><div class="v">1h00</div><div class="l">Trajet A/R habituel</div></div><div class="op">=</div><div class="box"><div class="v">3h00</div><div class="l">Surtemps</div></div></div><div class="result">Compensation à 50% → <strong>1h30 de repos</strong></div></div>
+</div></section>
+
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Les taux de compensation</h2></div>
+<table class="styled-table"><thead><tr><th>Situation</th><th>Taux</th></tr></thead><tbody>
+<tr><td>Déplacement en semaine</td><td class="hl">50%</td></tr>
+<tr><td>Déplacement un dimanche ou jour férié</td><td class="hl">80%</td></tr>
+<tr><td>Départ la veille (en semaine)</td><td class="hl">50%</td></tr>
+<tr><td>Départ la veille (dimanche ou jour férié)</td><td class="hl">80%</td></tr>
+</tbody></table>
+<div class="example"><h4>💡 Exemple 3 : Départ le dimanche soir pour formation lundi matin</h4><div class="flow"><div class="box"><div class="v">2h00</div><div class="l">Surtemps dimanche</div></div><div class="op">×</div><div class="box"><div class="v">80%</div><div class="l">Taux dimanche</div></div><div class="op">=</div><div class="box"><div class="v">1h36</div><div class="l">Compensation</div></div></div><div class="result">Le départ la veille doit être validé par le responsable et justifié</div></div>
+</div></section>
+
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Utiliser vos compensations</h2></div>
+<div class="def-grid"><div class="def-card green"><h3>✅ Règles d'utilisation</h3><ul><li>Utilisable dès la 1ère heure acquise</li><li>Pose en heures sur plages variables</li><li>Pose en demi-journée/journée possible</li><li>Accolable aux RTT et congés</li></ul></div><div class="def-card red-c"><h3>⚠️ Limites à respecter</h3><ul><li>Cumul maximum : 16h</li><li>Prise dans les 2 mois après acquisition</li><li>Soumis à validation du responsable</li></ul></div></div>
+<div class="info-box blue"><div class="icon">💻</div><div><h4>Où consulter votre compteur ?</h4><p>Les compensations sont créditées dans l'outil DEA (onglet « compteurs spéciaux »).</p></div></div>
+</div></section>
+
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number">6</div><h2 class="section-title">Cas particuliers</h2></div>
+<div class="def-grid"><div class="card"><div class="card-title">📍 Mission demi-journée en région</div><p>Possibilité de travailler sur le site de la mission l'autre partie de la journée.</p></div><div class="card"><div class="card-title">📅 Missions plusieurs jours</div><p>Compensation sur le trajet aller (1er jour) et retour (dernier jour). Jours intermédiaires = durée journalière contractuelle.</p></div><div class="card"><div class="card-title">🔄 Passage par le site habituel</div><p>Le trajet site habituel → lieu de mission = temps de travail effectif (pas de compensation).</p></div><div class="card"><div class="card-title">🚗 Mission ½ journée = déplacement journée</div><p>Si validé sur l'ordre de mission, la journée est décomptée à hauteur de la durée journalière contractuelle.</p></div></div>
+</div></section>
+
+<section class="section" id="s7"><div class="container"><div class="section-header"><div class="section-number red">7</div><h2 class="section-title">Les démarches à effectuer</h2></div>
+<div class="steps-flow"><div class="sf"><h4>Première connexion DEA</h4><p>Déclarez votre temps de trajet habituel et durée journalière</p></div><div class="sf"><h4>Avant le déplacement</h4><p>Établissez un ordre de mission avec justificatif</p></div><div class="sf"><h4>Après le déplacement</h4><p>Déclarez dans DEA votre heure de départ et d'arrivée</p></div><div class="sf"><h4>Utilisation</h4><p>Posez vos heures dans les 2 mois (validation responsable)</p></div></div>
+</div></section>
+
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Accord temps de déplacement • 1er février 2026 • Durée 3 ans</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>

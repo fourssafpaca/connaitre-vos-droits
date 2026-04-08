@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualité de Vie et Conditions de Travail — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--teal:#0d9488;--teal-light:#ccfbf1;--teal-bg:#f0fdfa;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        /* Hero */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%}.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-icons{font-size:2rem;margin-top:16px;letter-spacing:12px}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        /* Nav */
+        .nav-bar{display:none}
+
+        /* Sections */
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-number.teal{background:var(--teal)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        /* Cards */
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{padding-left:18px}.card ul li{margin:5px 0}
+        .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:20px 0}.card-grid-3{grid-template-columns:repeat(3,1fr)}@media(max-width:768px){.card-grid,.card-grid-3{grid-template-columns:1fr}}
+
+        /* Def grid */
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}.def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:linear-gradient(135deg,#f0fff4,#e8f5e8);border-color:#c6f6d5}.def-card.red{background:linear-gradient(135deg,#fef2f2,#fde8e8);border-color:#fecaca}.def-card.teal{background:linear-gradient(135deg,var(--teal-bg),#e0f7f4);border-color:var(--teal-light)}.def-card.purple{background:linear-gradient(135deg,var(--purple-bg),#f3e8ff);border-color:var(--purple-light)}.def-card.navy{background:linear-gradient(135deg,#eef2ff,#dbeafe);border-color:var(--blue-light)}.def-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card.green h3{color:var(--green)}.def-card.red h3{color:var(--red)}.def-card.teal h3{color:var(--teal)}.def-card.purple h3{color:var(--purple)}.def-card.navy h3{color:var(--navy)}.def-card p,.def-card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.def-card ul{padding-left:18px}.def-card ul li{margin:4px 0}
+
+        /* Acteurs grid */
+        .acteurs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}@media(max-width:768px){.acteurs-grid{grid-template-columns:repeat(2,1fr)}}.acteur-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:22px 14px;text-align:center;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}.acteur-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}.acteur-icon{font-size:2.2rem;margin-bottom:10px}.acteur-label{font-size:.85rem;font-weight:700;color:var(--navy)}.acteur-desc{font-size:.75rem;color:var(--text-muted);margin-top:4px;line-height:1.4}
+
+        /* Piliers */
+        .piliers-container{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:24px 0}.pilier{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff;border-radius:14px;padding:20px 28px;text-align:center;min-width:130px;box-shadow:var(--shadow)}.pilier-icon{font-size:1.6rem;margin-bottom:6px}.pilier-label{font-size:.88rem;font-weight:700}
+
+        /* Dispositifs grid */
+        .dispositifs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}@media(max-width:768px){.dispositifs-grid{grid-template-columns:repeat(2,1fr)}}.dispositif-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px 12px;text-align:center;box-shadow:var(--shadow);transition:all .2s}.dispositif-item:hover{border-color:var(--navy-light);background:var(--blue-bg)}.dispositif-icon{font-size:1.6rem;margin-bottom:8px}.dispositif-name{font-size:.82rem;font-weight:700;color:var(--navy)}.dispositif-desc{font-size:.72rem;color:var(--text-muted);margin-top:4px}
+
+        /* Info box */
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:22px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.purple{background:var(--purple-bg);border:1.5px solid var(--purple-light)}.info-box.teal{background:var(--teal-bg);border:1.5px solid var(--teal-light)}.info-icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px}.info-box p{font-size:.9rem;color:var(--text-secondary);line-height:1.65}
+
+        /* Alert */
+        .alert-box{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:14px;padding:24px 28px;margin:22px 0}.alert-box h4{font-size:1rem;font-weight:700;margin-bottom:8px}.alert-box p{opacity:.92;font-size:.92rem;line-height:1.6}
+
+        /* Checklist */
+        .checklist{list-style:none;margin:20px 0}.checklist li{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--text-secondary);line-height:1.6}.checklist li:last-child{border-bottom:none}.check-icon{width:24px;height:24px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:var(--green);font-weight:700;font-size:.8rem}
+
+        /* Legal quote */
+        .legal-quote{background:var(--blue-bg);border-left:4px solid var(--navy);border-radius:0 14px 14px 0;padding:22px 26px;margin:22px 0;font-size:.9rem;color:var(--text-secondary);line-height:1.7;font-style:italic}
+
+        /* Footer */
+        .footer{background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:#fff;padding:50px 0 40px;margin-top:30px}.footer .container{text-align:center}.footer-logo{width:80px;margin-bottom:18px}.footer p{opacity:.8;font-size:.88rem;margin:4px 0}.footer-contact{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}.footer-contact a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:600}
+
+        @media print{body{background:#fff}.nav-bar{display:none}.hero{padding:40px 0 30px}.section{padding:30px 0}.acteur-item,.dispositif-item,.card,.pilier{break-inside:avoid}}
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#beneficiaires" class="nav-top-link">Bénéficiaires</a><a href="#acteurs" class="nav-top-link">Acteurs</a><a href="#managers" class="nav-top-link">Managers</a><a href="#prevention" class="nav-top-link">Prévention</a><a href="#conciliation" class="nav-top-link">Vie pro/perso</a><a href="#expression" class="nav-top-link">Expression</a><a href="#handicap" class="nav-top-link">Handicap</a><a href="#numerique" class="nav-top-link">Numérique</a></div></div></nav>
+<div class="hero"><div class="container"><div class="hero-content">
+    <div class="hero-badge">🌟 Bien-être au travail</div>
+    <h1>Qualité de Vie et Conditions de Travail<span>Accord QVCT — 4 ans à compter du 1er février 2026 — URSSAF PACA</span></h1>
+    <p class="hero-subtitle">Tous acteurs du bien-être et de la performance collective. L'accord qui place la santé et l'épanouissement au cœur de l'organisation.</p>
+    <div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div>
+</div></div></div>
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Une question sur vos conditions de travail, la prévention des RPS ou le droit à la déconnexion ? <strong>Contactez vos délégués FO</strong> pour être accompagné(e).</p></div>
+</div></nav>
+
+<!-- SECTION 1 : BÉNÉFICIAIRES -->
+<section class="section" id="beneficiaires"><div class="container">
+    <div class="section-header"><div class="section-number">1</div><h2 class="section-title">À qui s'adresse cet accord ?</h2><p class="section-subtitle">Tous les salariés de l'URSSAF PACA sont concernés, sans exception.</p></div>
+
+    <div class="def-grid">
+        <div class="def-card teal">
+            <h3>✅ Tous les salariés</h3>
+            <ul>
+                <li>CDI, CDD, stagiaires</li>
+                <li>Temps plein, temps partiel, forfait</li>
+                <li>Cadres et non-cadres</li>
+            </ul>
+        </div>
+        <div class="def-card navy">
+            <h3>🎯 Les objectifs</h3>
+            <ul>
+                <li>Améliorer l'existant</li>
+                <li>Proposer des actions adaptées au terrain</li>
+                <li>Favoriser l'épanouissement de chacun</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-box teal">
+        <div class="info-icon">💡</div>
+        <div><h4>L'esprit de l'accord</h4><p>La QVCT est un facteur de santé et de réalisation personnelle. Elle contribue au bien-être et à l'accomplissement de chaque salarié, favorisant ainsi l'implication et la performance collective.</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 2 : LES ACTEURS -->
+<section class="section" id="acteurs"><div class="container">
+    <div class="section-header"><div class="section-number">2</div><h2 class="section-title">Les acteurs de la QVCT</h2><p class="section-subtitle">Un engagement partagé entre tous les niveaux de l'organisation.</p></div>
+
+    <div class="acteurs-grid">
+        <div class="acteur-item"><div class="acteur-icon">🏢</div><div class="acteur-label">Direction & RH</div><div class="acteur-desc">Garants de la santé et du bien-être</div></div>
+        <div class="acteur-item"><div class="acteur-icon">👔</div><div class="acteur-label">Managers</div><div class="acteur-desc">Relais de proximité au quotidien</div></div>
+        <div class="acteur-item"><div class="acteur-icon">👥</div><div class="acteur-label">Salariés</div><div class="acteur-desc">Acteurs de leur bien-être et celui des autres</div></div>
+        <div class="acteur-item"><div class="acteur-icon">🛡️</div><div class="acteur-label">CSSCT</div><div class="acteur-desc">Protection santé et sécurité</div></div>
+        <div class="acteur-item"><div class="acteur-icon">🏥</div><div class="acteur-label">Services Santé</div><div class="acteur-desc">Visites médicales et préconisations</div></div>
+        <div class="acteur-item"><div class="acteur-icon">🔧</div><div class="acteur-label">Référent SST</div><div class="acteur-desc">Prévention des risques</div></div>
+        <div class="acteur-item"><div class="acteur-icon">♿</div><div class="acteur-label">Référent Handicap</div><div class="acteur-desc">Insertion et maintien dans l'emploi</div></div>
+        <div class="acteur-item"><div class="acteur-icon">🚫</div><div class="acteur-label">Référents Harcèlement</div><div class="acteur-desc">Lutte contre harcèlement et sexisme</div></div>
+    </div>
+</div></section>
+
+<!-- SECTION 3 : MANAGERS -->
+<section class="section" id="managers"><div class="container">
+    <div class="section-header"><div class="section-number">3</div><h2 class="section-title">Accompagnement des managers</h2><p class="section-subtitle">Les managers sont accompagnés autour de 5 piliers fondamentaux.</p></div>
+
+    <div class="piliers-container">
+        <div class="pilier"><div class="pilier-icon">💬</div><div class="pilier-label">Échange</div></div>
+        <div class="pilier"><div class="pilier-icon">🎯</div><div class="pilier-label">Cohérence</div></div>
+        <div class="pilier"><div class="pilier-icon">🤝</div><div class="pilier-label">Respect</div></div>
+        <div class="pilier"><div class="pilier-icon">🔍</div><div class="pilier-label">Transparence</div></div>
+        <div class="pilier"><div class="pilier-icon">🌱</div><div class="pilier-label">Accompagnement</div></div>
+    </div>
+
+    <div class="card-grid card-grid-3">
+        <div class="card"><div class="card-title">🔄 Co-développement</div><p>Ateliers de partage d'expériences entre pairs, sans lien de subordination.</p></div>
+        <div class="card"><div class="card-title">🧭 Mentorat</div><p>Accompagnement par un pair expérimenté pour développer ses compétences.</p></div>
+        <div class="card"><div class="card-title">📋 Entretiens RH</div><p>À la prise de poste et à 6 mois pour échanger sur le ressenti.</p></div>
+        <div class="card"><div class="card-title">📢 I2M</div><p>Réunions mensuelles régionales et locales pour la circulation de l'information.</p></div>
+        <div class="card"><div class="card-title">📚 Formations</div><p>À la prise de poste et tout au long de la carrière (RPS, handicap, travail hybride…).</p></div>
+        <div class="card"><div class="card-title">🎉 Convivialité</div><p>Possibilité d'organiser des moments de cohésion au sein des équipes.</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 4 : PRÉVENTION -->
+<section class="section" id="prevention"><div class="container">
+    <div class="section-header"><div class="section-number red">4</div><h2 class="section-title">Prévention des risques</h2><p class="section-subtitle">Identifier, évaluer et agir pour protéger la santé physique et mentale de chacun.</p></div>
+
+    <div class="def-grid">
+        <div class="def-card red">
+            <h3>📋 DUERP</h3>
+            <p>Document Unique d'Évaluation des Risques Professionnels. Mis à jour annuellement, il identifie et hiérarchise les risques pour définir les actions de prévention.</p>
+        </div>
+        <div class="def-card purple">
+            <h3>📞 Cellule d'écoute nationale</h3>
+            <p>Service de l'UCANSS offrant écoute, soutien et accompagnement sur les problématiques professionnelles et personnelles. <strong>Anonyme et confidentiel.</strong></p>
+        </div>
+    </div>
+
+    <div class="card-grid" style="margin-top:24px">
+        <div class="card">
+            <div class="card-title">🚨 Incivilités et agressions</div>
+            <ul>
+                <li>Outil <strong>REAGIR</strong> pour déclarer les incidents</li>
+                <li>Traitement rapide et transparent</li>
+                <li>Soutien psychologique proposé</li>
+                <li>Communication annuelle sur les bons réflexes</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-title">🧠 Risques psychosociaux</div>
+            <ul>
+                <li>Actions recensées au DUERP</li>
+                <li>Circuit de remontée des situations à risques</li>
+                <li>Espace sécurisé pour s'exprimer</li>
+                <li>Prise en compte rapide garantie</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-box amber">
+        <div class="info-icon">🚗</div>
+        <div><h4>Risque routier</h4><p>Équipements de visioconférence privilégiés • Formations sécurité routière • Clés de survie dans les véhicules • Encouragement aux mobilités douces.</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 5 : CONCILIATION VIE PRO/PERSO -->
+<section class="section" id="conciliation"><div class="container">
+    <div class="section-header"><div class="section-number teal">5</div><h2 class="section-title">Conciliation vie professionnelle / vie personnelle</h2><p class="section-subtitle">Respecter l'équilibre entre travail et vie privée est une priorité.</p></div>
+
+    <div class="def-grid">
+        <div class="def-card teal">
+            <h3>📵 Droit à la déconnexion</h3>
+            <p>Droit de ne pas se connecter en dehors du temps de travail. La Direction n'attend <strong>aucune activité professionnelle</strong> en dehors des horaires de travail.</p>
+            <ul style="margin-top:10px">
+                <li>Point lors de l'EAEA</li>
+                <li>Bonnes pratiques diffusées</li>
+                <li>Entretien si connexions atypiques</li>
+            </ul>
+        </div>
+        <div class="def-card navy">
+            <h3>🏠 Télétravail</h3>
+            <p>Dispositif encadré par l'accord spécifique du 24 juin 2025. Attention particulière au droit à la déconnexion en cas de travail à distance.</p>
+        </div>
+    </div>
+
+    <div class="info-box green">
+        <div class="info-icon">👩‍💼</div>
+        <div><h4>Assistant(e) social(e)</h4><p>Permanences mensuelles en distanciel pour écouter, conseiller, orienter et accompagner les salariés dans leurs démarches. <strong>Stricte confidentialité garantie.</strong></p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 6 : EXPRESSION DIRECTE -->
+<section class="section" id="expression"><div class="container">
+    <div class="section-header"><div class="section-number">6</div><h2 class="section-title">Expression directe et collective</h2><p class="section-subtitle">L'URSSAF PACA offre de nombreux espaces d'expression aux salariés.</p></div>
+
+    <div class="dispositifs-grid">
+        <div class="dispositif-item"><div class="dispositif-icon">⭐</div><div class="dispositif-name">Comité SP+</div><div class="dispositif-desc">Mensuel • 22 membres</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">💡</div><div class="dispositif-name">Comité Innovation</div><div class="dispositif-desc">Trimestriel • 8-10 membres</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">🌍</div><div class="dispositif-name">Comité RSO</div><div class="dispositif-desc">Trimestriel • 11 membres</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">👀</div><div class="dispositif-name">Vis ma vie</div><div class="dispositif-desc">Annuel</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">✨</div><div class="dispositif-name">Pépites</div><div class="dispositif-desc">Partage d'idées • Annuel</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">🎤</div><div class="dispositif-name">C à vous</div><div class="dispositif-desc">Remontée d'irritants • Annuel</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">🏛️</div><div class="dispositif-name">CODIREL ouvert</div><div class="dispositif-desc">Trimestriel • 9 places</div></div>
+        <div class="dispositif-item"><div class="dispositif-icon">🗣️</div><div class="dispositif-name">VIVA ENGAGE</div><div class="dispositif-desc">Réseau social pro</div></div>
+    </div>
+
+    <div class="card-grid card-grid-3" style="margin-top:24px">
+        <div class="card"><div class="card-title">🚶 Visites de site</div><p>Annuelles par la Direction régionale. Moments conviviaux, échanges et ateliers.</p></div>
+        <div class="card"><div class="card-title">🎯 Ateliers BSI</div><p>2/an, 30 participants max. Amélioration de la circulation de l'information.</p></div>
+        <div class="card"><div class="card-title">🎊 Journées métiers</div><p>Réunir les salariés d'une même Direction pour renforcer la cohésion.</p></div>
+    </div>
+
+    <div class="legal-quote">
+        <strong>Protection des opinions —</strong> Les opinions émises ne peuvent donner lieu à aucune sanction, sous réserve que les propos ne comportent aucune malveillance et s'inscrivent dans des échanges professionnels constructifs.
+    </div>
+</div></section>
+
+<!-- SECTION 7 : HANDICAP -->
+<section class="section" id="handicap"><div class="container">
+    <div class="section-header"><div class="section-number teal">7</div><h2 class="section-title">Insertion et maintien dans l'emploi des personnes handicapées</h2></div>
+
+    <ul class="checklist">
+        <li><span class="check-icon">✓</span><span><strong>Entretien d'intégration</strong> avec le Référent Handicap pour tout nouveau salarié informant de son statut TH</span></li>
+        <li><span class="check-icon">✓</span><span><strong>Aménagements de poste</strong> sur préconisation du médecin du travail (ergonome, ergothérapeute…)</span></li>
+        <li><span class="check-icon">✓</span><span><strong>Suivi de l'évolution professionnelle</strong> des salariés en situation de handicap (politique salariale)</span></li>
+        <li><span class="check-icon">✓</span><span><strong>Partenariats</strong> avec des structures spécialisées (CAP EMPLOI)</span></li>
+    </ul>
+</div></section>
+
+<!-- SECTION 8 : NUMÉRIQUE -->
+<section class="section" id="numerique"><div class="container">
+    <div class="section-header"><div class="section-number">8</div><h2 class="section-title">Accompagnement à la transformation numérique</h2><p class="section-subtitle">Diffuser une culture numérique et faire monter en compétences tous les salariés.</p></div>
+
+    <div class="def-grid">
+        <div class="def-card purple">
+            <h3>🎯 Objectifs</h3>
+            <ul>
+                <li>Diffuser une culture numérique</li>
+                <li>Faire monter en compétences les salariés</li>
+                <li>Transformer les pratiques managériales</li>
+                <li>Améliorer la lisibilité de l'information</li>
+            </ul>
+        </div>
+        <div class="def-card navy">
+            <h3>🛠️ Moyens déployés</h3>
+            <ul>
+                <li>SharePoint et VIVA ENGAGE</li>
+                <li>Tutoriels Office 365 en libre accès</li>
+                <li>Espaces numériques d'apprentissage</li>
+                <li>Formations sur mesure</li>
+                <li>Sensibilisation à l'IA</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-box amber">
+        <div class="info-icon">⚠️</div>
+        <div><h4>Prévention du décrochage numérique</h4><p>Les managers sont sensibilisés pour identifier les salariés en difficulté face au numérique et déployer les solutions adaptées.</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 9 : DURÉE -->
+<section class="section" id="duree"><div class="container">
+    <div class="section-header"><div class="section-number red">9</div><h2 class="section-title">Durée et suivi de l'accord</h2></div>
+
+    <div class="def-grid">
+        <div class="def-card teal">
+            <h3>📅 Durée</h3>
+            <p><strong>4 ans</strong> à compter du <strong>1er février 2026</strong>. Non renouvelable par tacite reconduction.</p>
+        </div>
+        <div class="def-card navy">
+            <h3>📊 Suivi</h3>
+            <p>Bilan à l'issue des 2 premières années. Bilans annuels présentés en CSSCT et CSE.</p>
+        </div>
+    </div>
+
+    <div class="info-box green">
+        <div class="info-icon">🤝</div>
+        <div><h4>Partenariats</h4><p>L'URSSAF PACA développe des partenariats avec les acteurs externes utiles : CAPSSA, AG2R, CARSAT, CAP EMPLOI…</p></div>
+    </div>
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container">
+    <p><strong>Force Ouvrière — URSSAF PACA</strong></p>
+    <p>Accord relatif à la Qualité de Vie et aux Conditions de Travail • 1er février 2026</p>
+    <p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p>
+    <p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p>
+</div></div>
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>
