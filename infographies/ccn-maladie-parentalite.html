@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maladie & Parentalité — Convention Collective Sécurité Sociale — FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--pink:#9d174d;--pink-light:#fce7f3;--pink-bg:#fdf2f8;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}.nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}.nav-brand em{color:#d4a0a0;font-style:italic}.nav-links{display:flex;gap:4px}.nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}.nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;display:flex;align-items:flex-start;gap:8px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);flex-shrink:0}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.pink{background:var(--pink-bg);border-color:var(--pink-light)}.def-card.pink h3{color:var(--pink)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}.key-num.green .value{color:var(--green)}
+
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.pink{background:var(--pink-bg);border:1.5px solid var(--pink-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Maladie</a><a href="#s2" class="nav-top-link">Accident</a><a href="#s3" class="nav-top-link">ALD</a><a href="#s4" class="nav-top-link">Maternité</a><a href="#s5" class="nav-top-link">Paternité</a><a href="#s6" class="nav-top-link">Adoption</a><a href="#s7" class="nav-top-link">Récapitulatif</a></div></div></nav>
+
+<div class="hero"><div class="container hero-content"><div class="hero-badge">📖 Convention Collective Nationale</div><h1>Maladie & Parentalité<span>Vos droits en cas de maladie, maternité, paternité et adoption — Articles 41 à 46 ter CCN du 8 février 1957</span></h1><p class="hero-subtitle">La convention collective vous garantit un maintien de salaire bien supérieur aux dispositions légales. Connaître vos droits, c'est les défendre.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Un arrêt maladie, une grossesse, une adoption ? <strong>Contactez vos délégués FO</strong> pour vérifier que tous vos droits sont respectés.</p></div>
+
+<!-- SECTION 1 : CONGÉ MALADIE -->
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Le congé maladie : maintien de salaire</h2><p class="section-subtitle">En cas d'arrêt de travail pour maladie, la convention collective vous garantit un maintien de salaire bien supérieur aux dispositions légales, à condition d'avoir au moins 6 mois de présence.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Ancienneté</th><th>Salaire entier (100%)</th><th>Demi-salaire (50%)</th></tr></thead>
+    <tbody>
+        <tr><td>Moins d'1 an de présence</td><td class="hl">3 mois</td><td>—</td></tr>
+        <tr><td>1 an et plus de présence</td><td class="hl">6 mois</td><td class="hl">3 mois</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Pas de cumul</h4><p>Le salaire maintenu <strong>ne se cumule pas</strong> avec les indemnités journalières de la Sécurité sociale. Votre employeur complète pour atteindre le plein traitement.</p></div></div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Condition d'ancienneté</h4><p>La condition de <strong>6 mois de présence</strong> s'apprécie dans l'ensemble des organismes de Sécurité sociale, pas uniquement dans votre organisme actuel.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 2 : ACCIDENT DU TRAVAIL -->
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Accident du travail et maladie professionnelle</h2></div>
+
+<div class="key-numbers" style="grid-template-columns:1fr 1fr">
+    <div class="key-num green"><div class="value">100%</div><div class="label">du salaire maintenu</div></div>
+    <div class="key-num green"><div class="value">∞</div><div class="label">sans limitation<br>de durée</div></div>
+</div>
+
+<div class="def-card green" style="max-width:700px"><h3>🛡️ Protection maximale</h3><ul><li>Maintien intégral du salaire pendant toute la durée de l'arrêt</li><li>Aucune condition d'ancienneté</li><li>Les périodes d'arrêt pour accident du travail ou maladie professionnelle sont assimilées à du temps de travail effectif</li><li>Protection contre le licenciement pendant l'arrêt</li></ul></div>
+
+</div></section>
+
+<!-- SECTION 3 : ALD -->
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Affection de longue durée (ALD)</h2><p class="section-subtitle">Si vous êtes atteint d'une affection de longue durée reconnue par la Sécurité sociale, vous bénéficiez de dispositions spécifiques.</p></div>
+
+<div class="key-numbers" style="grid-template-columns:1fr 1fr">
+    <div class="key-num"><div class="value">3 ans</div><div class="label">maintien du salaire<br>maximum</div></div>
+    <div class="key-num"><div class="value">100%</div><div class="label">du salaire</div></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Conditions à respecter</h4><p>Vous devez respecter les obligations de l'article L.293 du Code de la Sécurité sociale et vous soumettre aux <strong>contrôles médicaux</strong> prévus par le règlement intérieur.</p></div></div>
+
+<div class="info-box blue"><div class="icon">💡</div><div><h4>C'est l'un des avantages les plus protecteurs</h4><p>La convention collective garantit le <strong>maintien intégral du salaire pendant 3 ans</strong> en cas d'ALD. C'est très supérieur au droit commun.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 4 : MATERNITÉ -->
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Le congé maternité</h2><p class="section-subtitle">La convention collective maintient votre salaire intégral pendant toute la durée du congé légal et prévoit des options supplémentaires.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Situation</th><th>Durée prénatal</th><th>Durée postnatal</th><th>Total</th></tr></thead>
+    <tbody>
+        <tr><td>1er ou 2ème enfant</td><td>6 semaines</td><td>10 semaines</td><td class="hl">16 semaines</td></tr>
+        <tr><td>À partir du 3ème enfant</td><td>8 semaines</td><td>18 semaines</td><td class="hl">26 semaines</td></tr>
+        <tr><td>Jumeaux</td><td>12 semaines</td><td>22 semaines</td><td class="hl">34 semaines</td></tr>
+        <tr><td>Triplés ou plus</td><td>24 semaines</td><td>22 semaines</td><td class="hl">46 semaines</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card pink"><h3>🤱 Options après le congé légal</h3><ul><li><strong>3 mois supplémentaires</strong> à demi-traitement</li><li>OU <strong>1 mois et demi</strong> supplémentaire à plein traitement</li><li>Choix de l'agente, sur demande</li></ul></div>
+    <div class="def-card green"><h3>✅ Garanties</h3><ul><li>Maintien intégral du salaire pendant le congé légal</li><li>Temps de présence pris en compte pour l'ancienneté</li><li>Réintégration dans le même poste ou poste équivalent</li><li>Protection contre le licenciement</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 5 : PATERNITÉ -->
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Le congé paternité</h2><p class="section-subtitle">Depuis juillet 2021, le congé paternité a été considérablement allongé.</p></div>
+
+<div class="key-numbers" style="grid-template-columns:repeat(3,1fr)">
+    <div class="key-num"><div class="value">25 j.</div><div class="label">calendaires<br>naissance simple</div></div>
+    <div class="key-num"><div class="value">32 j.</div><div class="label">calendaires<br>naissances multiples</div></div>
+    <div class="key-num green"><div class="value">100%</div><div class="label">du salaire<br>maintenu</div></div>
+</div>
+
+<div class="def-card blue" style="max-width:700px"><h3>📋 Modalités</h3><ul><li><strong>4 jours obligatoires</strong> immédiatement après la naissance (inclus dans les 25 jours)</li><li>Le solde peut être pris en une ou deux périodes de 5 jours minimum</li><li>À prendre dans les <strong>6 mois</strong> suivant la naissance</li><li>Se cumule avec le congé de naissance de 3 jours ouvrables</li></ul></div>
+
+</div></section>
+
+<!-- SECTION 6 : ADOPTION -->
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number">6</div><h2 class="section-title">Le congé pour adoption</h2><p class="section-subtitle">Les droits sont alignés sur ceux de la maternité.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Situation</th><th>Durée du congé</th></tr></thead>
+    <tbody>
+        <tr><td>Adoption d'un enfant (1 ou 2 enfants au foyer)</td><td class="hl">16 semaines</td></tr>
+        <tr><td>Adoption d'un enfant (3 enfants ou plus au foyer)</td><td class="hl">18 semaines</td></tr>
+        <tr><td>Adoption de plusieurs enfants</td><td class="hl">22 semaines</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card purple"><h3>🏠 Options après le congé légal</h3><ul><li><strong>3 mois supplémentaires</strong> à demi-traitement</li><li>OU <strong>1 mois et demi</strong> supplémentaire à plein traitement</li><li>Identique aux options maternité</li></ul></div>
+    <div class="def-card green"><h3>✅ Garanties</h3><ul><li>Maintien intégral du salaire pendant le congé légal</li><li>Réintégration dans le poste ou poste équivalent</li><li>Le congé peut être partagé entre les deux parents</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 7 : RÉCAPITULATIF -->
+<section class="section" id="s7"><div class="container"><div class="section-header"><div class="section-number red">7</div><h2 class="section-title">Récapitulatif de vos droits</h2></div>
+
+<table class="styled-table">
+    <thead><tr><th>Situation</th><th>Durée maintien salaire</th><th>Conditions</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Maladie ordinaire</strong></td><td class="hl">3 mois (100%) puis 3 mois (50%)</td><td>6 mois d'ancienneté, 1 an pour le 50%</td></tr>
+        <tr><td><strong>Accident du travail</strong></td><td class="hl">100% sans limite</td><td>Agents titulaires</td></tr>
+        <tr><td><strong>Affection longue durée</strong></td><td class="hl">100% jusqu'à 3 ans</td><td>ALD reconnue + contrôles médicaux</td></tr>
+        <tr><td><strong>Maternité</strong></td><td class="hl">100% congé légal + options</td><td>6 mois d'ancienneté</td></tr>
+        <tr><td><strong>Paternité</strong></td><td class="hl">100% (25 ou 32 jours)</td><td>6 mois d'ancienneté</td></tr>
+        <tr><td><strong>Adoption</strong></td><td class="hl">100% congé légal + options</td><td>6 mois d'ancienneté</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box green"><div class="icon">💡</div><div><h4>Prévoyance complémentaire</h4><p>En cas d'invalidité, vous êtes pris en charge par la <strong>Caisse de prévoyance du personnel des organismes de Sécurité sociale</strong>. Contactez vos délégués FO pour toute question sur vos droits.</p></div></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Convention Collective Nationale du 8 février 1957 • Articles 41 à 46 ter</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

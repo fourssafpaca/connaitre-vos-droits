@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévoyance & Décès — Convention Collective Sécurité Sociale — FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--teal:#0d9488;--teal-bg:#f0fdfa;--teal-light:#99f6e4;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}.nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}.nav-brand em{color:#d4a0a0;font-style:italic}.nav-links{display:flex;gap:4px}.nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}.nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;display:flex;align-items:flex-start;gap:8px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);flex-shrink:0}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.teal{background:var(--teal-bg);border-color:var(--teal-light)}.def-card.teal h3{color:var(--teal)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}.key-num.green .value{color:var(--green)}
+
+        /* STEPS */
+        .steps{display:flex;gap:0;margin:24px 0;flex-wrap:wrap}.step{flex:1;min-width:180px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 16px;position:relative}.step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--text-muted)}.step:last-child::after{display:none}.step-num{width:44px;height:44px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;margin-bottom:12px}.step-title{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:4px}.step p{font-size:.82rem;color:var(--text-muted)}
+
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.purple{background:var(--purple-bg);border:1.5px solid var(--purple-light)}.info-box.teal{background:var(--teal-bg);border:1.5px solid var(--teal-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Capital décès</a><a href="#s2" class="nav-top-link">Bénéficiaires</a><a href="#s3" class="nav-top-link">Régime prévoyance</a><a href="#s4" class="nav-top-link">Invalidité</a><a href="#s5" class="nav-top-link">Congés obsèques</a><a href="#s6" class="nav-top-link">Démarches</a><a href="#s7" class="nav-top-link">Récapitulatif</a></div></div></nav>
+
+<div class="hero"><div class="container hero-content"><div class="hero-badge">📖 Convention Collective Nationale</div><h1>Prévoyance & Décès<span>Capital décès, régime de prévoyance, invalidité et accompagnement des familles — Articles 59 à 62 CCN du 8 février 1957</span></h1><p class="hero-subtitle">La convention collective et le régime de prévoyance des personnels des organismes de Sécurité Sociale vous offrent des protections importantes pour vous et vos proches.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+
+<div class="golden-rule"><span class="gr-icon">🤝</span><p>Vous traversez une situation difficile — décès d'un proche, invalidité ? <strong>Vos délégués FO sont à vos côtés</strong> pour vous accompagner dans vos démarches.</p></div>
+
+<!-- SECTION 1 : CAPITAL DÉCÈS -->
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Le capital décès conventionnel</h2><p class="section-subtitle">En cas de décès d'un agent, la convention collective prévoit le versement d'une indemnité aux ayants droit, en complément des prestations Sécurité Sociale.</p></div>
+
+<div class="key-numbers" style="grid-template-columns:repeat(3,1fr)">
+    <div class="key-num red"><div class="value">3 mois</div><div class="label">de salaire versés<br>aux ayants droit</div></div>
+    <div class="key-num"><div class="value">+1 mois</div><div class="label">par enfant<br>à charge</div></div>
+    <div class="key-num green"><div class="value">= Total</div><div class="label">3 mois + (n enfants<br>× 1 mois)</div></div>
+</div>
+
+<div class="info-box blue"><div class="icon">💡</div><div><h4>Exemple concret</h4><p>Un agent décède en laissant <strong>2 enfants à charge</strong> et un salaire mensuel de 2 300€. Sa famille reçoit : 3 mois + 2 mois = <strong>5 × 2 300€ = 11 500€</strong> au titre de la CCN, en complément du capital décès Sécurité Sociale.</p></div></div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>En complément du régime de prévoyance</h4><p>Ce capital décès conventionnel s'ajoute aux garanties du <strong>régime de prévoyance</strong> des personnels de la Sécurité Sociale (voir section 3). Les deux dispositifs sont cumulables.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 2 : BÉNÉFICIAIRES -->
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Les bénéficiaires</h2><p class="section-subtitle">L'indemnité est versée aux ayants droit de l'agent décédé selon un ordre de priorité défini.</p></div>
+
+<div class="tri-grid">
+    <div class="def-card blue"><h3>1️⃣ En priorité</h3><ul><li>Le <strong>conjoint</strong> (époux/épouse)</li><li>Le <strong>partenaire de PACS</strong></li><li>Le <strong>concubin notoire</strong> (vie commune depuis 2 ans minimum)</li></ul></div>
+    <div class="def-card green"><h3>2️⃣ À défaut</h3><ul><li>Les <strong>enfants à charge</strong> de l'agent</li><li>Les enfants reconnus, adoptés ou recueillis</li><li>Répartis à parts égales entre eux</li></ul></div>
+    <div class="def-card purple"><h3>3️⃣ À défaut</h3><ul><li>Les <strong>ascendants</strong> (père, mère) à charge</li><li>Toute personne à charge fiscalement</li><li>À défaut : les héritiers légaux</li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Désignation de bénéficiaire</h4><p>Pour le régime de prévoyance, il est fortement recommandé de <strong>désigner expressément vos bénéficiaires</strong> auprès de l'organisme gestionnaire. Cette désignation peut être modifiée à tout moment.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 3 : RÉGIME DE PRÉVOYANCE -->
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Le régime de prévoyance</h2><p class="section-subtitle">Tous les agents sont affiliés obligatoirement au régime de prévoyance des personnels des organismes de Sécurité Sociale. Il offre des garanties complémentaires importantes.</p></div>
+
+<div class="quad-grid">
+    <div class="card"><div class="card-title">💀 Capital décès</div><p>Capital versé aux bénéficiaires désignés. Montant calculé en <strong>multiple du salaire annuel</strong> selon les barèmes en vigueur.</p></div>
+    <div class="card"><div class="card-title">👶 Rente éducation</div><p>Rente versée à chaque <strong>enfant à charge</strong> jusqu'à 26 ans (études), pour maintenir leur niveau de vie après le décès du parent.</p></div>
+    <div class="card"><div class="card-title">♿ Invalidité</div><p>Pension complémentaire en cas d'<strong>invalidité reconnue</strong> par la Sécurité Sociale (catégories 1, 2 ou 3). S'ajoute à la pension SS.</p></div>
+    <div class="card"><div class="card-title">🏥 Incapacité temporaire</div><p>Complément de revenus en cas d'<strong>arrêt de travail</strong> prolongé, après épuisement des droits au maintien de salaire CCN.</p></div>
+</div>
+
+<div class="info-box teal"><div class="icon">ℹ️</div><div><h4>Financement et cotisations</h4><p>Le régime de prévoyance est financé par des <strong>cotisations partagées entre l'employeur et le salarié</strong>. Le détail des cotisations et garanties figure sur votre bulletin de salaire. Consultez le service RH pour connaître les barèmes exacts en vigueur.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 4 : INVALIDITÉ -->
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">En cas d'invalidité</h2><p class="section-subtitle">Si vous êtes reconnu invalide par la Sécurité Sociale, le régime de prévoyance vous garantit un complément de revenus.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Catégorie d'invalidité SS</th><th>Situation</th><th>Garantie prévoyance</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Catégorie 1</strong></td><td>Invalide pouvant exercer une activité réduite</td><td class="hl">Pension complémentaire</td></tr>
+        <tr><td><strong>Catégorie 2</strong></td><td>Invalide ne pouvant exercer d'activité</td><td class="hl">Pension complémentaire majorée</td></tr>
+        <tr><td><strong>Catégorie 3</strong></td><td>Invalide nécessitant assistance d'une tierce personne</td><td class="hl">Pension + majoration tierce personne</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Maintien des garanties</h3><ul><li>Les garanties prévoyance sont <strong>maintenues</strong> pendant les congés maladie longue durée</li><li>Le mi-temps thérapeutique ne réduit pas les garanties</li><li>Maintien pendant le congé sans solde pour longue maladie</li></ul></div>
+    <div class="def-card blue"><h3>📋 Démarches</h3><ul><li>Notification de la décision CPAM au service RH</li><li>Constitution du dossier de demande prévoyance</li><li>Délai de traitement : variable selon l'organisme gestionnaire</li><li>Vos délégués FO peuvent vous accompagner</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 5 : CONGÉS POUR OBSÈQUES -->
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Congés pour événements familiaux et obsèques</h2><p class="section-subtitle">La convention collective prévoit des jours de congés spécifiques pour les deuils familiaux.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Événement</th><th>Durée CCN</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Décès du conjoint / partenaire PACS</strong></td><td class="hl">5 jours ouvrés</td></tr>
+        <tr><td><strong>Décès d'un enfant</strong></td><td class="hl">12 jours ouvrés (ou 14 si &lt;25 ans)</td></tr>
+        <tr><td><strong>Décès du père ou de la mère</strong></td><td class="hl">3 jours ouvrés</td></tr>
+        <tr><td><strong>Décès d'un frère ou d'une sœur</strong></td><td class="hl">3 jours ouvrés</td></tr>
+        <tr><td><strong>Décès des beaux-parents</strong></td><td class="hl">3 jours ouvrés</td></tr>
+        <tr><td><strong>Décès d'un grand-parent</strong></td><td class="hl">1 jour ouvré</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Délai de route</h4><p>Un <strong>délai de route supplémentaire</strong> peut être accordé si les obsèques ont lieu à plus de 300 km du lieu de travail. Ce délai est fixé par l'employeur après concertation.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 6 : DÉMARCHES -->
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number">6</div><h2 class="section-title">Les démarches à effectuer</h2><p class="section-subtitle">En cas de décès d'un agent, les proches doivent accomplir plusieurs démarches pour obtenir les prestations auxquelles ils ont droit.</p></div>
+
+<div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-title">Informer le RH</div><p>Contacter le service RH de l'organisme dès que possible</p></div>
+    <div class="step"><div class="step-num">2</div><div class="step-title">Fournir les justificatifs</div><p>Acte de décès, livret de famille, justificatifs de charges</p></div>
+    <div class="step"><div class="step-num">3</div><div class="step-title">Compléter le dossier</div><p>Remplir le dossier de demande de capital décès CCN</p></div>
+    <div class="step"><div class="step-num">4</div><div class="step-title">Saisir la prévoyance</div><p>Contacter l'organisme gestionnaire du régime de prévoyance</p></div>
+</div>
+
+<div class="info-box green"><div class="icon">🤝</div><div><h4>Vous n'êtes pas seul(e)</h4><p>Le service RH et vos délégués FO peuvent vous accompagner dans ces démarches difficiles. <strong>N'hésitez pas à les contacter</strong> — nous pouvons vous aider à identifier toutes les prestations auxquelles vous avez droit et à constituer les dossiers.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 7 : RÉCAPITULATIF -->
+<section class="section" id="s7"><div class="container"><div class="section-header"><div class="section-number red">7</div><h2 class="section-title">Récapitulatif des garanties</h2></div>
+
+<table class="styled-table">
+    <thead><tr><th>Garantie</th><th>Montant / Durée</th><th>Source</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Capital décès CCN</strong></td><td class="hl">3 mois + 1 mois/enfant</td><td>CCN Art. 59</td></tr>
+        <tr><td><strong>Capital décès prévoyance</strong></td><td class="hl">Multiple du salaire annuel</td><td>Régime prévoyance</td></tr>
+        <tr><td><strong>Rente éducation</strong></td><td class="hl">Jusqu'à 26 ans (études)</td><td>Régime prévoyance</td></tr>
+        <tr><td><strong>Pension invalidité complémentaire</strong></td><td class="hl">Selon catégorie SS</td><td>Régime prévoyance</td></tr>
+        <tr><td><strong>Congé décès conjoint/PACS</strong></td><td class="hl">5 jours ouvrés</td><td>CCN Art. 40</td></tr>
+        <tr><td><strong>Congé décès enfant</strong></td><td class="hl">12 à 14 jours ouvrés</td><td>CCN Art. 40</td></tr>
+        <tr><td><strong>Congé décès parent</strong></td><td class="hl">3 jours ouvrés</td><td>CCN Art. 40</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box green"><div class="icon">💡</div><div><h4>Pensez à désigner vos bénéficiaires</h4><p>Pour le régime de prévoyance, <strong>désignez expressément vos bénéficiaires</strong> auprès de l'organisme gestionnaire. Sans désignation, c'est l'ordre légal qui s'applique, ce qui peut ne pas correspondre à vos souhaits. Cette démarche simple peut éviter bien des complications à vos proches.</p></div></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Convention Collective Nationale du 8 février 1957 • Articles 59 à 62</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

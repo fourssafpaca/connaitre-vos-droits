@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement & Mobilité — Convention Collective Sécurité Sociale — FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--teal:#0d9488;--teal-bg:#f0fdfa;--teal-light:#99f6e4;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}.nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}.nav-brand em{color:#d4a0a0;font-style:italic}.nav-links{display:flex;gap:4px}.nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}.nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;display:flex;align-items:flex-start;gap:8px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);flex-shrink:0}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.teal{background:var(--teal-bg);border-color:var(--teal-light)}.def-card.teal h3{color:var(--teal)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}
+
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.teal{background:var(--teal-bg);border:1.5px solid var(--teal-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Embauche</a><a href="#s2" class="nav-top-link">Période d'essai</a><a href="#s3" class="nav-top-link">Changement</a><a href="#s4" class="nav-top-link">Stage probatoire</a><a href="#s5" class="nav-top-link">Récapitulatif</a></div></div></nav>
+
+<div class="hero"><div class="container hero-content"><div class="hero-badge">📖 Convention Collective Nationale</div><h1>Recrutement & Mobilité<span>Embauche, période d'essai, changement d'organisme et stage probatoire — Articles 14 à 18 CCN du 8 février 1957</span></h1><p class="hero-subtitle">Vous êtes recruté, vous changez d'organisme ou vous êtes promu ? Ce guide vous explique vos droits à chaque étape de votre parcours.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Un recrutement, une mutation, une promotion ? <strong>Contactez vos délégués FO</strong> pour vérifier que vos droits sont respectés.</p></div>
+
+<!-- SECTION 1 : L'EMBAUCHE -->
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">L'embauche dans un organisme de Sécurité Sociale</h2><p class="section-subtitle">Tout recrutement dans un organisme de Sécurité Sociale obéit à des règles précises fixées par la convention collective.</p></div>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>📋 Principes du recrutement</h3><ul><li>Recrutement sur la base de <strong>critères objectifs</strong> de compétence et d'aptitude</li><li>Les emplois vacants doivent faire l'objet d'une <strong>publicité interne</strong> préalable</li><li>Le CSE est informé des recrutements effectués</li><li>Tout agent recruté reçoit un <strong>contrat de travail</strong> précisant le niveau, le coefficient et la rémunération</li></ul></div>
+    <div class="def-card green"><h3>✅ Garanties à l'embauche</h3><ul><li>Rattachement à la <strong>Convention Collective Nationale</strong> du 8 février 1957</li><li>Affiliation au <strong>régime de prévoyance</strong> des personnels</li><li>Information sur les <strong>accords locaux</strong> applicables</li><li>Remise du <strong>règlement intérieur</strong></li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Publicité des postes</h4><p>La convention collective impose que les postes vacants soient portés à la connaissance du personnel de l'organisme <strong>avant tout recrutement externe</strong>. C'est une garantie de transparence et de mobilité interne.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 2 : PÉRIODE D'ESSAI -->
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">La période d'essai</h2><p class="section-subtitle">La période d'essai permet à l'employeur et au salarié d'évaluer si le poste convient. Ses durées sont fixées par la convention collective.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Catégorie</th><th>Durée initiale</th><th>Renouvellement</th><th>Durée maximale totale</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Employés</strong> (niveaux 1 à 4A)</td><td class="hl">3 mois</td><td>1 fois</td><td class="hl">6 mois</td></tr>
+        <tr><td><strong>Cadres</strong> (niveaux 4B et supérieurs)</td><td class="hl">4 mois</td><td>1 fois</td><td class="hl">8 mois</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card amber"><h3>⚠️ Rupture pendant l'essai</h3><ul><li>Possible par l'une ou l'autre des parties</li><li><strong>Délai de prévenance</strong> à respecter par l'employeur (proportionnel au temps de présence)</li><li>Pas d'indemnité de licenciement</li><li>Le renouvellement doit être <strong>expressément prévu</strong> au contrat</li></ul></div>
+    <div class="def-card green"><h3>✅ Ce qui compte dans l'essai</h3><ul><li>Les absences pour maladie <strong>suspendent</strong> la période d'essai (prolongation d'autant)</li><li>L'ancienneté est comptée <strong>dès le 1er jour</strong> si l'essai est concluant</li><li>En cas de changement d'organisme, la période d'essai peut être réduite ou supprimée</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 3 : CHANGEMENT D'ORGANISME -->
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Le changement d'organisme</h2><p class="section-subtitle">Vous souhaitez rejoindre un autre organisme de Sécurité Sociale ? La convention collective prévoit des garanties importantes pour faciliter votre mobilité.</p></div>
+
+<div class="tri-grid">
+    <div class="def-card teal"><h3>🔄 Ancienneté conservée</h3><ul><li>L'ancienneté acquise dans le réseau Sécu est <strong>intégralement conservée</strong></li><li>Y compris entre organismes de branches différentes</li><li>Base de calcul : date d'entrée dans le premier organisme</li></ul></div>
+    <div class="def-card green"><h3>📊 Coefficient maintenu</h3><ul><li>Votre <strong>coefficient</strong> est maintenu dans le nouvel organisme</li><li>Les points d'expérience et de compétence sont conservés</li><li>Pas de perte de rémunération</li></ul></div>
+    <div class="def-card blue"><h3>📋 Formalités</h3><ul><li>Respect du <strong>délai-congé</strong> dans l'organisme d'origine</li><li>Transfert du dossier administratif</li><li>Nouveau contrat de travail dans l'organisme d'accueil</li></ul></div>
+</div>
+
+<div class="info-box green"><div class="icon">💡</div><div><h4>Un avantage majeur de la CCN</h4><p>La conservation de l'ancienneté entre organismes est l'un des avantages les plus importants de la convention collective. Elle permet une <strong>mobilité sans perte de droits</strong> dans l'ensemble du réseau de la Sécurité Sociale.</p></div></div>
+
+<div class="alert-box"><h4>⚠️ Attention aux délais</h4><p>En cas de changement d'organisme, vous devez respecter le <strong>délai-congé</strong> prévu par la convention (1 à 3 mois selon votre catégorie). Anticipez votre demande de mutation pour éviter tout blocage.</p></div>
+
+</div></section>
+
+<!-- SECTION 4 : STAGE PROBATOIRE -->
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Le stage probatoire</h2><p class="section-subtitle">En cas de promotion à un poste de niveau supérieur, un stage probatoire peut être mis en place pour valider vos aptitudes au nouveau poste.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Catégorie</th><th>Durée</th><th>Renouvellement</th><th>Si concluant</th><th>Si non concluant</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Non-cadres</strong></td><td class="hl">3 mois max</td><td>1 fois possible</td><td>Promotion définitive</td><td>Retour ancien poste</td></tr>
+        <tr><td><strong>Cadres</strong></td><td class="hl">6 mois</td><td>—</td><td>Promotion définitive</td><td>Retour ancien poste</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Pendant le stage probatoire</h3><ul><li>Rémunération au niveau du <strong>nouveau poste</strong> dès le 1er jour (si durée &gt; 1 mois)</li><li>Vous concourez normalement aux <strong>points de compétences</strong></li><li>Votre ancienneté continue de courir</li><li>Vous restez éligible à d'autres promotions</li></ul></div>
+    <div class="def-card amber"><h3>⚠️ En cas d'échec</h3><ul><li>Retour à votre <strong>ancien poste</strong> ou poste équivalent</li><li>Reprise de votre <strong>ancien coefficient</strong></li><li>Aucune sanction ni mention dans le dossier</li><li>L'échec au stage probatoire n'est pas un motif de licenciement</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">ℹ️</div><div><h4>Cas particulier : remplacement par l'adjoint</h4><p>Si un adjoint remplace un cadre absent pendant plus de <strong>3 mois consécutifs</strong>, il bénéficie d'une <strong>indemnité différentielle</strong> correspondant à la différence de coefficient. Ce remplacement est pris en compte pour les promotions futures.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 5 : RÉCAPITULATIF -->
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number red">5</div><h2 class="section-title">Récapitulatif</h2></div>
+
+<table class="styled-table">
+    <thead><tr><th>Étape</th><th>Durée / Règle</th><th>Points clés</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Période d'essai (employés)</strong></td><td class="hl">3 mois (+ 3 mois)</td><td>Renouvellement 1 fois, prévu au contrat</td></tr>
+        <tr><td><strong>Période d'essai (cadres)</strong></td><td class="hl">4 mois (+ 4 mois)</td><td>Renouvellement 1 fois, prévu au contrat</td></tr>
+        <tr><td><strong>Changement d'organisme</strong></td><td class="hl">Ancienneté conservée</td><td>Coefficient et points maintenus</td></tr>
+        <tr><td><strong>Stage probatoire (non-cadres)</strong></td><td class="hl">3 mois max</td><td>Retour ancien poste si échec</td></tr>
+        <tr><td><strong>Stage probatoire (cadres)</strong></td><td class="hl">6 mois</td><td>Retour ancien poste si échec</td></tr>
+        <tr><td><strong>Remplacement cadre par adjoint</strong></td><td class="hl">Indemnité si &gt; 3 mois</td><td>Différentiel de coefficient versé</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box green"><div class="icon">💡</div><div><h4>Votre parcours est protégé</h4><p>Que vous soyez recruté, muté ou promu, la convention collective garantit la <strong>continuité de vos droits</strong>. N'hésitez pas à contacter vos délégués FO avant toute démarche pour vérifier vos droits.</p></div></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Convention Collective Nationale du 8 février 1957 • Articles 14 à 18</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
