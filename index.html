@@ -50,7 +50,15 @@
         .footer{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:28px 24px;text-align:center;margin-top:auto}
         .footer p{opacity:.7;font-size:.82rem;margin:2px 0}
 
-        @media(max-width:600px){.hero h1{font-size:1.8rem}.delegates-names{flex-direction:column;gap:8px}}
+        .quick-nav{background:var(--white);border-bottom:1.5px solid var(--border);padding:16px 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+        .quick-nav-inner{max-width:900px;margin:0 auto;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+        .quick-nav a{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:50px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .2s;border:1.5px solid transparent}
+        .quick-nav a.accords{background:#eff6ff;color:var(--navy);border-color:#dbeafe}
+        .quick-nav a.accords:hover{background:var(--navy);color:#fff}
+        .quick-nav a.ccn{background:#fde8e8;color:var(--red);border-color:#fecaca}
+        .quick-nav a.ccn:hover{background:var(--red);color:#fff}
+        .quick-nav a.droits{background:#f0fff4;color:#276749;border-color:#c6f6d5}
+        .quick-nav a.droits:hover{background:#276749;color:#fff}
     </style>
 </head>
 <body>
@@ -69,10 +77,19 @@
     </div>
 </div>
 
+<!-- NAVIGATION RAPIDE -->
+<div class="quick-nav">
+    <div class="quick-nav-inner">
+        <a href="#accords-locaux" class="accords">📋 Accords locaux</a>
+        <a href="#convention-collective" class="ccn">📖 Convention collective</a>
+        <a href="#droits-procedures" class="droits">⚖️ Droits & procédures</a>
+    </div>
+</div>
+
 <div class="main">
 
     <!-- ACCORDS LOCAUX -->
-    <h2 class="section-title">📋 Accords locaux URSSAF PACA</h2>
+    <h2 class="section-title" id="accords-locaux">📋 Accords locaux URSSAF PACA</h2>
 
     <div class="doc-card">
         <h3>🏗️ Accompagnement mobilité Joliette</h3>
@@ -119,7 +136,7 @@
     </div>
 
     <!-- CONVENTION COLLECTIVE -->
-    <h2 class="section-title">📖 Convention collective nationale</h2>
+    <h2 class="section-title" id="convention-collective">📖 Convention collective nationale</h2>
 
     <div class="doc-card">
         <h3>🏖️ Les congés</h3>
@@ -170,7 +187,7 @@
     </div>
 
     <!-- DROITS & PROCÉDURES -->
-    <h2 class="section-title">⚖️ Droits & procédures</h2>
+    <h2 class="section-title" id="droits-procedures">⚖️ Droits & procédures</h2>
 
     <div class="doc-card">
         <h3>📋 Licenciement pour inaptitude</h3>
