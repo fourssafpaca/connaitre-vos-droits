@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prise en charge des abonnements transport — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--teal:#0d9488;--teal-light:#ccfbf1;--teal-bg:#f0fdfa;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        /* Hero */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%}.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-icons{font-size:2rem;margin-top:16px;letter-spacing:12px}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .nav-bar{display:none}
+
+        /* Nav */
+        .nav-bar{background:#fff;border-bottom:2px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.04)}.nav-bar .container{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.nav-bar .container::-webkit-scrollbar{display:none}.nav-link{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;color:var(--text-secondary);text-decoration:none;white-space:nowrap;transition:all .2s;border:1.5px solid transparent}.nav-link:hover{background:var(--blue-bg);color:var(--navy-light);border-color:var(--blue-light)}
+
+        /* Sections */
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-number.green{background:var(--green)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        /* Cards */
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{padding-left:18px}.card ul li{margin:5px 0}
+        .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:20px 0}@media(max-width:768px){.card-grid{grid-template-columns:1fr}}
+
+        /* Def grid */
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}.def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:linear-gradient(135deg,#f0fff4,#e8f5e8);border-color:#c6f6d5}.def-card.red{background:linear-gradient(135deg,#fef2f2,#fde8e8);border-color:#fecaca}.def-card.navy{background:linear-gradient(135deg,#eef2ff,#dbeafe);border-color:var(--blue-light)}.def-card.teal{background:linear-gradient(135deg,var(--teal-bg),#e0f7f4);border-color:var(--teal-light)}.def-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card.green h3{color:var(--green)}.def-card.red h3{color:var(--red)}.def-card.navy h3{color:var(--navy)}.def-card.teal h3{color:var(--teal)}.def-card p,.def-card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.def-card ul{padding-left:18px}.def-card ul li{margin:4px 0}
+
+        /* Big highlight */
+        .big-highlight{background:linear-gradient(135deg,var(--navy-dark),var(--navy),var(--navy-light));color:#fff;border-radius:16px;padding:44px 36px;text-align:center;margin:24px 0;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}.big-highlight::before{content:'';position:absolute;top:-40%;right:-15%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);border-radius:50%}.big-highlight .value{font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;line-height:1;position:relative;z-index:1}.big-highlight .value span{font-size:4rem}.big-highlight .label{font-size:1.15rem;opacity:.9;margin-top:10px;position:relative;z-index:1}.big-highlight .sub{font-size:.88rem;opacity:.7;margin-top:6px;position:relative;z-index:1}
+
+        /* Transport modes */
+        .transport-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}@media(max-width:768px){.transport-grid{grid-template-columns:repeat(2,1fr)}}.transport-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:22px 14px;text-align:center;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}.transport-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}.transport-item .icon{font-size:2.4rem;margin-bottom:8px}.transport-item .name{font-size:.85rem;font-weight:700;color:var(--navy)}.transport-item .detail{font-size:.75rem;color:var(--text-muted);margin-top:4px}
+
+        /* Cumul flow */
+        .cumul-flow{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:24px 0}.cumul-item{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 28px;text-align:center;box-shadow:var(--shadow)}.cumul-item .val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--navy)}.cumul-item .lbl{font-size:.78rem;color:var(--text-muted)}.cumul-op{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--text-muted)}.cumul-result{background:var(--green-bg);border-color:var(--green-light)}.cumul-result .val{color:var(--green)}
+
+        /* Info box */
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:22px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.teal{background:var(--teal-bg);border:1.5px solid var(--teal-light)}.info-icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px}.info-box p{font-size:.9rem;color:var(--text-secondary);line-height:1.65}
+
+        /* Alert */
+        .alert-box{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:14px;padding:24px 28px;margin:22px 0}.alert-box h4{font-size:1rem;font-weight:700;margin-bottom:8px}.alert-box p{opacity:.92;font-size:.92rem;line-height:1.6}
+
+        /* Checklist */
+        .checklist{list-style:none;margin:20px 0}.checklist li{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--text-secondary);line-height:1.6}.checklist li:last-child{border-bottom:none}.check-icon{width:24px;height:24px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:var(--green);font-weight:700;font-size:.8rem}
+
+        /* Footer */
+        .footer{background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:#fff;padding:50px 0 40px;margin-top:30px}.footer .container{text-align:center}.footer-logo{width:80px;margin-bottom:18px}.footer p{opacity:.8;font-size:.88rem;margin:4px 0}.footer-contact{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}.footer-contact a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:600}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.hero{padding:40px 0 30px}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<!-- FIXED NAV -->
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#taux" class="nav-top-link">Taux</a><a href="#eligible" class="nav-top-link">Éligibles</a><a href="#exclusions" class="nav-top-link">Exclusions</a><a href="#justificatifs" class="nav-top-link">Justificatifs</a><a href="#cumul" class="nav-top-link">Cumul FMD</a><a href="#duree" class="nav-top-link">Durée</a></div></div></nav>
+
+<!-- HERO -->
+<div class="hero"><div class="container"><div class="hero-content">
+    <div class="hero-badge">🚃 Mobilité</div>
+    <h1>Prise en charge des abonnements transport<span>Accord du 25 février 2025 — Durée 3 ans — URSSAF PACA</span></h1>
+    <p class="hero-subtitle">75% de vos abonnements de transport en commun pris en charge par l'employeur pour vos trajets domicile-travail.</p>
+    <div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div>
+</div></div></div>
+
+<!-- GOLDEN RULE -->
+<div class="golden-rule"><span class="gr-icon">✊</span><p>Négociation ouverte à l'initiative de Force Ouvrière — C'est grâce à la demande de FO que cette négociation a été engagée, aboutissant à <strong>une prise en charge à 75%</strong>.</p></div>
+
+<!-- SECTION 1 : TAUX -->
+<section class="section" id="taux"><div class="container">
+    <div class="section-header"><div class="section-number">1</div><h2 class="section-title">Quel taux de prise en charge ?</h2><p class="section-subtitle">L'URSSAF PACA prend en charge vos abonnements bien au-delà du minimum légal de 50%.</p></div>
+
+    <div class="big-highlight">
+        <div class="value">75<span>%</span></div>
+        <div class="label">de prise en charge par l'employeur</div>
+        <div class="sub">Soit 25 points au-dessus du minimum légal de 50%</div>
+    </div>
+</div></section>
+
+<!-- SECTION 2 : ABONNEMENTS ÉLIGIBLES -->
+<section class="section" id="eligible"><div class="container">
+    <div class="section-header"><div class="section-number green">2</div><h2 class="section-title">Quels abonnements sont pris en charge ?</h2></div>
+
+    <div class="transport-grid">
+        <div class="transport-item"><div class="icon">🚌</div><div class="name">Bus</div><div class="detail">Abonnement hebdo, mensuel ou annuel</div></div>
+        <div class="transport-item"><div class="icon">🚃</div><div class="name">Train</div><div class="detail">Base tarif 2ᵉ classe</div></div>
+        <div class="transport-item"><div class="icon">🚋</div><div class="name">Tramway / Métro</div><div class="detail">Tous abonnements</div></div>
+        <div class="transport-item"><div class="icon">🚲</div><div class="name">Vélo libre-service</div><div class="detail">Abonnement location</div></div>
+    </div>
+
+    <div class="def-grid" style="margin-top:24px">
+        <div class="def-card green">
+            <h3>✅ Conditions de prise en charge</h3>
+            <ul>
+                <li>Abonnements <strong>hebdomadaires, mensuels ou annuels</strong></li>
+                <li>Transports publics de personnes</li>
+                <li>Location de vélo en libre-service</li>
+                <li>Abonnements <strong>multimodaux</strong> (bus + train, bus + vélo…)</li>
+            </ul>
+        </div>
+        <div class="def-card navy">
+            <h3>🏠 Trajet couvert</h3>
+            <p>La prise en charge couvre uniquement les trajets <strong>domicile-travail</strong> depuis votre résidence habituelle déclarée à l'employeur.</p>
+            <p style="margin-top:10px">Les extensions géographiques hors trajet domicile-travail ne sont <strong>pas prises en charge</strong>.</p>
+        </div>
+    </div>
+</div></section>
+
+<!-- SECTION 3 : EXCLUSIONS -->
+<section class="section" id="exclusions"><div class="container">
+    <div class="section-header"><div class="section-number red">3</div><h2 class="section-title">Ce qui n'est pas pris en charge</h2></div>
+
+    <div class="alert-box">
+        <h4>❌ Exclusions</h4>
+        <p>Titres de transport unitaires • Extensions hors trajet domicile-travail • Salariés disposant d'un véhicule de fonction • Salariés disposant d'une place de parking attribuée</p>
+    </div>
+
+    <div class="info-box blue">
+        <div class="info-icon">ℹ️</div>
+        <div><h4>Cas particuliers — Sites de Nice et Marseille</h4><p>Les salariés du site de <strong>Nice</strong> et ceux de <strong>Marseille Viton redéployés à Joliette</strong> bénéficient de dispositions spécifiques (accords du 25/10/2022).</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 4 : JUSTIFICATIFS -->
+<section class="section" id="justificatifs"><div class="container">
+    <div class="section-header"><div class="section-number">4</div><h2 class="section-title">Quels justificatifs fournir ?</h2></div>
+
+    <ul class="checklist">
+        <li><span class="check-icon">✓</span><span><strong>Abonnement nominatif :</strong> présentation du justificatif d'abonnement à votre nom</span></li>
+        <li><span class="check-icon">✓</span><span><strong>Vélo libre-service sans nom :</strong> attestation sur l'honneur accompagnée du justificatif de paiement</span></li>
+        <li><span class="check-icon">✓</span><span><strong>Abonnement multimodal :</strong> justificatif détaillant les modes de transport inclus</span></li>
+    </ul>
+</div></section>
+
+<!-- SECTION 5 : CUMUL FMD -->
+<section class="section" id="cumul"><div class="container">
+    <div class="section-header"><div class="section-number green">5</div><h2 class="section-title">Cumul avec le Forfait Mobilités Durables</h2><p class="section-subtitle">La prise en charge transport à 75% est cumulable avec le FMD.</p></div>
+
+    <div class="cumul-flow">
+        <div class="cumul-item"><div class="val">75%</div><div class="lbl">Abonnement transport</div></div>
+        <div class="cumul-op">+</div>
+        <div class="cumul-item"><div class="val">FMD</div><div class="lbl">Mobilité douce</div></div>
+        <div class="cumul-op">=</div>
+        <div class="cumul-item cumul-result"><div class="val">600 € max</div><div class="lbl">Plafond cumulé / an</div></div>
+    </div>
+
+    <div class="info-box amber">
+        <div class="info-icon">⚠️</div>
+        <div><h4>Plafond d'exonération</h4><p>Le cumul de la prise en charge transport et du FMD est plafonné à <strong>600 € par an</strong> dans la limite d'exonération fiscale et sociale.</p></div>
+    </div>
+</div></section>
+
+<!-- SECTION 6 : DURÉE -->
+<section class="section" id="duree"><div class="container">
+    <div class="section-header"><div class="section-number red">6</div><h2 class="section-title">Durée et application de l'accord</h2></div>
+
+    <div class="def-grid">
+        <div class="def-card teal">
+            <h3>📅 Durée</h3>
+            <p><strong>3 ans</strong> à compter de l'agrément ministériel.</p>
+            <p style="margin-top:10px">Effet rétroactif au <strong>1er janvier 2024</strong>.</p>
+        </div>
+        <div class="def-card navy">
+            <h3>📝 Date de signature</h3>
+            <p>Accord signé le <strong>25 février 2025</strong> entre la Direction de l'URSSAF PACA et les organisations syndicales.</p>
+        </div>
+    </div>
+
+    <div class="info-box green">
+        <div class="info-icon">🌍</div>
+        <div><h4>Engagement écologique</h4><p>La prise en charge majorée à 75% traduit la volonté de l'URSSAF PACA de favoriser l'usage des transports en commun et de réduire l'empreinte carbone des trajets domicile-travail.</p></div>
+    </div>
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container">
+    <p><strong>Force Ouvrière — URSSAF PACA</strong></p>
+    <p>Accord relatif à la prise en charge des abonnements transport • 25 février 2025 • Durée 3 ans</p>
+    <p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p>
+    <p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p>
+</div></div>
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>

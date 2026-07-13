@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Mémo — Horaire Variable</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 2px 4px rgba(0,0,0,.06)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+
+        .memo{max-width:820px;margin:0 auto;background:var(--white);min-height:100vh;padding:24px}
+
+        /* Header */
+        .header{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:3px solid var(--red);margin-bottom:18px}
+        .header-left h1{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:800;color:var(--navy);line-height:1.2}
+        .header-left p{font-size:.78rem;color:var(--text-muted);margin-top:2px}
+        .header-logo{width:68px}
+
+        /* Grid */
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        @media(max-width:600px){.grid{grid-template-columns:1fr}}
+        .full-width{grid-column:1/-1}
+
+        /* Boxes */
+        .box{background:var(--bg);border-radius:12px;padding:14px;border:1px solid var(--border)}
+        .box-title{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+
+        /* Timeline mini */
+        .timeline-mini{display:flex;height:36px;border-radius:8px;overflow:hidden;font-size:.66rem;font-weight:700;color:#fff;margin-bottom:10px}
+        .timeline-mini>div{display:flex;align-items:center;justify-content:center}
+        .tm-mobile{background:var(--navy)}.tm-fixed{background:var(--red)}.tm-lunch{background:var(--amber)}
+
+        /* Numbers */
+        .numbers{display:flex;gap:8px;flex-wrap:wrap}
+        .num{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px 12px;text-align:center;flex:1;min-width:70px}
+        .num-value{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--red)}
+        .num-label{font-size:.7rem;color:var(--text-muted)}
+
+        /* Options mini */
+        .options-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .opt-group h5{font-size:.75rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+        .opt-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:.75rem;margin:4px 0;display:flex;align-items:center;gap:6px}
+        .opt-badge{background:var(--navy-dark);color:#fff;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:5px}
+        .opt-time{font-family:'Playfair Display',serif;font-weight:800;color:var(--red);font-size:.82rem}
+
+        /* Gauge mini */
+        .gauge-mini{display:flex;height:32px;border-radius:16px;overflow:hidden;font-size:.72rem;font-weight:700;margin-bottom:10px}
+        .gm-debit{background:var(--red-light);color:var(--red);flex:6;display:flex;align-items:center;justify-content:center}
+        .gm-neutral{background:var(--border);color:var(--text-muted);flex:2;display:flex;align-items:center;justify-content:center}
+        .gm-credit{background:var(--green-light);color:var(--green);flex:8;display:flex;align-items:center;justify-content:center}
+
+        /* Mini list */
+        .mini-list{font-size:.78rem;padding-left:16px;margin:0;color:var(--text-secondary)}.mini-list li{margin:3px 0}
+
+        /* Table mini */
+        .table-mini{width:100%;font-size:.75rem;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden}
+        .table-mini th{background:var(--navy-dark);color:#fff;padding:7px 8px;text-align:left;font-weight:700;font-size:.72rem}
+        .table-mini td{background:var(--white);padding:6px 8px;border-bottom:1px solid var(--bg);font-size:.75rem}
+        .table-mini tr:last-child td{border-bottom:none}
+        .hl{color:var(--red);font-weight:800}
+
+        /* Badge steps */
+        .badge-mini{display:flex;justify-content:space-around;text-align:center}
+        .badge-mini>div{font-size:.72rem;color:var(--text-secondary)}
+        .badge-mini .icon{font-size:1.4rem;margin-bottom:3px}
+
+        /* Alert */
+        .alert-mini{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:10px;padding:10px 14px;font-size:.78rem;margin-top:10px;line-height:1.5}
+
+        /* Footer */
+        .footer-mini{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:2px solid var(--navy);font-size:.72rem;color:var(--text-muted)}
+        .footer-mini a{color:var(--navy);text-decoration:none;font-weight:600}
+
+        @media print{body{background:#fff}.memo{box-shadow:none;padding:14px}}
+    </style>
+</head>
+<body>
+
+<div class="memo">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>📋 Horaire Variable — L'Essentiel</h1>
+            <p>Fiche mémo • URSSAF PACA • Accord du 28/10/2014</p>
+        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' fill='%238B1B1A'%3EFO%3C/text%3E%3Ctext x='5' y='25' font-family='Arial' font-size='12' fill='%238B1B1A' transform='rotate(-90 20 50)'%3EURSSAF PACA%3C/text%3E%3C/svg%3E" alt="FO" class="header-logo">
+    </div>
+
+    <div class="grid">
+        <!-- AMPLITUDE -->
+        <div class="box">
+            <div class="box-title">⏰ Amplitude horaire</div>
+            <div class="timeline-mini">
+                <div class="tm-mobile" style="flex:1.5">7h30</div>
+                <div class="tm-fixed" style="flex:2">FIXE</div>
+                <div class="tm-lunch" style="flex:2.5">DÉJ.</div>
+                <div class="tm-fixed" style="flex:2">FIXE</div>
+                <div class="tm-mobile" style="flex:3">18h30</div>
+            </div>
+            <div class="numbers">
+                <div class="num"><div class="num-value">4h</div><div class="num-label">min/jour</div></div>
+                <div class="num"><div class="num-value">10h</div><div class="num-label">max/jour</div></div>
+                <div class="num"><div class="num-value">35'</div><div class="num-label">pause min</div></div>
+            </div>
+        </div>
+
+        <!-- OPTIONS PLAGES FIXES -->
+        <div class="box">
+            <div class="box-title">🎯 Vos plages fixes (au choix)</div>
+            <div class="options-mini">
+                <div class="opt-group">
+                    <h5>☀️ MATIN</h5>
+                    <div class="opt-item"><span class="opt-badge">1</span><span class="opt-time">9h — 11h</span></div>
+                    <div class="opt-item"><span class="opt-badge">2</span><span class="opt-time">9h30 — 11h30</span></div>
+                </div>
+                <div class="opt-group">
+                    <h5>🌙 APRÈS-MIDI</h5>
+                    <div class="opt-item"><span class="opt-badge">3</span><span class="opt-time">13h30 — 15h30</span></div>
+                    <div class="opt-item"><span class="opt-badge">4</span><span class="opt-time">14h — 16h</span></div>
+                </div>
+            </div>
+            <p style="font-size:.7rem;color:var(--text-muted);margin-top:8px">📅 Choix annuel — Modification avant le 31/10</p>
+        </div>
+
+        <!-- CRÉDIT / DÉBIT -->
+        <div class="box">
+            <div class="box-title">📊 Crédit / Débit</div>
+            <div class="gauge-mini">
+                <div class="gm-debit">-6h max</div>
+                <div class="gm-neutral">0</div>
+                <div class="gm-credit">+8h max</div>
+            </div>
+            <ul class="mini-list">
+                <li><strong>Crédit max :</strong> +8h (pas d'heures sup)</li>
+                <li><strong>Débit max :</strong> -6h (examen RH si dépassé)</li>
+                <li><strong>Dépassement interdit !</strong></li>
+            </ul>
+        </div>
+
+        <!-- UTILISATION CRÉDITS -->
+        <div class="box">
+            <div class="box-title">✨ Utiliser vos crédits</div>
+            <table class="table-mini">
+                <tr><th>Contrat</th><th>Limite / an</th></tr>
+                <tr><td>Temps plein</td><td class="hl">8 j. ou 16 ½ j.</td></tr>
+                <tr><td>Plateformes tél.</td><td class="hl">12 j. ou 24 ½ j.</td></tr>
+                <tr><td>TP 29h30-32h</td><td class="hl">5 j. ou 10 ½ j.</td></tr>
+                <tr><td>TP &lt;29h</td><td class="hl">4 j. ou 8 ½ j.</td></tr>
+            </table>
+            <p style="font-size:.7rem;color:var(--text-muted);margin-top:6px">Max 1 jour ou 2 ½ journées/mois • Validation manager</p>
+        </div>
+
+        <!-- BADGEAGE -->
+        <div class="box full-width">
+            <div class="box-title">📱 Badgeage obligatoire : 4 fois/jour minimum</div>
+            <div class="badge-mini">
+                <div><div class="icon">🌅</div>Arrivée matin</div>
+                <div><div class="icon">🍽️</div>Départ déjeuner</div>
+                <div><div class="icon">☕</div>Retour déjeuner</div>
+                <div><div class="icon">🌙</div>Sortie soir</div>
+            </div>
+            <div class="alert-mini">
+                <strong>⚠️ À retenir</strong>
+                Oubli = exceptionnel (régularisation via outil) • Fraude = sanction possible • Présence hors plages mobiles non autorisée
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-mini">
+        <div><strong>Force Ouvrière — URSSAF PACA</strong> • Accord du 28/10/2014</div>
+        <div style="margin-top:6px;font-weight:700;">👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</div>
+    </div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Horaire Variable — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04);--shadow-lg:0 10px 25px -3px rgba(0,0,0,.08),0 4px 6px -2px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+        /* FIXED NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}
+        .nav-brand em{color:#d4a0a0;font-style:italic}
+        .nav-links{display:flex;gap:4px}
+        .nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+        .nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+        /* HERO */
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+        /* GOLDEN RULE */
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+        .nav-bar{background:#fff;border-bottom:2px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.04)}.nav-bar .container{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.nav-bar .container::-webkit-scrollbar{display:none}.nav-link{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;color:var(--text-secondary);text-decoration:none;white-space:nowrap;transition:all .2s;border:1.5px solid transparent}.nav-link:hover{background:var(--blue-bg);color:var(--navy);border-color:var(--blue-light)}
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}.def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}.def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:6px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+        .key-numbers{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin:28px 0}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:24px 16px;text-align:center;box-shadow:var(--shadow)}.key-num .value{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--red);line-height:1}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:6px}
+        .timeline{display:flex;height:55px;border-radius:10px;overflow:hidden;margin:20px 0;box-shadow:var(--shadow)}.timeline>div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;flex-direction:column;line-height:1.2}.timeline .mobile{background:var(--navy)}.timeline .fixed{background:var(--red)}.timeline .lunch{background:#d97706}
+        .legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:12px 0}.legend-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-secondary)}.legend-dot{width:14px;height:14px;border-radius:4px}
+        .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}@media(max-width:600px){.options-grid{grid-template-columns:1fr}}.opt-group{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--shadow)}.opt-group h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:14px}.opt-item{background:var(--bg);border-radius:10px;padding:14px;margin:8px 0;display:flex;align-items:center;gap:12px}.opt-badge{background:var(--navy);color:#fff;font-size:.7rem;font-weight:700;padding:5px 10px;border-radius:6px}.opt-time{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--red)}
+        .gauge{display:flex;height:40px;border-radius:20px;overflow:hidden;margin:20px 0;box-shadow:var(--shadow)}.gauge>div{display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}.gauge .debit{background:var(--red-light);color:var(--red);flex:6}.gauge .zero{background:var(--border);color:var(--text-muted);flex:2}.gauge .credit{background:var(--green-light);color:var(--green);flex:8}
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.styled-table th{background:var(--navy);color:#fff;padding:12px 18px;text-align:left;font-weight:700;font-size:.85rem}.styled-table th.c{text-align:center}.styled-table td{padding:12px 18px;border-bottom:1.5px solid var(--border);font-size:.88rem;background:#fff}.styled-table td.c{text-align:center}.styled-table .hl{color:var(--red);font-weight:800}
+        .checklist{list-style:none;margin:20px 0}.checklist li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--text-secondary)}.checklist li:last-child{border-bottom:none}.ck{width:24px;height:24px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-weight:800;font-size:.8rem}
+        .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0;text-align:center}@media(max-width:600px){.steps{grid-template-columns:1fr 1fr}}.step-icon{font-size:2rem;margin-bottom:6px}.step-label{font-size:.82rem;color:var(--text-secondary)}
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}.footer .contact{margin-top:16px;opacity:.5;font-size:.78rem}
+        @media print{body{background:#fff}.nav,.nav-bar{display:none}.hero{margin-top:0}}
+    </style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Concernés</a><a href="#s2" class="nav-top-link">Amplitude</a><a href="#s3" class="nav-top-link">Plages fixes</a><a href="#s4" class="nav-top-link">Crédit/Débit</a><a href="#s5" class="nav-top-link">Crédits</a><a href="#s6" class="nav-top-link">Badgeage</a></div></div></nav>
+<div class="hero"><div class="container hero-content"><div class="hero-badge">📋 Guide Pratique</div><h1>L'Horaire Variable<span>Tout comprendre sur l'organisation de votre temps de travail à l'URSSAF PACA</span></h1><p class="hero-subtitle">Accord du 28 octobre 2014. Flexibilité encadrée de vos horaires d'arrivée et de départ.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p>Une question sur vos horaires, vos plages fixes ou vos crédits d'heures ? <strong>Contactez vos délégués FO</strong> pour être accompagné(e).</p></div>
+
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">Qui est concerné ?</h2></div>
+<div class="def-grid"><div class="def-card green"><h3>✅ Vous êtes concerné(e) si…</h3><ul><li>Salarié(e) CDI ou CDD</li><li>Cadre ou non-cadre</li><li>Temps plein (hors forfait jours)</li><li>Convention Collective du 8/02/1957 ou 25/06/1968</li></ul></div><div class="def-card red-c"><h3>❌ Non concerné(e) si…</h3><ul><li>Agent de Direction (cadre dirigeant)</li><li>Inspecteur du recouvrement</li><li>Temps partiel thérapeutique</li><li>Cadre au forfait jours</li></ul></div></div>
+</div></section>
+
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">L'amplitude horaire</h2><p class="section-subtitle">Deux exemples de journées types selon les options de plages fixes choisies.</p></div>
+<p style="font-weight:700;color:var(--navy);margin-bottom:8px">📌 Exemple 1 : Options 1 + 3 (plages fixes tôt)</p>
+<div class="timeline"><div class="mobile" style="flex:1.5">7h30→9h</div><div class="fixed" style="flex:2">FIXE 9h→11h</div><div class="lunch" style="flex:2.5">DÉJ. 11h→13h30</div><div class="fixed" style="flex:2">FIXE 13h30→15h30</div><div class="mobile" style="flex:3">15h30→18h30</div></div>
+<p style="font-weight:700;color:var(--navy);margin-bottom:8px;margin-top:20px">📌 Exemple 2 : Options 2 + 4 (plages fixes tard)</p>
+<div class="timeline"><div class="mobile" style="flex:2">7h30→9h30</div><div class="fixed" style="flex:2">FIXE 9h30→11h30</div><div class="lunch" style="flex:2.5">DÉJ. 11h30→14h</div><div class="fixed" style="flex:2">FIXE 14h→16h</div><div class="mobile" style="flex:2.5">16h→18h30</div></div>
+<div class="legend"><div class="legend-item"><div class="legend-dot" style="background:var(--navy)"></div>Plage mobile</div><div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Plage fixe</div><div class="legend-item"><div class="legend-dot" style="background:#d97706"></div>Pause déjeuner</div></div>
+<div class="key-numbers"><div class="key-num"><div class="value">7h30</div><div class="label">Ouverture</div></div><div class="key-num"><div class="value">18h30</div><div class="label">Fermeture</div></div><div class="key-num"><div class="value">4h</div><div class="label">Durée min/jour</div></div><div class="key-num"><div class="value">10h</div><div class="label">Durée max/jour</div></div><div class="key-num"><div class="value">35'</div><div class="label">Pause déj. min</div></div></div>
+</div></section>
+
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number">3</div><h2 class="section-title">Choisissez vos plages fixes</h2><p class="section-subtitle">Vous choisissez librement une option le matin et une l'après-midi. Choix valable pour l'année civile.</p></div>
+<div class="options-grid">
+<div class="opt-group"><h4>☀️ Plages fixes du MATIN</h4><div class="opt-item"><span class="opt-badge">Option 1</span><span class="opt-time">9h00 → 11h00</span></div><div class="opt-item"><span class="opt-badge">Option 2</span><span class="opt-time">9h30 → 11h30</span></div></div>
+<div class="opt-group"><h4>🌙 Plages fixes de l'APRÈS-MIDI</h4><div class="opt-item"><span class="opt-badge">Option 3</span><span class="opt-time">13h30 → 15h30</span></div><div class="opt-item"><span class="opt-badge">Option 4</span><span class="opt-time">14h00 → 16h00</span></div></div>
+</div>
+<div class="info-box blue"><div class="icon">📅</div><div><h4>Changement de formule</h4><p>Pour modifier votre choix, demande écrite avant le <strong>31 octobre</strong> (délai 2 mois). À défaut, reconduction tacite.</p></div></div>
+</div></section>
+
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Le système Crédit / Débit</h2><p class="section-subtitle">Vos heures s'accumulent ou se déduisent au fil des semaines.</p></div>
+<div class="gauge"><div class="debit">-6h max</div><div class="zero">0</div><div class="credit">+8h max</div></div>
+<div class="def-grid"><div class="card"><div class="card-title">📈 Crédit d'heures (+)</div><p style="font-size:.92rem;color:var(--text-secondary);line-height:1.7">Maximum <strong>+8 heures</strong> cumulables (temps plein). Ces heures ne donnent pas lieu au paiement d'heures supplémentaires.</p></div><div class="card"><div class="card-title">📉 Débit d'heures (-)</div><p style="font-size:.92rem;color:var(--text-secondary);line-height:1.7">Maximum <strong>-6 heures</strong> (temps plein). Un dépassement fera l'objet d'un examen par les équipes RH.</p></div></div>
+<table class="styled-table" style="margin-top:24px"><thead><tr><th>Contrat</th><th class="c">Débit max</th><th class="c">Crédit max</th></tr></thead><tbody>
+<tr><td>Temps plein</td><td class="c hl">-6h00</td><td class="c" style="color:var(--green);font-weight:800">+8h00</td></tr>
+<tr><td>TP 32h</td><td class="c hl">-5h25</td><td class="c" style="color:var(--green);font-weight:800">+7h15</td></tr>
+<tr><td>TP 30h</td><td class="c hl">-5h00</td><td class="c" style="color:var(--green);font-weight:800">+6h45</td></tr>
+<tr><td>TP 28h</td><td class="c hl">-4h45</td><td class="c" style="color:var(--green);font-weight:800">+6h20</td></tr>
+<tr><td>TP 24h</td><td class="c hl">-4h00</td><td class="c" style="color:var(--green);font-weight:800">+5h25</td></tr>
+</tbody></table>
+<div class="alert-box"><h4>⚠️ Attention</h4><p>Tout dépassement des limites à votre initiative est un non-respect du protocole et peut faire l'objet d'une sanction.</p></div>
+</div></section>
+
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Utiliser vos crédits d'heures</h2><p class="section-subtitle">Vous pouvez vous absenter sur une plage fixe sous conditions.</p></div>
+<ul class="checklist"><li><span class="ck">✓</span><span>Prise au minimum par <strong>demi-journée</strong></span></li><li><span class="ck">✓</span><span>Validation préalable de votre <strong>responsable hiérarchique</strong></span></li><li><span class="ck">✓</span><span>Maximum <strong>1 jour ou 2 demi-journées par mois</strong></span></li><li><span class="ck">✓</span><span>La pose ne doit pas créer un débit supérieur à -6h</span></li></ul>
+<table class="styled-table"><thead><tr><th>Type de contrat</th><th class="c">Limite annuelle</th></tr></thead><tbody>
+<tr><td>Temps plein (sauf 36h/4,5j et alternance)</td><td class="c hl">8 j. ou 16 ½ j.</td></tr>
+<tr><td>Plateformes téléphoniques</td><td class="c hl">12 j. ou 24 ½ j.</td></tr>
+<tr><td>TP 29h30 – 32h</td><td class="c hl">5 j. ou 10 ½ j.</td></tr>
+<tr><td>TP < 29h</td><td class="c hl">4 j. ou 8 ½ j.</td></tr>
+</tbody></table>
+</div></section>
+
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number red">6</div><h2 class="section-title">Badgeage obligatoire</h2><p class="section-subtitle">4 badgeages minimum par jour.</p></div>
+<div class="steps"><div><div class="step-icon">🌅</div><div class="step-label">Arrivée matin</div></div><div><div class="step-icon">🍽️</div><div class="step-label">Départ déjeuner</div></div><div><div class="step-icon">☕</div><div class="step-label">Retour déjeuner</div></div><div><div class="step-icon">🌙</div><div class="step-label">Sortie soir</div></div></div>
+<div class="alert-box"><h4>⚠️ À retenir</h4><p>Oubli = exceptionnel (régularisation via outil) • Fraude = sanction possible • Présence hors plages mobiles non autorisée</p></div>
+</div></section>
+
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Accord du 28/10/2014</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>

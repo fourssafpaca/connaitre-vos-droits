@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Mémo — Procédure Disciplinaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 2px 4px rgba(0,0,0,.06)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+
+        .memo{max-width:820px;margin:0 auto;background:var(--white);min-height:100vh;padding:20px}
+
+        /* Header */
+        .header{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:3px solid var(--red);margin-bottom:6px}
+        .header-left h1{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:var(--navy);line-height:1.2}
+        .header-left p{font-size:.72rem;color:var(--text-muted);margin-top:2px}
+        .header-logo{width:62px}
+
+        /* Golden rule */
+        .golden-rule{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:.82rem}
+        .golden-rule .icon{font-size:1.4rem}
+        .golden-rule strong{font-family:'Playfair Display',serif;font-weight:800}
+
+        /* Grid */
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        @media(max-width:600px){.grid{grid-template-columns:1fr}}
+        .full-width{grid-column:1/-1}
+
+        /* Boxes */
+        .box{background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border)}
+        .box.red-bg{background:var(--red-light);border-color:#fecaca}
+        .box.green-bg{background:var(--green-bg);border-color:var(--green-light)}
+        .box.amber-bg{background:var(--amber-bg);border-color:var(--amber-light)}
+        .box.blue-bg{background:var(--blue-bg);border-color:var(--blue-light)}
+        .box.purple-bg{background:var(--purple-bg);border-color:var(--purple-light)}
+        .box-title{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+
+        /* Mini list */
+        .mini-list{font-size:.72rem;padding-left:14px;margin:0;color:var(--text-secondary)}.mini-list li{margin:2px 0}
+
+        /* Sanctions mini table */
+        .sanctions-table{width:100%;font-size:.7rem;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden}
+        .sanctions-table th{background:var(--navy-dark);color:#fff;padding:6px 8px;text-align:left;font-weight:700;font-size:.68rem}
+        .sanctions-table td{background:var(--white);padding:5px 8px;border-bottom:1px solid var(--bg);font-size:.7rem}
+        .sanctions-table tr:last-child td{border-bottom:none}
+        .hl{color:var(--red);font-weight:800}
+        .tag-simple{display:inline-block;background:var(--green-light);color:var(--green);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:10px}
+        .tag-conseil{display:inline-block;background:var(--red-light);color:var(--red);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:10px}
+
+        /* Steps mini */
+        .steps-mini{counter-reset:step}
+        .step-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px}
+        .step-num{min-width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:.68rem;flex-shrink:0}
+        .step-text{font-size:.7rem;color:var(--text-secondary);line-height:1.4}
+        .step-delay{color:var(--red);font-weight:700;font-size:.65rem}
+
+        /* Délais mini */
+        .delais-table{width:100%;font-size:.68rem;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden}
+        .delais-table th{background:var(--navy-dark);color:#fff;padding:5px 6px;text-align:left;font-weight:700;font-size:.66rem}
+        .delais-table td{background:var(--white);padding:4px 6px;border-bottom:1px solid var(--bg);font-size:.68rem}
+        .delais-table tr:last-child td{border-bottom:none}
+
+        /* Rights check */
+        .rights-check{font-size:.7rem;color:var(--text-secondary)}
+        .rights-check li{list-style:none;padding:3px 0 3px 18px;position:relative}
+        .rights-check li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800;font-size:.8rem}
+
+        /* Alert */
+        .alert-mini{background:linear-gradient(135deg,var(--red-dark),var(--red));color:#fff;border-radius:10px;padding:8px 12px;font-size:.72rem;line-height:1.5}
+
+        /* Info */
+        .info-mini{background:var(--blue-bg);border:1px solid var(--blue-light);border-radius:8px;padding:7px 10px;font-size:.7rem;color:var(--text-secondary)}
+
+        /* Footer */
+        .footer-mini{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:8px;border-top:2px solid var(--navy);font-size:.68rem;color:var(--text-muted)}
+        .footer-mini a{color:var(--navy);text-decoration:none;font-weight:600}
+
+        @media print{body{background:#fff}.memo{box-shadow:none;padding:14px}}
+    </style>
+</head>
+<body>
+
+<div class="memo">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>🛡️ Procédure Disciplinaire</h1>
+            <p>Fiche mémo • URSSAF PACA • Art. 48 CCN + Code du Travail</p>
+        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' fill='%238B1B1A'%3EFO%3C/text%3E%3Ctext x='5' y='25' font-family='Arial' font-size='12' fill='%238B1B1A' transform='rotate(-90 20 50)'%3EURSSAF PACA%3C/text%3E%3C/svg%3E" alt="FO" class="header-logo">
+    </div>
+
+    <!-- GOLDEN RULE -->
+    <div class="golden-rule">
+        <span class="icon">⚠️</span>
+        <span><strong>Règle d'or :</strong> Un salarié ne se rend <u>JAMAIS</u> seul à un entretien préalable !</span>
+    </div>
+
+    <div class="grid">
+        <!-- LES 5 SANCTIONS -->
+        <div class="box full-width">
+            <div class="box-title">⚖️ Les 5 sanctions disciplinaires</div>
+            <table class="sanctions-table">
+                <tr>
+                    <th>N°</th>
+                    <th>Sanction</th>
+                    <th>Détail</th>
+                    <th>Procédure</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--amber)">1</td>
+                    <td><strong>Avertissement</strong></td>
+                    <td>Rappel à l'ordre écrit, faute légère</td>
+                    <td><span class="tag-simple">Simple</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--amber)">2</td>
+                    <td><strong>Blâme</strong></td>
+                    <td>Sanction formelle, inscrit au dossier</td>
+                    <td><span class="tag-simple">Simple</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--red)">3</td>
+                    <td><strong>Suspension</strong></td>
+                    <td>Max 7 jours, sans traitement</td>
+                    <td><span class="tag-conseil">Conseil</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--red)">4</td>
+                    <td><strong>Rétrogradation</strong></td>
+                    <td>Baisse niveau / rémunération</td>
+                    <td><span class="tag-conseil">Conseil</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--red)">5</td>
+                    <td><strong>Licenciement</strong></td>
+                    <td>Avec ou sans indemnités</td>
+                    <td><span class="tag-conseil">Conseil</span></td>
+                </tr>
+            </table>
+            <p style="font-size:.65rem;color:var(--text-muted);margin-top:6px">Aucune amende ou sanction pécuniaire autorisée • Prescription 3 ans (Art. L1332-5 CT)</p>
+        </div>
+
+        <!-- PROCÉDURE SIMPLE -->
+        <div class="box">
+            <div class="box-title">📝 Procédure simple</div>
+            <p style="font-size:.66rem;color:var(--text-muted);margin-bottom:6px">Avertissement & Blâme</p>
+            <div class="steps-mini">
+                <div class="step-item"><div class="step-num">1</div><div class="step-text">Rapport écrit du supérieur</div></div>
+                <div class="step-item"><div class="step-num">2</div><div class="step-text">Convocation à l'entretien<br><span class="step-delay">≤ 2 mois après les faits</span></div></div>
+                <div class="step-item"><div class="step-num">3</div><div class="step-text">Entretien — explications du salarié + assistance</div></div>
+                <div class="step-item"><div class="step-num">4</div><div class="step-text">Notification écrite motivée<br><span class="step-delay">Min 1 jour franc, max 1 mois</span></div></div>
+            </div>
+            <div class="info-mini" style="margin-top:8px">
+                <strong>CCN :</strong> entretien obligatoire même pour l'avertissement (contrairement au Code du travail).
+            </div>
+        </div>
+
+        <!-- PROCÉDURE CONSEIL -->
+        <div class="box red-bg">
+            <div class="box-title">⚖️ Conseil de discipline</div>
+            <p style="font-size:.66rem;color:var(--text-muted);margin-bottom:6px">Suspension, rétrogradation, licenciement</p>
+            <div class="steps-mini">
+                <div class="step-item"><div class="step-num">1</div><div class="step-text">Convocation entretien préalable</div></div>
+                <div class="step-item"><div class="step-num">2</div><div class="step-text">Entretien préalable + assistance</div></div>
+                <div class="step-item"><div class="step-num">3</div><div class="step-text">Saisine Conseil <span class="step-delay">≤ 5 jours ouvrés</span></div></div>
+                <div class="step-item"><div class="step-num">4</div><div class="step-text">Communication dossier <span class="step-delay">≥ 8 jours avant</span></div></div>
+                <div class="step-item"><div class="step-num">5</div><div class="step-text">Réunion paritaire <span class="step-delay">≤ 15 jours</span></div></div>
+                <div class="step-item"><div class="step-num">6</div><div class="step-text">Conclusions motivées <span class="step-delay">Notif. 48h</span></div></div>
+                <div class="step-item"><div class="step-num">7</div><div class="step-text">Décision finale directeur <span class="step-delay">≤ 1 mois total</span></div></div>
+            </div>
+        </div>
+
+        <!-- VOS DROITS -->
+        <div class="box green-bg">
+            <div class="box-title">✋ Vos droits</div>
+            <ul class="rights-check">
+                <li><strong>Être informé par écrit</strong> des griefs</li>
+                <li><strong>Se faire assister</strong> par une personne du personnel</li>
+                <li><strong>Présence d'élus CSE</strong> possible</li>
+                <li><strong>Accès au dossier</strong> complet (8j avant Conseil)</li>
+                <li><strong>Récusation</strong> de membres du Conseil</li>
+                <li><strong>Donner ses explications</strong></li>
+            </ul>
+        </div>
+
+        <!-- RECOURS -->
+        <div class="box purple-bg">
+            <div class="box-title">📞 Recours possibles</div>
+            <ul class="mini-list">
+                <li><strong>Conseil de Prud'hommes</strong> (Art. L1333-1 CT)</li>
+                <li>Annulation si sanction injustifiée ou disproportionnée</li>
+                <li><strong>Commission paritaire nationale</strong> (interprétation textes)</li>
+            </ul>
+        </div>
+
+        <!-- DÉLAIS CLÉS -->
+        <div class="box full-width">
+            <div class="box-title">⏱️ Délais clés</div>
+            <table class="delais-table">
+                <tr><th>Étape</th><th>Délai</th></tr>
+                <tr><td>Engagement poursuites</td><td class="hl">2 mois max après connaissance</td></tr>
+                <tr><td>Saisine Conseil</td><td class="hl">5 jours ouvrés max</td></tr>
+                <tr><td>Réunion Conseil</td><td class="hl">15 jours max</td></tr>
+                <tr><td>Dossier au salarié</td><td><strong>8 jours min avant Conseil</strong></td></tr>
+                <tr><td>Conclusions Conseil</td><td><strong>48 heures</strong></td></tr>
+                <tr><td>Décision finale</td><td class="hl">1 mois max après entretien</td></tr>
+                <tr><td>Prescription sanctions</td><td><strong>3 ans</strong> (Art. L1332-5 CT)</td></tr>
+            </table>
+        </div>
+
+        <!-- MISE À PIED CONSERVATOIRE -->
+        <div class="full-width">
+            <div class="alert-mini">
+                <strong>⚠️ Mise à pied conservatoire :</strong> Licenciement possible → avec traitement (1 mois max). Faute grave → sans traitement, Conseil sous 15 jours.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-mini">
+        <div><strong>Force Ouvrière — URSSAF PACA</strong> • Art. 48 CCN + Code du Travail</div>
+        <div style="margin-top:6px;font-weight:700;">👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</div>
+    </div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

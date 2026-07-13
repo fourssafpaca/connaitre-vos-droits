@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harcèlement moral - Fiche Mémo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fo-red: #A51C1C;
+            --navy: #1E3A5F;
+            --cream: #FAF8F5;
+            --white: #FFFFFF;
+            --gray-200: #E8E8E8;
+            --gray-700: #374151;
+            --success: #059669;
+            --success-light: #D1FAE5;
+            --warning: #D97706;
+            --warning-light: #FEF3C7;
+            --purple: #7C3AED;
+            --purple-light: #EDE9FE;
+            --info-light: #E0F2FE;
+            --red-light: #FEE2E2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: #111827; line-height: 1.35; }
+        
+        .memo {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            min-height: 100vh;
+            padding: 18px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--fo-red);
+            margin-bottom: 12px;
+        }
+        .header-left h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+        .header-left p {
+            font-size: 0.72rem;
+            color: var(--gray-700);
+        }
+        .header-logo { width: 60px; }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+        /* Boxes */
+        .box {
+            background: var(--cream);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .box.red-bg { background: var(--red-light); }
+        .box.success-bg { background: var(--success-light); }
+        .box.warning-bg { background: var(--warning-light); }
+        .box.purple-bg { background: var(--purple-light); }
+        .box.info-bg { background: var(--info-light); }
+        .box-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Mini list */
+        .mini-list {
+            font-size: 0.7rem;
+            padding-left: 14px;
+            margin: 0;
+        }
+        .mini-list li { margin: 2px 0; }
+
+        /* Definition box */
+        .def-box {
+            background: var(--navy);
+            color: white;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.7rem;
+            line-height: 1.4;
+        }
+        .def-box .ref {
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        /* Types mini */
+        .types-mini {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .type-mini {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 6px 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+        .type-mini .icon { font-size: 1rem; }
+        .type-mini .label { font-size: 0.6rem; color: var(--navy); font-weight: 600; }
+        .type-mini .desc { font-size: 0.55rem; color: var(--gray-700); }
+
+        /* Steps mini */
+        .steps-mini {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .step-mini {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 0.62rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            min-width: 100px;
+        }
+        .step-mini .num {
+            background: var(--fo-red);
+            color: white;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.58rem;
+            flex-shrink: 0;
+        }
+
+        /* Preuve schema */
+        .preuve-schema {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.68rem;
+        }
+        .preuve-box {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+            flex: 1;
+        }
+        .preuve-box strong { color: var(--navy); }
+        .preuve-arrow { font-size: 1.2rem; color: var(--fo-red); flex-shrink: 0; }
+
+        /* Sanctions mini */
+        .sanctions-mini {
+            width: 100%;
+            font-size: 0.68rem;
+            border-collapse: collapse;
+        }
+        .sanctions-mini th {
+            background: var(--navy);
+            color: white;
+            padding: 4px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.65rem;
+        }
+        .sanctions-mini td {
+            background: var(--white);
+            padding: 4px 6px;
+            border-bottom: 1px solid var(--cream);
+            font-size: 0.65rem;
+        }
+        .sanctions-mini .hl {
+            color: var(--fo-red);
+            font-weight: 700;
+        }
+
+        /* Alert */
+        .alert-mini {
+            background: var(--fo-red);
+            color: white;
+            border-radius: 6px;
+            padding: 6px 8px;
+            font-size: 0.68rem;
+        }
+
+        /* Info */
+        .info-mini {
+            background: var(--info-light);
+            border-radius: 6px;
+            padding: 6px 8px;
+            font-size: 0.68rem;
+            color: var(--gray-700);
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        /* Footer */
+        .footer-mini {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 2px solid var(--navy);
+            font-size: 0.65rem;
+            color: var(--gray-700);
+        }
+
+        @media print {
+            body { background: white; }
+            .memo { box-shadow: none; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="memo">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>🛡️ Harcèlement moral au travail</h1>
+            <p>Fiche mémo • Connaître vos droits</p>
+        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' fill='%23A51C1C'%3EFO%3C/text%3E%3Ctext x='5' y='25' font-family='Arial' font-size='12' fill='%23A51C1C' transform='rotate(-90 20 50)'%3EURSSAF PACA%3C/text%3E%3C/svg%3E" alt="FO" class="header-logo">
+    </div>
+
+    <div class="grid">
+        <!-- DÉFINITION -->
+        <div class="box full-width">
+            <div class="box-title">📖 Définition légale</div>
+            <div class="def-box">
+                Agissements <strong>répétés</strong> ayant pour objet ou pour effet une <strong>dégradation des conditions de travail</strong> susceptible de porter atteinte aux droits et à la dignité, d'altérer la santé physique ou mentale, ou de compromettre l'avenir professionnel du salarié.
+                <div class="ref">Art. L1152-1 Code du travail • Art. 222-33-2 Code pénal</div>
+            </div>
+            <div class="info-mini" style="margin-top: 6px;">
+                <strong>3 conditions :</strong> agissements répétés • dégradation des conditions de travail (ou susceptibilité) • atteinte aux droits/dignité/santé/avenir pro. <strong>Pas besoin de prouver l'intention de nuire.</strong>
+            </div>
+        </div>
+
+        <!-- 3 FORMES -->
+        <div class="box full-width">
+            <div class="box-title">👥 Les 3 formes de harcèlement</div>
+            <div class="types-mini">
+                <div class="type-mini">
+                    <div class="icon">⬇️</div>
+                    <div class="label">Descendant</div>
+                    <div class="desc">Hiérarchie → Salarié</div>
+                </div>
+                <div class="type-mini">
+                    <div class="icon">↔️</div>
+                    <div class="label">Horizontal</div>
+                    <div class="desc">Entre collègues</div>
+                </div>
+                <div class="type-mini">
+                    <div class="icon">⬆️</div>
+                    <div class="label">Ascendant</div>
+                    <div class="desc">Salarié → Hiérarchie</div>
+                </div>
+                <div class="type-mini" style="background: var(--purple-light);">
+                    <div class="icon">🏢</div>
+                    <div class="label">Managérial</div>
+                    <div class="desc">Méthodes de gestion</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXEMPLES -->
+        <div class="box red-bg">
+            <div class="box-title">🚨 Exemples reconnus</div>
+            <ul class="mini-list">
+                <li>Critiques humiliantes <strong>répétées</strong></li>
+                <li>Mise à l'écart (missions, réunions, matériel)</li>
+                <li>Surcharge intentionnelle de travail</li>
+                <li>Ordres contradictoires systématiques</li>
+                <li>Pressions à démissionner</li>
+                <li>Surveillance excessive / contrôle abusif</li>
+                <li>Sanctions injustifiées répétées</li>
+            </ul>
+        </div>
+
+        <!-- CE QUI N'EST PAS -->
+        <div class="box success-bg">
+            <div class="box-title">✅ Ce qui n'est PAS du harcèlement</div>
+            <ul class="mini-list">
+                <li>Remarque <strong>ponctuelle</strong> sur la qualité du travail</li>
+                <li>Stress lié à la charge si organisation équilibrée</li>
+                <li>Conflit ponctuel ou désaccord professionnel</li>
+                <li>Sanction disciplinaire unique et fondée</li>
+                <li>Exercice normal du pouvoir de direction</li>
+            </ul>
+        </div>
+
+        <!-- CHARGE DE LA PREUVE -->
+        <div class="box full-width">
+            <div class="box-title">⚖️ Charge de la preuve aménagée (L1154-1)</div>
+            <div class="preuve-schema">
+                <div class="preuve-box">
+                    <strong>Salarié</strong><br>
+                    Présente des éléments<br>laissant <em>présumer</em><br>le harcèlement
+                </div>
+                <div class="preuve-arrow">→</div>
+                <div class="preuve-box">
+                    <strong>Employeur</strong><br>
+                    Doit prouver que les faits<br>ne sont <em>pas</em> constitutifs<br>de harcèlement
+                </div>
+            </div>
+            <p style="font-size: 0.62rem; color: var(--gray-700); margin-top: 6px;">💡 Conservez : mails, SMS, certificats médicaux, attestations de témoins, notes de service, compte-rendus</p>
+        </div>
+
+        <!-- VOS DROITS -->
+        <div class="box purple-bg">
+            <div class="box-title">🔒 Vos droits</div>
+            <ul class="mini-list">
+                <li><strong>Protection</strong> contre les représailles (L1152-2)</li>
+                <li><strong>Nullité</strong> du licenciement lié au harcèlement (L1152-3)</li>
+                <li><strong>Droit d'alerte</strong> et de retrait</li>
+                <li><strong>Médiation</strong> possible (L1152-6)</li>
+                <li>Consultation du <strong>médecin du travail</strong></li>
+            </ul>
+        </div>
+
+        <!-- SANCTIONS -->
+        <div class="box">
+            <div class="box-title">⚡ Sanctions encourues</div>
+            <table class="sanctions-mini">
+                <tr>
+                    <th>Type</th>
+                    <th>Sanction</th>
+                </tr>
+                <tr>
+                    <td>Pénale</td>
+                    <td class="hl">2 ans + 30 000 €</td>
+                </tr>
+                <tr>
+                    <td>Disciplinaire</td>
+                    <td class="hl">Jusqu'au licenciement</td>
+                </tr>
+                <tr>
+                    <td>Civile</td>
+                    <td class="hl">Dommages-intérêts</td>
+                </tr>
+                <tr>
+                    <td>+ Discrimination</td>
+                    <td class="hl">3 ans + 45 000 €</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- COMMENT AGIR -->
+        <div class="box full-width">
+            <div class="box-title">🆘 Comment agir ? Les 6 étapes</div>
+            <div class="steps-mini">
+                <div class="step-mini"><span class="num">1</span> Consigner les faits par écrit (dates, témoins)</div>
+                <div class="step-mini"><span class="num">2</span> Consulter le médecin du travail</div>
+                <div class="step-mini"><span class="num">3</span> Alerter vos délégués FO</div>
+                <div class="step-mini"><span class="num">4</span> Signaler à l'employeur (courrier recommandé)</div>
+                <div class="step-mini"><span class="num">5</span> Saisir l'Inspection du travail</div>
+                <div class="step-mini"><span class="num">6</span> Action en justice (Prud'hommes ou Pénal)</div>
+            </div>
+        </div>
+
+        <!-- RÔLE CSE -->
+        <div class="box warning-bg">
+            <div class="box-title">🏛️ Rôle du CSE</div>
+            <ul class="mini-list">
+                <li><strong>Droit d'alerte</strong> atteinte aux droits (L2312-59)</li>
+                <li><strong>Enquête</strong> conjointe avec l'employeur</li>
+                <li><strong>CSSCT</strong> : prévention RPS</li>
+                <li><strong>Référent harcèlement</strong> désigné par le CSE</li>
+            </ul>
+        </div>
+
+        <!-- OBLIGATIONS EMPLOYEUR -->
+        <div class="box">
+            <div class="box-title">🏢 Obligations de l'employeur</div>
+            <ul class="mini-list">
+                <li><strong>Prévention</strong> : actions d'information (L1152-4)</li>
+                <li><strong>Sécurité</strong> : protéger la santé (L4121-1)</li>
+                <li><strong>Réaction</strong> : enquête + mesures conservatoires</li>
+                <li><strong>Sanction</strong> : de l'auteur des faits</li>
+            </ul>
+        </div>
+
+        <!-- ALERTE -->
+        <div class="box full-width">
+            <div class="alert-mini">
+                <strong>⚠️ Jurisprudence 2025 :</strong> La dégradation effective n'est pas nécessaire — la simple susceptibilité de dégradation suffit (Cass. soc. 11/03/2025). Les méthodes de gestion dégradantes constituent un harcèlement même sans ciblage individuel (Cass. soc. 10/12/2025).
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-mini">
+        <div><strong>Force Ouvrière — URSSAF PACA</strong> • Code du travail + Code pénal</div>
+        <div style="margin-top:6px;font-weight:700;">👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</div>
+    </div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harcèlement Moral au Travail — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #203A5E;
+            --navy-dark: #172a45;
+            --navy-light: #2c5282;
+            --red: #8B1B1A;
+            --red-dark: #6b1413;
+            --red-light: #fde8e8;
+            --red-muted: #fef2f2;
+            --green: #276749;
+            --green-light: #c6f6d5;
+            --green-bg: #f0fff4;
+            --amber: #92400e;
+            --amber-light: #fef3c7;
+            --amber-bg: #fffbeb;
+            --blue-light: #dbeafe;
+            --blue-bg: #eff6ff;
+            --purple: #553c9a;
+            --purple-light: #e9d8fd;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            margin-top: 56px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            color: white;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139,27,26,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: rgba(255,255,255,0.6);
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.42em;
+            font-weight: 500;
+            margin-top: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 650px;
+            line-height: 1.7;
+        }
+
+        /* ========== NAVIGATION (fixed top) ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(32,58,94,0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .nav-brand em {
+            color: #d4a0a0;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.78em;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.12);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--navy);
+            color: white;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-number.red { background: var(--red); }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.25;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            max-width: 700px;
+        }
+
+        /* ========== CARDS ========== */
+        .card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title .emoji { font-size: 1.2em; }
+
+        /* ========== DEFINITION GRID ========== */
+        .def-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .def-grid { grid-template-columns: 1fr; }
+        }
+
+        .def-card {
+            border-radius: 14px;
+            padding: 28px;
+            border: 1.5px solid;
+        }
+
+        .def-card.navy {
+            background: linear-gradient(135deg, #f0f4ff, #e8edf5);
+            border-color: #c3d0e8;
+        }
+
+        .def-card.red {
+            background: linear-gradient(135deg, #fef2f2, #fde8e8);
+            border-color: #fecaca;
+        }
+
+        .def-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .def-card.navy h3 { color: var(--navy); }
+        .def-card.red h3 { color: var(--red); }
+
+        .def-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========== LEGAL QUOTE ========== */
+        .legal-quote {
+            background: var(--navy-dark);
+            color: white;
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin: 28px 0;
+            position: relative;
+        }
+
+        .legal-quote::before {
+            content: '«';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .legal-quote p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-quote .source {
+            display: block;
+            margin-top: 12px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.82rem;
+            opacity: 0.7;
+        }
+
+        /* ========== TYPES GRID ========== */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .types-grid { grid-template-columns: 1fr; }
+        }
+
+        .type-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .type-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .type-icon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .type-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .type-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .type-card .arrow {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+            opacity: 0.5;
+        }
+
+        /* ========== EXAMPLES ========== */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .examples-grid { grid-template-columns: 1fr; }
+        }
+
+        .example-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--red-muted);
+            border-radius: 10px;
+            border-left: 4px solid var(--red);
+        }
+
+        .example-item .x-mark {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .example-item p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* ========== WHAT IS NOT ========== */
+        .not-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .not-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--green-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--green);
+        }
+
+        .not-item .check-mark {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .not-item p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* ========== PROOF SECTION ========== */
+        .proof-flow {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 16px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .proof-flow {
+                grid-template-columns: 1fr;
+            }
+            .proof-arrow { transform: rotate(90deg); }
+        }
+
+        .proof-box {
+            border-radius: 14px;
+            padding: 24px;
+            border: 2px solid;
+        }
+
+        .proof-box.salarie {
+            background: var(--blue-bg);
+            border-color: #93c5fd;
+        }
+
+        .proof-box.employeur {
+            background: var(--amber-bg);
+            border-color: #fcd34d;
+        }
+
+        .proof-box h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .proof-box.salarie h3 { color: var(--navy); }
+        .proof-box.employeur h3 { color: var(--amber); }
+
+        .proof-box ul {
+            list-style: none;
+        }
+
+        .proof-box ul li {
+            font-size: 0.85rem;
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            color: var(--text-secondary);
+        }
+
+        .proof-box ul li::before {
+            content: '→';
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .proof-box.salarie ul li::before { color: var(--navy); }
+        .proof-box.employeur ul li::before { color: var(--amber); }
+
+        .proof-arrow {
+            font-size: 2rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ========== RIGHTS CARDS ========== */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .rights-grid { grid-template-columns: 1fr; }
+        }
+
+        .right-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .right-card h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .right-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ========== STEPS ========== */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .step-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .step-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-dot.red { background: var(--red); }
+
+        .step-connector {
+            width: 3px;
+            flex: 1;
+            background: var(--border);
+            margin: 4px 0;
+        }
+
+        .step:last-child .step-connector { display: none; }
+
+        .step-content {
+            padding-bottom: 24px;
+            flex: 1;
+        }
+
+        .step-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ========== SANCTIONS TABLE ========== */
+        .sanctions-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .sanctions-table th {
+            background: var(--navy);
+            color: white;
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .sanctions-table th.red-col { background: var(--red); }
+
+        .sanctions-table td {
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-secondary);
+        }
+
+        .sanctions-table tr:last-child td { border-bottom: none; }
+
+        .sanctions-table tr:nth-child(even) td { background: #fafbfc; }
+
+        /* ========== ALERT BOXES ========== */
+        .alert {
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .alert.red {
+            background: var(--red-light);
+            border: 1.5px solid #fecaca;
+        }
+
+        .alert.green {
+            background: var(--green-bg);
+            border: 1.5px solid #86efac;
+        }
+
+        .alert.amber {
+            background: var(--amber-bg);
+            border: 1.5px solid #fcd34d;
+        }
+
+        .alert .alert-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+        .alert p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .alert.red p { color: var(--red-dark); }
+        .alert.green p { color: var(--green); }
+        .alert.amber p { color: var(--amber); }
+
+        .alert strong { font-weight: 700; }
+
+        /* ========== ROLE CSE ========== */
+        .cse-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .cse-grid { grid-template-columns: 1fr; }
+        }
+
+        .cse-card {
+            background: var(--blue-bg);
+            border: 1.5px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cse-card .cse-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .cse-card h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .cse-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy-dark);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .footer-info .org {
+            font-weight: 700;
+            font-size: 1rem;
+            opacity: 1;
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--red);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .footer-contact a:hover { background: var(--red-dark); }
+
+        /* ========== GOLDEN RULE ========== */
+        .golden-rule {
+            background: var(--red);
+            color: white;
+            padding: 20px 0;
+        }
+
+        .golden-rule .container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .golden-rule .gr-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .golden-rule p {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .golden-rule strong {
+            text-transform: uppercase;
+        }
+
+        /* ========== PRINT ========== */
+        @media print {
+            .nav-bar { display: none; }
+            .section { padding: 30px 0; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div>
+        <div class="nav-links">
+            <a href="#definition" class="nav-link">Définition</a>
+            <a href="#types" class="nav-link">Les types</a>
+            <a href="#exemples" class="nav-link">Exemples</a>
+            <a href="#preuve" class="nav-link">La preuve</a>
+            <a href="#droits" class="nav-link">Vos droits</a>
+            <a href="#agir" class="nav-link">Comment agir</a>
+            <a href="#sanctions" class="nav-link">Sanctions</a>
+            <a href="#cse" class="nav-link">Rôle du CSE</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-badge">📋 Guide pratique du salarié</div>
+        <h1>
+            Le Harcèlement Moral au Travail
+            <span>Comprendre, identifier et se défendre — Guide à l'usage des salariés</span>
+        </h1>
+        <p class="hero-subtitle">
+            Le harcèlement moral est un délit. Chaque salarié a le droit d'exercer son activité professionnelle dans des conditions qui respectent sa santé, sa dignité et ses droits. Ce guide vous aide à comprendre la procédure, vos droits et vos recours.
+        </p>
+        <div style="margin-top:20px;padding:12px 20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;display:inline-block;font-size:0.95rem;">
+            ✊ <span>Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</span>
+        </div>
+    </div>
+</header>
+
+<!-- GOLDEN RULE -->
+<div class="golden-rule">
+    <div class="container">
+        <span class="gr-icon">⚠️</span>
+        <p>Vous pensez être victime de harcèlement moral ? <strong>Ne restez pas seul(e).</strong> Contactez immédiatement vos représentants syndicaux FO pour être accompagné(e) dans vos démarches.</p>
+    </div>
+</div>
+
+<!-- SECTION 1: DEFINITION -->
+<section id="definition" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Qu'est-ce que le harcèlement moral ?</h2>
+            <p class="section-subtitle">Une définition légale précise, protectrice pour le salarié</p>
+        </div>
+
+        <div class="legal-quote">
+            <p>Aucun salarié ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel.</p>
+            <span class="source">Article L1152-1 du Code du travail</span>
+        </div>
+
+        <div class="def-grid">
+            <div class="def-card navy">
+                <h3>📌 Les 3 conditions cumulatives</h3>
+                <p>
+                    <strong>1. Des agissements répétés</strong> — Un acte isolé ne suffit pas. Il faut une succession de faits, même espacés dans le temps.<br><br>
+                    <strong>2. Une dégradation des conditions de travail</strong> — Il suffit que les agissements soient <em>susceptibles</em> de dégrader les conditions. La dégradation effective n'est pas nécessaire (Cass. soc. 11 mars 2025).<br><br>
+                    <strong>3. Des conséquences sur le salarié</strong> — Atteinte aux droits, à la dignité, à la santé physique ou mentale, ou à l'avenir professionnel.
+                </p>
+            </div>
+            <div class="def-card red">
+                <h3>🔑 Les points essentiels à retenir</h3>
+                <p>
+                    <strong>Pas besoin de prouver l'intention de nuire</strong> — Le harcèlement est caractérisé par ses <em>effets</em>, pas par l'intention de l'auteur.<br><br>
+                    <strong>Pas besoin d'être directement visé</strong> — Des méthodes de gestion dégradantes peuvent constituer un harcèlement même si le salarié n'est pas personnellement ciblé (Cass. soc. 10 déc. 2025).<br><br>
+                    <strong>L'auteur peut être n'importe qui</strong> — Supérieur, collègue, subordonné, ou personne extérieure ayant autorité.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 2: TYPES -->
+<section id="types" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Les différentes formes de harcèlement</h2>
+            <p class="section-subtitle">Le harcèlement moral peut prendre plusieurs formes selon la relation entre l'auteur et la victime</p>
+        </div>
+
+        <div class="types-grid">
+            <div class="type-card">
+                <div class="type-icon">⬇️</div>
+                <h3>Descendant (hiérarchique)</h3>
+                <p>Du supérieur vers le subordonné. La forme la plus fréquente : pression, dévalorisation, surcharge, mise à l'écart, ordres contradictoires.</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon">↔️</div>
+                <h3>Horizontal (entre collègues)</h3>
+                <p>Entre salariés de même niveau. Isolement, rumeurs, exclusion du collectif, sabotage du travail d'un pair.</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon">⬆️</div>
+                <h3>Ascendant</h3>
+                <p>D'un ou plusieurs subordonnés vers leur supérieur. Plus rare mais reconnu : contestation systématique, déstabilisation, mise en difficulté.</p>
+            </div>
+        </div>
+
+        <div class="alert amber" style="margin-top:24px;">
+            <span class="alert-icon">💡</span>
+            <p><strong>Harcèlement managérial :</strong> Depuis l'arrêt du 10 décembre 2025, la Cour de cassation confirme que des <strong>méthodes de gestion</strong> dégradant les conditions de travail peuvent constituer un harcèlement moral, <strong>même si aucun salarié n'est personnellement visé</strong>. C'est le management lui-même qui est en cause, pas une relation individuelle.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: EXEMPLES -->
+<section id="exemples" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number red">3</div>
+            <h2 class="section-title">Identifier le harcèlement moral</h2>
+            <p class="section-subtitle">Des exemples concrets issus de la jurisprudence pour reconnaître les signaux</p>
+        </div>
+
+        <h3 style="font-size:1rem; color:var(--red); font-weight:700; margin-bottom:16px;">🚩 Ce qui peut constituer du harcèlement moral</h3>
+
+        <div class="examples-grid">
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Critiques humiliantes répétées devant les collègues, réflexions dévalorisantes</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Mise à l'écart : privation de missions, de matériel, exclusion des réunions, isolement physique</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Surcharge de travail intentionnelle ou objectifs volontairement irréalistes</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Retrait progressif de responsabilités, déclassement, placardisation (bore-out)</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Ordres et contre-ordres systématiques, communication par intermédiaire pour humilier</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Sanctions injustifiées et répétées, avertissements abusifs en série</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Pressions répétées pour démissionner, chantage, menaces</p>
+            </div>
+            <div class="example-item">
+                <span class="x-mark">✗</span>
+                <p>Surveillance excessive, contrôle disproportionné, refus systématique de congés</p>
+            </div>
+        </div>
+
+        <h3 style="font-size:1rem; color:var(--green); font-weight:700; margin:28px 0 16px;">✓ Ce qui n'est pas du harcèlement moral</h3>
+
+        <div class="not-grid">
+            <div class="not-item">
+                <span class="check-mark">✓</span>
+                <p>Des remarques ponctuelles et justifiées sur la qualité du travail (pouvoir de direction normal)</p>
+            </div>
+            <div class="not-item">
+                <span class="check-mark">✓</span>
+                <p>Un stress lié à la charge de travail si l'organisation est équilibrée et non intentionnellement nocive</p>
+            </div>
+            <div class="not-item">
+                <span class="check-mark">✓</span>
+                <p>Un conflit ponctuel avec un collègue ou un désaccord professionnel</p>
+            </div>
+            <div class="not-item">
+                <span class="check-mark">✓</span>
+                <p>Une sanction disciplinaire unique et fondée sur des faits objectifs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: PREUVE -->
+<section id="preuve" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">4</div>
+            <h2 class="section-title">La preuve du harcèlement</h2>
+            <p class="section-subtitle">Un régime de preuve aménagé en faveur du salarié (art. L1154-1 du Code du travail)</p>
+        </div>
+
+        <div class="proof-flow">
+            <div class="proof-box salarie">
+                <h3>👤 Le salarié doit…</h3>
+                <p style="font-size:0.85rem; color:var(--navy); font-weight:600; margin-bottom:10px;">Présenter des éléments de fait laissant PRÉSUMER le harcèlement</p>
+                <ul>
+                    <li>Courriels, SMS, messages agressifs ou humiliants</li>
+                    <li>Témoignages de collègues (même anonymisés sous conditions)</li>
+                    <li>Certificats médicaux, arrêts de travail</li>
+                    <li>Comptes-rendus d'entretien, notes de service</li>
+                    <li>Journal de bord daté des faits subis</li>
+                    <li>Avertissements ou sanctions contestés</li>
+                    <li>Tout document prouvant la dégradation</li>
+                </ul>
+            </div>
+            <div class="proof-arrow">➜</div>
+            <div class="proof-box employeur">
+                <h3>🏢 L'employeur doit alors…</h3>
+                <p style="font-size:0.85rem; color:var(--amber); font-weight:600; margin-bottom:10px;">Prouver que les agissements NE SONT PAS constitutifs de harcèlement</p>
+                <ul>
+                    <li>Justifier que ses décisions reposent sur des éléments objectifs</li>
+                    <li>Prouver l'absence de tout lien avec un harcèlement</li>
+                    <li>Démontrer les mesures de prévention prises</li>
+                    <li>Démontrer qu'il a agi après le signalement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert green" style="margin-top:20px;">
+            <span class="alert-icon">✅</span>
+            <p><strong>Important :</strong> Le juge examine <strong>l'ensemble des faits présentés</strong>, pris dans leur globalité. Des faits qui semblent anodins isolément peuvent, combinés, laisser présumer un harcèlement. Les documents médicaux doivent obligatoirement être pris en compte.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: DROITS -->
+<section id="droits" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">5</div>
+            <h2 class="section-title">Vos droits en tant que salarié</h2>
+            <p class="section-subtitle">La loi vous protège à plusieurs niveaux</p>
+        </div>
+
+        <div class="rights-grid">
+            <div class="right-card">
+                <h4>🛡️ Protection contre les représailles</h4>
+                <p>Aucune sanction, aucun licenciement ne peut frapper un salarié ayant <strong>subi, refusé de subir</strong>, ou ayant <strong>témoigné de bonne foi</strong> d'un harcèlement moral (art. L1152-2). Toute mesure prise en représailles est <strong>nulle</strong>.</p>
+            </div>
+            <div class="right-card">
+                <h4>⚖️ Droit d'alerte</h4>
+                <p>Vous pouvez alerter votre employeur, les élus du CSE, l'inspection du travail ou le médecin du travail. Le <strong>droit d'alerte est une liberté fondamentale</strong> protégée par la loi, y compris le statut de lanceur d'alerte (loi Sapin II).</p>
+            </div>
+            <div class="right-card">
+                <h4>🏥 Droit de retrait</h4>
+                <p>Si vous estimez que la situation présente un <strong>danger grave et imminent</strong> pour votre santé mentale, vous pouvez exercer votre droit de retrait. Attention : il doit être proportionné et justifié.</p>
+            </div>
+            <div class="right-card">
+                <h4>📋 Médiation</h4>
+                <p>Vous pouvez demander une <strong>procédure de médiation</strong> (art. L1152-6). Le médiateur tente de concilier les parties. En cas d'échec, il informe des sanctions encourues et des garanties en faveur de la victime.</p>
+            </div>
+            <div class="right-card">
+                <h4>🩺 Médecin du travail</h4>
+                <p>Le médecin du travail peut constater l'altération de votre état de santé et proposer des <strong>aménagements ou un changement de poste</strong>. Son avis est un élément de preuve important.</p>
+            </div>
+            <div class="right-card">
+                <h4>📝 Nullité du licenciement</h4>
+                <p>Tout licenciement en lien avec un harcèlement moral est <strong>nul</strong> (art. L1152-3). Le salarié peut obtenir sa <strong>réintégration</strong> ou des dommages-intérêts sans plafond du barème Macron.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 6: AGIR -->
+<section id="agir" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number red">6</div>
+            <h2 class="section-title">Comment agir ?</h2>
+            <p class="section-subtitle">Les étapes clés pour se défendre face au harcèlement moral</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">1</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Consigner les faits par écrit</h4>
+                    <p>Tenez un journal daté et détaillé : dates, heures, lieux, faits précis, témoins présents. Conservez tous les écrits (mails, SMS, notes). C'est la base de votre dossier.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">2</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Consulter le médecin du travail</h4>
+                    <p>Demandez une visite. Le médecin du travail constate l'altération de votre santé et peut proposer des aménagements. Son avis constitue un élément de preuve essentiel.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot red">3</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Alerter vos représentants syndicaux FO</h4>
+                    <p><strong>Étape essentielle.</strong> Votre délégué syndical FO peut vous assister, alerter l'employeur, déclencher une enquête via le CSE et vous guider dans la procédure. Ne restez jamais seul(e).</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">4</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Signaler par écrit à l'employeur</h4>
+                    <p>Adressez un courrier recommandé à l'employeur décrivant les faits. L'employeur a une obligation de réaction : il doit prendre les mesures pour faire cesser le harcèlement.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">5</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Saisir l'inspection du travail</h4>
+                    <p>L'inspecteur du travail peut mener une enquête, constater les infractions et transmettre au Procureur de la République.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot red">6</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Agir en justice</h4>
+                    <p><strong>Conseil de Prud'hommes :</strong> pour obtenir réparation du préjudice, nullité du licenciement, dommages-intérêts.<br>
+                    <strong>Tribunal correctionnel :</strong> pour faire sanctionner pénalement l'auteur (2 ans d'emprisonnement, 30 000 € d'amende).<br>
+                    <em>Délai : 5 ans pour l'action civile, 6 ans pour l'action pénale.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: SANCTIONS -->
+<section id="sanctions" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">7</div>
+            <h2 class="section-title">Les sanctions encourues</h2>
+            <p class="section-subtitle">L'auteur et l'employeur risquent des sanctions civiles et pénales</p>
+        </div>
+
+        <table class="sanctions-table">
+            <thead>
+                <tr>
+                    <th style="width:30%;">Type</th>
+                    <th>Auteur du harcèlement</th>
+                    <th class="red-col">Employeur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sanction disciplinaire</strong></td>
+                    <td>Faute grave justifiant le licenciement (art. L1152-5)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Sanction pénale</strong></td>
+                    <td>2 ans d'emprisonnement + 30 000 € d'amende (art. 222-33-2 C. pénal)</td>
+                    <td>Responsabilité pénale si manquement à l'obligation de prévention</td>
+                </tr>
+                <tr>
+                    <td><strong>Réparation civile</strong></td>
+                    <td>Dommages-intérêts pour préjudice moral, physique, professionnel</td>
+                    <td>Responsabilité civile (obligation de sécurité, art. L4121-1). Pas de plafond en cas de nullité du licenciement</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination</strong></td>
+                    <td colspan="2">Si le harcèlement est lié à un critère discriminatoire : 1 an + 3 750 € supplémentaires (art. L1155-2)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert red" style="margin-top:20px;">
+            <span class="alert-icon">⚠️</span>
+            <p><strong>Obligation de l'employeur :</strong> L'employeur a une obligation de <strong>prévention</strong> (art. L1152-4) et de <strong>sécurité</strong> (art. L4121-1). Même s'il n'est pas l'auteur du harcèlement, il est responsable s'il n'a pas pris les mesures pour l'empêcher ou le faire cesser.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 8: CSE -->
+<section id="cse" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">8</div>
+            <h2 class="section-title">Le rôle du CSE et des représentants du personnel</h2>
+            <p class="section-subtitle">Des interlocuteurs essentiels pour la détection et la protection</p>
+        </div>
+
+        <div class="cse-grid">
+            <div class="cse-card">
+                <div class="cse-icon">🔔</div>
+                <h4>Droit d'alerte</h4>
+                <p>Les élus CSE peuvent exercer un droit d'alerte en cas d'atteinte aux droits des personnes ou en cas de danger grave et imminent.</p>
+            </div>
+            <div class="cse-card">
+                <div class="cse-icon">🔍</div>
+                <h4>Enquête</h4>
+                <p>Le CSE peut diligenter une enquête conjointe avec l'employeur suite à un signalement. Les conclusions s'imposent dans le dossier.</p>
+            </div>
+            <div class="cse-card">
+                <div class="cse-icon">🩺</div>
+                <h4>CSSCT</h4>
+                <p>La Commission Santé, Sécurité et Conditions de Travail analyse les risques psychosociaux et peut proposer des mesures de prévention.</p>
+            </div>
+        </div>
+
+        <div class="alert green" style="margin-top:20px;">
+            <span class="alert-icon">📢</span>
+            <p><strong>Référent harcèlement :</strong> Depuis 2019, chaque CSE désigne un <strong>référent en matière de lutte contre le harcèlement sexuel et les agissements sexistes</strong>. Il est votre interlocuteur privilégié. Dans les entreprises de +250 salariés, l'employeur doit aussi désigner un référent RH.</p>
+        </div>
+
+        <div class="alert amber" style="margin-top:12px;">
+            <span class="alert-icon">📋</span>
+            <p><strong>Enquête interne :</strong> Si l'enquête interne est non probante et ne permet pas d'établir les faits, <strong>le doute doit profiter au salarié</strong> (Cass. soc. 18 juin 2025). L'employeur ne peut pas se retrancher derrière une enquête bâclée pour licencier le salarié.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-info">
+            <p class="org">Force Ouvrière — URSSAF PACA</p>
+            <p>Document d'information syndicale — 2026</p>
+            <p>Sources : Code du travail (L1152-1 à L1152-6, L1154-1, L4121-1) · Code pénal (art. 222-33-2) · Jurisprudence 2025</p>
+        </div>
+        <div class="footer-contact">
+            <p style="font-size:.95rem;font-weight:700;margin-bottom:8px;">Vos délégués syndicaux FO</p>
+            <p style="font-size:.9rem;">👤 Antoine Chessa</p>
+            <p style="font-size:.9rem;">👤 Stéphane Imbert</p>
+            <p style="font-size:.9rem;">👤 Jean-Philippe Musso</p>
+        </div>
+    </div>
+</footer>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

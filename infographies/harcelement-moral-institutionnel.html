@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harcèlement Moral Institutionnel — Guide FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #203A5E;
+            --navy-dark: #172a45;
+            --navy-light: #2c5282;
+            --red: #8B1B1A;
+            --red-dark: #6b1413;
+            --red-light: #fde8e8;
+            --red-muted: #fef2f2;
+            --green: #276749;
+            --green-light: #c6f6d5;
+            --green-bg: #f0fff4;
+            --amber: #92400e;
+            --amber-light: #fef3c7;
+            --amber-bg: #fffbeb;
+            --blue-light: #dbeafe;
+            --blue-bg: #eff6ff;
+            --purple: #553c9a;
+            --purple-light: #e9d8fd;
+            --purple-bg: #faf5ff;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            margin-top: 56px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            color: white;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge.main {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-badge.new {
+            background: white;
+            color: var(--red);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 small {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.42em;
+            font-weight: 500;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            max-width: 680px;
+            line-height: 1.7;
+        }
+
+        /* ========== NAVIGATION ========== */
+        /* ========== NAVIGATION (fixed top) ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(32,58,94,0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .nav-brand em {
+            color: #d4a0a0;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.78em;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.12);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section { padding: 50px 0; }
+        .section:nth-child(even) { background: white; }
+
+        .section-header { margin-bottom: 32px; }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--red);
+            color: white;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-number.navy { background: var(--navy); }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.25;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            max-width: 700px;
+        }
+
+        /* ========== TIMELINE JURISPRUDENCE ========== */
+        .jurisprudence-card {
+            background: white;
+            border: 2px solid var(--red);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 20px;
+        }
+
+        .jurisprudence-card .card-header {
+            background: var(--red);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .jurisprudence-card .card-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .jurisprudence-card .card-header .date-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .jurisprudence-card .card-body {
+            padding: 24px;
+        }
+
+        .jurisprudence-card .card-body p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .jurisprudence-card .card-body p:last-child { margin-bottom: 0; }
+
+        .jurisprudence-card .takeaway {
+            background: var(--amber-bg);
+            border: 1.5px solid #fcd34d;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 16px;
+        }
+
+        .jurisprudence-card .takeaway p {
+            font-size: 0.85rem;
+            color: var(--amber);
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        /* ========== LEGAL QUOTE ========== */
+        .legal-quote {
+            background: var(--navy-dark);
+            color: white;
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin: 28px 0;
+            position: relative;
+        }
+
+        .legal-quote::before {
+            content: '«';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .legal-quote p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-quote .source {
+            display: block;
+            margin-top: 12px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.82rem;
+            opacity: 0.7;
+        }
+
+        /* ========== COMPARISON TABLE ========== */
+        .compare-table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 650px;
+        }
+
+        .compare-table th {
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .compare-table th:first-child { background: var(--text-muted); border-radius: 14px 0 0 0; }
+        .compare-table th:nth-child(2) { background: var(--navy); }
+        .compare-table th:nth-child(3) { background: var(--red); border-radius: 0 14px 0 0; }
+
+        .compare-table td {
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-secondary);
+            background: white;
+        }
+
+        .compare-table td:first-child {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:last-child td:first-child { border-radius: 0 0 0 14px; }
+        .compare-table tr:last-child td:last-child { border-radius: 0 0 14px 0; }
+
+        /* ========== CARDS GRID ========== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        .info-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card p, .info-card li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .info-card ul li {
+            padding: 3px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .info-card ul li::before {
+            content: '→';
+            color: var(--red);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ========== FRANCE TELECOM CASE ========== */
+        .case-study {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139,27,26,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .case-study h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-study p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.75;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 12px;
+        }
+
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .case-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .case-stat {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .case-stat .big {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fca5a5;
+            line-height: 1.2;
+        }
+
+        .case-stat .label {
+            font-size: 0.72rem;
+            opacity: 0.6;
+            margin-top: 4px;
+        }
+
+        /* ========== SIGNAUX FAIBLES ========== */
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .signals-grid { grid-template-columns: 1fr; }
+        }
+
+        .signal-card {
+            background: var(--red-muted);
+            border: 1.5px solid #fecaca;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .signal-card .signal-icon {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .signal-card h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 6px;
+        }
+
+        .signal-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ========== STEPS ========== */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+        }
+
+        .step-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .step-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-dot.navy { background: var(--navy); }
+
+        .step-connector {
+            width: 3px;
+            flex: 1;
+            background: var(--border);
+            margin: 4px 0;
+        }
+
+        .step:last-child .step-connector { display: none; }
+
+        .step-content {
+            padding-bottom: 24px;
+            flex: 1;
+        }
+
+        .step-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ========== ALERT BOXES ========== */
+        .alert {
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .alert.red { background: var(--red-light); border: 1.5px solid #fecaca; }
+        .alert.green { background: var(--green-bg); border: 1.5px solid #86efac; }
+        .alert.amber { background: var(--amber-bg); border: 1.5px solid #fcd34d; }
+        .alert.purple { background: var(--purple-bg); border: 1.5px solid #d6bcfa; }
+
+        .alert .alert-icon { font-size: 1.3rem; flex-shrink: 0; }
+        .alert p { font-size: 0.88rem; line-height: 1.6; }
+        .alert.red p { color: var(--red-dark); }
+        .alert.green p { color: var(--green); }
+        .alert.amber p { color: var(--amber); }
+        .alert.purple p { color: var(--purple); }
+        .alert strong { font-weight: 700; }
+
+        /* ========== GOLDEN RULE ========== */
+        .golden-rule {
+            background: var(--navy-dark);
+            color: white;
+            padding: 20px 0;
+        }
+
+        .golden-rule .container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .golden-rule .gr-icon { font-size: 2rem; flex-shrink: 0; }
+
+        .golden-rule p {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy-dark);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .footer-info .org {
+            font-weight: 700;
+            font-size: 1rem;
+            opacity: 1;
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--red);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        @media print {
+            .nav-bar { display: none; }
+            .section { padding: 30px 0; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div>
+        <div class="nav-links">
+            <a href="#definition" class="nav-link">Définition</a>
+            <a href="#jurisprudence" class="nav-link">Jurisprudence</a>
+            <a href="#france-telecom" class="nav-link">Affaire FT</a>
+            <a href="#comparaison" class="nav-link">Comparaison</a>
+            <a href="#signaux" class="nav-link">Signaux</a>
+            <a href="#responsabilite" class="nav-link">Responsabilités</a>
+            <a href="#agir" class="nav-link">Comment agir</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-badges">
+            <span class="hero-badge main">📋 Guide pratique du salarié</span>
+            <span class="hero-badge new">Nouvelle jurisprudence 2025</span>
+        </div>
+        <h1>
+            Le Harcèlement Moral Institutionnel
+            <small>Quand la politique d'entreprise devient un délit — Comprendre la nouvelle jurisprudence</small>
+        </h1>
+        <p class="hero-subtitle">
+            Depuis janvier 2025, la Cour de cassation reconnaît officiellement le harcèlement moral institutionnel : une politique d'entreprise qui dégrade volontairement les conditions de travail constitue une infraction pénale. Ce guide vous explique cette avancée majeure et ses conséquences concrètes.
+        </p>
+        <div style="margin-top:20px;padding:12px 20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;display:inline-block;font-size:0.95rem;">
+            ✊ <span>Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</span>
+        </div>
+    </div>
+</header>
+
+<!-- GOLDEN RULE -->
+<div class="golden-rule">
+    <div class="container">
+        <span class="gr-icon">🏛️</span>
+        <p>Le harcèlement institutionnel n'est pas un conflit individuel : c'est <strong>l'organisation du travail elle-même</strong> qui est mise en cause. Les élus CSE et les syndicats sont en première ligne pour le détecter et le combattre.</p>
+    </div>
+</div>
+
+<!-- SECTION 1: DEFINITION -->
+<section id="definition" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Qu'est-ce que le harcèlement moral institutionnel ?</h2>
+            <p class="section-subtitle">Une forme systémique de harcèlement, enracinée dans la politique de l'entreprise</p>
+        </div>
+
+        <div class="legal-quote">
+            <p>La mise en œuvre, en connaissance de cause, d'une politique d'entreprise qui a pour objet de dégrader les conditions de travail de tout ou partie des salariés aux fins de parvenir à une réduction des effectifs ou d'atteindre tout autre objectif, qu'il soit managérial, économique ou financier, engage la responsabilité pénale de l'employeur.</p>
+            <span class="source">Cass. crim., 21 janvier 2025, n° 22-87.145 (Affaire France Télécom)</span>
+        </div>
+
+        <div class="cards-grid">
+            <div class="info-card">
+                <h4>📌 Ce qui le caractérise</h4>
+                <p>Contrairement au harcèlement classique (un individu contre un autre), le harcèlement institutionnel résulte d'une <strong>stratégie d'organisation du travail</strong> décidée par la direction :</p>
+                <ul>
+                    <li>Il émane d'une <strong>politique d'entreprise délibérée</strong></li>
+                    <li>Il affecte <strong>un collectif de salariés</strong>, pas seulement un individu</li>
+                    <li>Il ne nécessite <strong>pas de lien direct</strong> entre l'auteur et les victimes</li>
+                    <li>Les victimes n'ont <strong>pas besoin d'être individuellement identifiées</strong></li>
+                    <li>C'est <strong>l'organisation du travail elle-même</strong> qui est toxique</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>🔑 Ce qui le différencie</h4>
+                <p>Le harcèlement institutionnel ne relève pas d'un <strong>dysfonctionnement ponctuel</strong> ni de la <strong>dérive isolée d'un manager</strong>. C'est une logique organisationnelle déshumanisante où les pratiques managériales deviennent elles-mêmes vecteurs de souffrance au travail.</p>
+                <ul>
+                    <li><strong>Structurel</strong>, pas interpersonnel</li>
+                    <li><strong>Délibéré</strong> ou maintenu en connaissance de cause</li>
+                    <li>Poursuit un <strong>objectif économique ou managérial</strong></li>
+                    <li>Se traduit par des <strong>décisions de gouvernance</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 2: JURISPRUDENCE -->
+<section id="jurisprudence" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Les décisions fondatrices</h2>
+            <p class="section-subtitle">Une construction jurisprudentielle en deux temps majeurs</p>
+        </div>
+
+        <div class="jurisprudence-card">
+            <div class="card-header">
+                <h3>Cass. crim., 21 janvier 2025, n° 22-87.145 (Affaire France Télécom)</h3>
+                <span class="date-badge">21/01/2025</span>
+            </div>
+            <div class="card-body">
+                <p><strong>L'arrêt fondateur.</strong> Pour la première fois, la Cour de cassation consacre la notion de « harcèlement moral institutionnel » et confirme la condamnation pénale des anciens dirigeants de France Télécom.</p>
+                <p>La Cour juge que l'article 222-33-2 du Code pénal <strong>n'exige pas</strong> que les agissements s'exercent à l'égard d'une victime déterminée, ni qu'ils résultent d'une relation interpersonnelle directe. Le terme « autrui » peut s'entendre comme <strong>un collectif de salariés non identifiés</strong>, pourvu qu'ils appartiennent à la même communauté de travail.</p>
+                <p>La Cour précise que la loi permet de réprimer les agissements répétés s'inscrivant dans le cadre d'une <strong>« politique d'entreprise »</strong>, constituée par l'ensemble des décisions prises par les dirigeants.</p>
+                <div class="takeaway">
+                    <p>💡 À retenir : Une politique d'entreprise dégradant délibérément les conditions de travail est un délit pénal, même sans victime individuellement identifiée.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="jurisprudence-card" style="border-color: var(--navy);">
+            <div class="card-header" style="background: var(--navy);">
+                <h3>Cass. soc., 10 décembre 2025, n° 24-15.412 (Pronovias France)</h3>
+                <span class="date-badge">10/12/2025</span>
+            </div>
+            <div class="card-body">
+                <p><strong>Le prolongement en droit social.</strong> La chambre sociale confirme que les <strong>méthodes de gestion au sein d'une entreprise</strong> peuvent caractériser un harcèlement moral sans qu'il soit nécessaire pour le salarié de démontrer qu'il a été <strong>personnellement visé</strong>.</p>
+                <p>Dans cette affaire, plusieurs salariées d'une boutique avaient dénoncé des pressions pour démissionner, du chantage, des humiliations et un climat anxiogène. La Cour approuve la cour d'appel qui a reconnu le harcèlement sur la base du management général, sans exiger de faits ciblés.</p>
+                <p>L'arrêt consacre aussi la <strong>nullité du licenciement</strong> fondé sur des informations obtenues en violation du secret médical (contact direct avec le médecin traitant).</p>
+                <div class="takeaway">
+                    <p>💡 À retenir : Le harcèlement managérial « systémique » est désormais reconnu devant les Prud'hommes. Un salarié peut obtenir réparation sans prouver avoir été personnellement ciblé.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: FRANCE TELECOM -->
+<section id="france-telecom" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number navy">3</div>
+            <h2 class="section-title">L'affaire France Télécom : le précédent fondateur</h2>
+            <p class="section-subtitle">La crise qui a conduit à la reconnaissance du harcèlement moral institutionnel</p>
+        </div>
+
+        <div class="case-study">
+            <h3>📡 France Télécom (devenue Orange) — 2006 à 2009</h3>
+            <p>À partir de 2006, les dirigeants de France Télécom ont mis en place des plans de restructuration massifs visant le départ de 22 000 salariés et la mobilité forcée de 10 000 agents, touchant un quart des effectifs. Les méthodes employées — mutations arbitraires, pression hiérarchique constante, climat anxiogène, isolement des salariés — ont créé une souffrance collective sans précédent.</p>
+            <p>La Cour de cassation a confirmé que ces dirigeants avaient excédé « très largement le pouvoir normal de direction et de contrôle du chef d'entreprise », et que la politique menée, poursuivant un objectif de réduction d'effectifs sans recourir au licenciement économique, constituait un harcèlement moral institutionnel.</p>
+
+            <div class="case-stats">
+                <div class="case-stat">
+                    <div class="big">22 000</div>
+                    <div class="label">départs visés sur 3 ans</div>
+                </div>
+                <div class="case-stat">
+                    <div class="big">19</div>
+                    <div class="label">suicides</div>
+                </div>
+                <div class="case-stat">
+                    <div class="big">12</div>
+                    <div class="label">tentatives de suicide</div>
+                </div>
+                <div class="case-stat">
+                    <div class="big">15 ans</div>
+                    <div class="label">de procédure judiciaire</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: COMPARAISON -->
+<section id="comparaison" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">4</div>
+            <h2 class="section-title">Classique vs Institutionnel : les différences</h2>
+            <p class="section-subtitle">Deux formes de harcèlement moral, des mécanismes distincts</p>
+        </div>
+
+        <div class="compare-table-wrapper">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Harcèlement classique</th>
+                        <th>Harcèlement institutionnel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Origine</td>
+                        <td>Comportement d'un individu (manager, collègue)</td>
+                        <td>Politique d'entreprise, stratégie de direction</td>
+                    </tr>
+                    <tr>
+                        <td>Relation auteur/victime</td>
+                        <td>Relation directe et identifiable</td>
+                        <td>Pas de lien direct requis</td>
+                    </tr>
+                    <tr>
+                        <td>Victimes</td>
+                        <td>Un salarié déterminé (ou quelques-uns)</td>
+                        <td>Un collectif, une communauté de travail</td>
+                    </tr>
+                    <tr>
+                        <td>Objectif</td>
+                        <td>Variable (pouvoir, jalousie, élimination…)</td>
+                        <td>Économique, managérial ou financier</td>
+                    </tr>
+                    <tr>
+                        <td>Mécanisme</td>
+                        <td>Agissements personnels répétés</td>
+                        <td>Décisions de gouvernance et d'organisation</td>
+                    </tr>
+                    <tr>
+                        <td>Responsabilité</td>
+                        <td>L'auteur individuel + l'employeur (obligation de sécurité)</td>
+                        <td>Les dirigeants personnellement + les complices</td>
+                    </tr>
+                    <tr>
+                        <td>Terrain juridique</td>
+                        <td>Prud'hommes (civil) et/ou Correctionnel (pénal)</td>
+                        <td>Correctionnel (pénal) principalement, et Prud'hommes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert purple" style="margin-top:20px;">
+            <span class="alert-icon">🔗</span>
+            <p><strong>Les deux formes peuvent coexister.</strong> Le harcèlement institutionnel peut engendrer des harcèlements managériaux individuels. Un manager qui applique une politique d'entreprise toxique peut lui-même être reconnu comme auteur (ou complice) de harcèlement moral.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: SIGNAUX -->
+<section id="signaux" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">5</div>
+            <h2 class="section-title">Signaux d'alerte : reconnaître le harcèlement institutionnel</h2>
+            <p class="section-subtitle">Des indices à repérer collectivement, notamment par les élus CSE et les syndicats</p>
+        </div>
+
+        <div class="signals-grid">
+            <div class="signal-card">
+                <div class="signal-icon">📊</div>
+                <h4>Objectifs irréalistes généralisés</h4>
+                <p>Des objectifs individuels ou collectifs volontairement inatteignables, créant un stress permanent et un sentiment d'échec systématique.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🔄</div>
+                <h4>Réorganisations à répétition</h4>
+                <p>Des restructurations incessantes sans concertation, des mobilités forcées, des changements de poste imposés sans justification.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">📈</div>
+                <h4>Explosion de l'absentéisme</h4>
+                <p>Une hausse significative des arrêts maladie, surtout pour motif psychologique (burn-out, dépression, anxiété) sur un service ou un site.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🚪</div>
+                <h4>Pression au départ</h4>
+                <p>Des incitations non formalisées au départ « volontaire », des démissions suspectes en série, des placardisations multiples.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🔇</div>
+                <h4>Climat de peur généralisé</h4>
+                <p>Les salariés n'osent plus s'exprimer, les alertes syndicales sont ignorées ou minimisées, la parole est confisquée.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">⚙️</div>
+                <h4>Dégradation des conditions de travail</h4>
+                <p>Suppression de moyens, surcharge systématique, perte de sens, absence de reconnaissance, surveillance excessive.</p>
+            </div>
+        </div>
+
+        <div class="alert amber" style="margin-top:20px;">
+            <span class="alert-icon">💡</span>
+            <p><strong>Rôle clé des élus :</strong> Les CSE et CSSCT doivent être associés aux audits RH, aux enquêtes internes et à l'élaboration de protocoles d'alerte. L'intégration de dispositifs de protection des lanceurs d'alerte et de formations sur les risques psychosociaux est essentielle.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 6: RESPONSABILITE -->
+<section id="responsabilite" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">6</div>
+            <h2 class="section-title">Responsabilités pénales et civiles</h2>
+            <p class="section-subtitle">Les dirigeants sont personnellement responsables de leurs choix managériaux</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="info-card" style="border-color:#fecaca;">
+                <h4>⚖️ Responsabilité pénale des dirigeants</h4>
+                <p>Les dirigeants qui instaurent ou maintiennent <strong>sciemment</strong> une politique ayant des effets délétères sur les salariés engagent leur responsabilité pénale personnelle.</p>
+                <ul>
+                    <li><strong>2 ans d'emprisonnement</strong> et <strong>30 000 € d'amende</strong> (art. 222-33-2 C. pénal)</li>
+                    <li>Pas besoin de relation directe avec les victimes</li>
+                    <li>Il suffit d'avoir <strong>connaissance des effets négatifs</strong></li>
+                    <li>Le dépassement du pouvoir normal de direction suffit</li>
+                </ul>
+            </div>
+            <div class="info-card" style="border-color:#fecaca;">
+                <h4>👥 Responsabilité des complices</h4>
+                <p>Les <strong>cadres intermédiaires</strong> et anciens dirigeants ayant participé à la mise en œuvre de la politique peuvent être poursuivis comme complices.</p>
+                <ul>
+                    <li><strong>Un seul acte</strong> de complicité suffit (aide, assistance matérielle ou intellectuelle)</li>
+                    <li>Même des personnes ayant <strong>quitté l'entreprise</strong></li>
+                    <li>Avoir appliqué des directives délétères <strong>en connaissance de cause</strong></li>
+                    <li>L'élément intentionnel : savoir que la politique dégrade les conditions de travail</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>🏢 Responsabilité de l'entreprise</h4>
+                <p>La personne morale (l'entreprise elle-même) peut aussi être poursuivie et condamnée pénalement pour harcèlement moral institutionnel.</p>
+                <ul>
+                    <li>Amende multipliée par 5 pour les personnes morales (150 000 €)</li>
+                    <li>Obligation de sécurité (art. L4121-1 Code du travail)</li>
+                    <li>Responsabilité civile pour le préjudice subi par les salariés</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>🛡️ Ce que ça change pour les salariés</h4>
+                <p>La reconnaissance du harcèlement institutionnel <strong>renforce la protection</strong> des salariés :</p>
+                <ul>
+                    <li>Pas besoin de prouver avoir été <strong>personnellement visé</strong></li>
+                    <li>L'action peut être <strong>collective</strong> (syndicats, CSE)</li>
+                    <li>Les <strong>décideurs au sommet</strong> sont responsables, pas seulement les exécutants</li>
+                    <li><strong>Nullité</strong> du licenciement lié au harcèlement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: AGIR -->
+<section id="agir" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number navy">7</div>
+            <h2 class="section-title">Comment agir face au harcèlement institutionnel ?</h2>
+            <p class="section-subtitle">Des leviers individuels et collectifs complémentaires</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot navy">1</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Documenter collectivement</h4>
+                    <p>Rassemblez les preuves à plusieurs : courriels, notes internes, témoignages croisés, statistiques d'absentéisme, rapports d'expertise, PV de CSE. Le caractère collectif renforce considérablement le dossier.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">2</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Alerter le CSE et les syndicats</h4>
+                    <p><strong>FO est là pour vous accompagner.</strong> Les élus CSE peuvent exercer leur droit d'alerte, demander une expertise risques psychosociaux, et interpeller l'employeur formellement.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">3</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Demander une expertise CSSCT</h4>
+                    <p>Le CSE peut mandater un cabinet d'expertise agréé pour évaluer les risques psychosociaux et objectiver les conditions de travail dégradées. Le coût est à la charge de l'employeur.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot navy">4</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Saisir l'inspection du travail</h4>
+                    <p>L'inspecteur du travail peut constater les infractions à l'obligation de sécurité et transmettre au Procureur de la République s'il estime que les faits relèvent du harcèlement institutionnel.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-line">
+                    <div class="step-dot">5</div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h4>Action en justice</h4>
+                    <p><strong>Action civile (Prud'hommes) :</strong> individuelle ou collective, pour obtenir réparation des préjudices et nullité des mesures prises en lien avec le harcèlement.<br>
+                    <strong>Plainte pénale :</strong> déposée par les salariés, le syndicat ou le CSE, pour faire sanctionner les dirigeants responsables. C'est la voie empruntée dans l'affaire France Télécom.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert red">
+            <span class="alert-icon">⚠️</span>
+            <p><strong>N'oubliez pas :</strong> la restructuration d'une entreprise n'est pas en soi illégale. Ce qui est sanctionné, c'est la <strong>méthode</strong> : dès lors qu'elle excède le pouvoir normal de direction et porte atteinte à la santé et à la dignité des salariés, elle constitue un harcèlement moral institutionnel.</p>
+        </div>
+
+        <div class="alert green">
+            <span class="alert-icon">✅</span>
+            <p><strong>Les syndicats peuvent agir en justice</strong> au nom de l'intérêt collectif de la profession (art. L2132-3 Code du travail). C'est une fédération syndicale qui a déposé la plainte dans l'affaire France Télécom. FO peut vous défendre et porter la cause devant les tribunaux.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-info">
+            <p class="org">Force Ouvrière — URSSAF PACA</p>
+            <p>Document d'information syndicale — 2026</p>
+            <p>Sources : Code pénal (art. 222-33-2) · Code du travail (L1152-1 à L1152-6, L4121-1)</p>
+            <p>Jurisprudence : Cass. crim. 21/01/2025 n°22-87.145 · Cass. soc. 10/12/2025 n°24-15.412</p>
+        </div>
+        <div class="footer-contact">
+            <p style="font-size:.95rem;font-weight:700;margin-bottom:8px;">Vos délégués syndicaux FO</p>
+            <p style="font-size:.9rem;">👤 Antoine Chessa</p>
+            <p style="font-size:.9rem;">👤 Stéphane Imbert</p>
+            <p style="font-size:.9rem;">👤 Jean-Philippe Musso</p>
+        </div>
+    </div>
+</footer>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
