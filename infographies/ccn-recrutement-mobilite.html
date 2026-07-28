@@ -17,11 +17,11 @@
 
         .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
 
-        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;display:flex;align-items:flex-start;gap:8px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);flex-shrink:0}
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;padding-left:20px;text-indent:-20px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);margin-right:8px}
         .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
         .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
         .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.teal{background:var(--teal-bg);border-color:var(--teal-light)}.def-card.teal h3{color:var(--teal)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
-        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.def-card ul li::before{content:'→';font-weight:600}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);padding-left:20px;text-indent:-20px}.def-card ul li::before{content:'→';font-weight:600;margin-right:8px}
 
         .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}
 
@@ -56,20 +56,27 @@
 </div></section>
 
 <!-- SECTION 2 : PÉRIODE D'ESSAI -->
-<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">La période d'essai</h2><p class="section-subtitle">La période d'essai permet à l'employeur et au salarié d'évaluer si le poste convient. Ses durées sont fixées par la convention collective.</p></div>
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">La période d'essai</h2><p class="section-subtitle">La convention collective ne fixe pas de durée de période d'essai à l'embauche : ce sont les durées maximales du Code du travail qui s'appliquent.</p></div>
 
 <table class="styled-table">
-    <thead><tr><th>Catégorie</th><th>Durée initiale</th><th>Renouvellement</th><th>Durée maximale totale</th></tr></thead>
+    <thead><tr><th>Catégorie</th><th>Durée maximale initiale</th><th>Maximum avec renouvellement</th></tr></thead>
     <tbody>
-        <tr><td><strong>Employés</strong> (niveaux 1 à 4A)</td><td class="hl">3 mois</td><td>1 fois</td><td class="hl">6 mois</td></tr>
-        <tr><td><strong>Cadres</strong> (niveaux 4B et supérieurs)</td><td class="hl">4 mois</td><td>1 fois</td><td class="hl">8 mois</td></tr>
+        <tr><td><strong>Employés</strong> (niveaux 1 à 4B)</td><td class="hl">2 mois</td><td class="hl">4 mois</td></tr>
+        <tr><td><strong>Cadres</strong> (à partir du niveau 5A)</td><td class="hl">4 mois</td><td class="hl">8 mois</td></tr>
     </tbody>
 </table>
+<p style="font-size:.82rem;color:var(--text-muted);margin-top:-12px">Code du travail, articles L. 1221-19 et L. 1221-21.</p>
+
+<div class="info-box blue"><div class="icon">🎯</div><div><h4>Employé ou cadre ?</h4><p>Depuis le <strong>protocole d'accord du 22 novembre 2024</strong> relatif à la classification, le statut de cadre s'acquiert <strong>à partir du niveau 5A</strong> pour le personnel administratif. Les <strong>niveaux 1 à 4B</strong> ne relèvent donc pas du statut cadre. <em>(Seuils spécifiques : niveau 5E pour le personnel soignant, IVA pour l'informatique ; tous les niveaux pour les ingénieurs-conseils.)</em></p></div></div>
+
+<div class="info-box amber"><div class="icon">🔁</div><div><h4>Le renouvellement n'a rien d'automatique</h4><p>Le renouvellement n'est possible <strong>qu'une seule fois</strong>, et à <strong>deux conditions cumulatives</strong> : il doit être prévu par un accord de branche étendu <strong>et</strong> stipulé expressément dans votre contrat de travail ou votre lettre d'engagement. À défaut, la période d'essai <strong>ne peut pas être renouvelée</strong>. Vérifiez ce que dit votre contrat.</p></div></div>
 
 <div class="def-grid">
     <div class="def-card amber"><h3>⚠️ Rupture pendant l'essai</h3><ul><li>Possible par l'une ou l'autre des parties</li><li><strong>Délai de prévenance</strong> à respecter par l'employeur (proportionnel au temps de présence)</li><li>Pas d'indemnité de licenciement</li><li>Le renouvellement doit être <strong>expressément prévu</strong> au contrat</li></ul></div>
-    <div class="def-card green"><h3>✅ Ce qui compte dans l'essai</h3><ul><li>Les absences pour maladie <strong>suspendent</strong> la période d'essai (prolongation d'autant)</li><li>L'ancienneté est comptée <strong>dès le 1er jour</strong> si l'essai est concluant</li><li>En cas de changement d'organisme, la période d'essai peut être réduite ou supprimée</li></ul></div>
+    <div class="def-card green"><h3>✅ Ce qui compte dans l'essai</h3><ul><li>Les absences pour maladie <strong>suspendent</strong> la période d'essai (elle est prolongée d'autant)</li><li>L'ancienneté est comptée <strong>dès le 1er jour</strong> si l'essai est concluant</li><li>La <strong>titularisation</strong> intervient au plus tard après 6 mois de présence effective <em>(CCN, art. 17)</em></li></ul></div>
 </div>
+
+<div class="alert-box"><h4>⚠️ Ne pas confondre avec le stage probatoire</h4><p>La convention collective ne fixe pas la période d'essai à l'embauche, mais elle prévoit un <strong>stage probatoire</strong> dans deux situations bien distinctes : en cas de <strong>changement d'organisme</strong> (art. 16 — 2 mois maximum pour les employés, 3 mois pour les cadres) et en cas de <strong>promotion</strong> (art. 37 — 3 mois pour les employés, exceptionnellement renouvelable une fois, 6 mois pour les cadres). À l'issue du stage, l'agent est confirmé dans son nouveau poste ou réintégré dans son emploi précédent.</p></div>
 
 </div></section>
 
