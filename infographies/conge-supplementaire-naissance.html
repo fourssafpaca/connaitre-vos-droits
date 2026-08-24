@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congé supplémentaire de naissance — FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--pink:#9d174d;--pink-light:#fce7f3;--pink-bg:#fdf2f8;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(32,58,94,.97);backdrop-filter:blur(12px);padding:0 20px;box-shadow:0 2px 20px rgba(0,0,0,.15)}.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}.nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1em;font-weight:700}.nav-brand em{color:#d4a0a0;font-style:italic}.nav-links{display:flex;gap:4px}.nav-top-link{color:rgba(255,255,255,.7);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}.nav-top-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+
+        .hero{margin-top:56px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 100%);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,27,26,.15) 0%,transparent 70%);border-radius:50%}.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;background:var(--red);color:#fff;padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}.hero h1 span{color:rgba(255,255,255,.6);display:block;font-family:'DM Sans',sans-serif;font-size:.42em;font-weight:500;margin-top:10px}.hero-subtitle{font-size:1.1rem;opacity:.85;max-width:650px;line-height:1.7}.hero-fo{margin-top:20px;padding:12px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;display:inline-block;font-size:.95rem}
+
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;padding-left:20px;text-indent:-20px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);margin-right:8px}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.pink{background:var(--pink-bg);border-color:var(--pink-light)}.def-card.pink h3{color:var(--pink)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);padding-left:20px;text-indent:-20px}.def-card ul li::before{content:'→';font-weight:600;margin-right:8px}
+
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}.key-num.green .value{color:var(--green)}
+
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.pink{background:var(--pink-bg);border:1.5px solid var(--pink-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        .steps{counter-reset:step;margin:24px 0}.step{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1.5px solid var(--border)}.step:last-child{border-bottom:none}.step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}.step-num.red{background:var(--red)}.step-num.green{background:var(--green)}.step-body h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:3px}.step-body p{font-size:.9rem;color:var(--text-secondary);line-height:1.6}
+
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#s1" class="nav-top-link">Essentiel</a><a href="#s2" class="nav-top-link">Qui</a><a href="#s3" class="nav-top-link">L'ordre</a><a href="#s4" class="nav-top-link">Durée</a><a href="#s5" class="nav-top-link">Délais</a><a href="#s6" class="nav-top-link">Demande</a><a href="#s7" class="nav-top-link">Indemnités</a><a href="#s8" class="nav-top-link">Garanties</a><a href="#s9" class="nav-top-link">Position FO</a></div></div></nav>
+
+<div class="hero"><div class="container hero-content"><div class="hero-badge">⚖️ Droits &amp; procédures</div><h1>Le congé supplémentaire de naissance<span>1 ou 2 mois de plus, pour chacun des deux parents — ouvert depuis le 1er juillet 2026</span></h1><p class="hero-subtitle">Créé par la loi de financement de la Sécurité sociale pour 2026, ce nouveau congé s'ajoute à vos congés de maternité, de paternité et d'accueil de l'enfant, ou d'adoption. Il est indemnisé par la CPAM. À l'URSSAF, une règle d'ordre de prise conditionne tout : la connaître, c'est éviter de perdre un congé conventionnel.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
+
+<div class="golden-rule"><span class="gr-icon">⚠️</span><p><strong>L'ordre compte.</strong> Demandez votre congé supplémentaire de naissance <strong>après</strong> votre congé conventionnel de l'article 46 de la convention collective — pas à la sortie du congé légal. <strong>Un doute ? Contactez vos délégués FO avant de déposer votre demande.</strong></p></div>
+
+<!-- SECTION 1 : L'ESSENTIEL -->
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">L'essentiel en un coup d'œil</h2><p class="section-subtitle">Un congé nouveau, distinct de tous ceux que vous connaissez déjà. Il ne remplace rien : il s'ajoute.</p></div>
+
+<div class="key-numbers">
+    <div class="key-num"><div class="value">1 ou 2</div><div class="label">mois, au choix<br>par parent</div></div>
+    <div class="key-num red"><div class="value">4 mois</div><div class="label">au total possible<br>à deux parents</div></div>
+    <div class="key-num green"><div class="value">70 / 60 %</div><div class="label">du salaire net<br>1er mois / 2e mois</div></div>
+    <div class="key-num"><div class="value">9 mois</div><div class="label">pour démarrer<br>après la naissance</div></div>
+</div>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>📖 D'où vient ce congé</h3><ul><li><strong>Loi n° 2025-1403 du 30 décembre 2025</strong> (LFSS 2026)</li><li>Décrets <strong>n° 2026-419</strong> et <strong>n° 2026-425 du 30 mai 2026</strong> (JO du 31 mai 2026)</li><li>Code du travail, <strong>articles L. 1225-46-2 à L. 1225-46-7</strong></li><li>Ouvert <strong>depuis le 1er juillet 2026</strong></li></ul></div>
+    <div class="def-card amber"><h3>🚫 À ne pas confondre</h3><ul><li>Ce n'est <strong>pas</strong> le congé de naissance de 3 jours — celui-ci existe toujours, indépendamment</li><li>Ce n'est <strong>pas</strong> le congé parental d'éducation</li><li>Ce n'est <strong>pas</strong> le congé supplémentaire de l'article 46 de la convention collective</li><li>Il <strong>s'ajoute</strong> à vos droits existants, il ne s'y substitue pas</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">💡</div><div><h4>Vous avez eu un enfant depuis janvier 2026 ?</h4><p>Le congé vous est ouvert. Et si votre enfant est né <strong>entre le 1er janvier et le 30 juin 2026</strong>, vous avez jusqu'au <strong>31 mars 2027</strong> pour démarrer — le compte à rebours a commencé.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 2 : QUI -->
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Qui peut en bénéficier</h2><p class="section-subtitle">Les deux parents, sans distinction — c'est l'une des nouveautés du dispositif.</p></div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>👨‍👩‍👧 Les personnes concernées</h3><ul><li>La <strong>mère</strong></li><li>Le <strong>père</strong></li><li>Le <strong>conjoint, partenaire de PACS ou concubin</strong> de la mère</li><li>Les parents qui <strong>adoptent</strong> un enfant</li><li>Les <strong>travailleurs handicapés en ESAT</strong> et les <strong>stagiaires de la formation professionnelle</strong> (décret n° 2026-425)</li></ul></div>
+    <div class="def-card purple"><h3>👶 Les enfants concernés</h3><ul><li>Enfants <strong>nés ou adoptés à partir du 1er janvier 2026</strong></li><li>Enfants <strong>nés avant cette date</strong> mais dont la naissance <strong>était censée intervenir</strong> à compter du 1er janvier 2026 (naissances prématurées)</li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Une condition : avoir épuisé son congé de maternité, de paternité ou d'adoption</h4><p>Vous devez avoir <strong>pris</strong> votre congé de maternité, de paternité et d'accueil de l'enfant ou d'adoption, et être <strong>arrivé à son terme</strong>. Ce n'est qu'ensuite que le congé supplémentaire de naissance s'ouvre <em>(art. L. 1225-46-2, al. 1)</em>.</p></div></div>
+
+<div class="info-box green"><div class="icon">✅</div><div><h4>Sauf si vous n'y aviez pas droit</h4><p>Cette condition <strong>ne s'applique pas</strong> si vous n'avez pas exercé ce droit <strong>faute d'en remplir les conditions d'ouverture</strong> <em>(art. L. 1225-46-2, al. 2)</em>. Ne renoncez donc pas au congé supplémentaire au motif que vous n'aviez pas droit au congé de paternité ou de maternité.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 3 : L'ORDRE DE PRISE -->
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number red">3</div><h2 class="section-title">⚠️ Le piège à éviter à l'URSSAF : l'ordre de prise</h2><p class="section-subtitle">C'est le point le plus important de cette fiche. Il ne concerne que les salariés de la Sécurité sociale, et il ne figure dans aucune information générale sur le sujet.</p></div>
+
+<div class="alert-box"><h4>Demander le congé supplémentaire de naissance trop tôt vous fait perdre le congé supplémentaire de l'article 46</h4><p>Le congé de maternité supplémentaire de l'<strong>article 46</strong> de la convention collective du 8 février 1957 doit être <strong>impérativement accolé</strong> au congé légal de maternité de l'<strong>article 45</strong>. Si vous intercalez le congé supplémentaire de naissance entre les deux, l'accolement est rompu — et le bénéfice de l'article 46 est perdu.</p></div>
+
+<div class="card" style="margin:24px 0">
+    <div class="card-title">✅ La bonne séquence</div>
+    <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Congé légal de maternité — article 45</h4><p>16, 26, 34 ou 46 semaines selon votre situation, à plein traitement.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Congé supplémentaire conventionnel — article 46</h4><p>3 mois à demi-traitement, ou 1 mois et demi à plein traitement, à votre choix. <strong>Accolé au précédent, sans interruption.</strong></p></div></div>
+        <div class="step"><div class="step-num green">3</div><div class="step-body"><h4>Congé supplémentaire de naissance</h4><p>1 ou 2 mois, indemnisés par la CPAM. <strong>C'est seulement maintenant qu'il faut le demander.</strong></p></div></div>
+    </div>
+    <p style="font-size:.9rem;color:var(--text-secondary);margin-top:8px">La même règle vaut pour le <strong>congé d'adoption (article 46 bis)</strong> et le <strong>congé de paternité (article 46 ter)</strong> : ils doivent être pris <strong>avant</strong> le congé supplémentaire de naissance.</p>
+</div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>🎁 Bonne nouvelle n° 1 — vous avez plus de temps</h3><ul><li>Le délai de 9 mois pour démarrer est <strong>prolongé de la durée de votre congé conventionnel</strong></li><li><strong>Exemple</strong> : 3 mois de congé conventionnel → <strong>12 mois</strong> (9 + 3) pour débuter votre congé supplémentaire de naissance</li></ul></div>
+    <div class="def-card green"><h3>🎁 Bonne nouvelle n° 2 — votre indemnité n'est pas rabotée</h3><ul><li>Le congé de l'article 46 à demi-traitement est une <strong>absence autorisée par l'employeur</strong>, équivalant à un rétablissement de salaire</li><li>Votre indemnité journalière est donc calculée <strong>sur le salaire plein</strong>, et non sur le demi-traitement</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">📌</div><div><h4>D'où vient cette règle</h4><p>C'est la lecture retenue par l'<strong>UCANSS</strong> dans la note technique annexée à sa lettre circulaire du 30 juin 2026 — donc <strong>la position que la direction appliquera</strong>. Avant de poser votre demande, <strong>faites-la confirmer par écrit par votre service RH</strong>, et prévenez vos délégués FO.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 4 : DURÉE -->
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Durée, fractionnement, et le congé à deux</h2><p class="section-subtitle">C'est vous qui choisissez la durée, et vous pouvez la couper en deux.</p></div>
+
+<div class="tri-grid">
+    <div class="def-card blue"><h3>⏱️ 1 ou 2 mois</h3><ul><li>Le <strong>choix de la durée appartient au salarié</strong></li><li>L'employeur ne choisit pas à votre place</li></ul></div>
+    <div class="def-card purple"><h3>✂️ Fractionnable</h3><ul><li>Le congé peut être fractionné en <strong>2 périodes d'un mois</strong> chacune</li><li><em>Art. L. 1225-46-2, al. 4</em></li></ul></div>
+    <div class="def-card pink"><h3>👫 Jusqu'à 4 mois à deux</h3><ul><li>Chaque parent peut le prendre <strong>simultanément ou en alternance</strong> avec l'autre</li><li>Soit jusqu'à <strong>4 mois de présence parentale</strong> après les congés maternité, paternité et adoption</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 5 : DÉLAIS -->
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number">5</div><h2 class="section-title">Quand le prendre — le compte à rebours de 9 mois</h2><p class="section-subtitle">Le congé n'est pas ouvert indéfiniment. Passé le délai, le droit est perdu.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Votre situation</th><th>Le congé doit débuter…</th><th>Date limite</th></tr></thead>
+    <tbody>
+        <tr><td>Enfant né ou arrivé au foyer <strong>à partir du 1er juillet 2026</strong></td><td>dans les <strong>9 mois</strong> suivant la naissance ou l'arrivée au foyer</td><td class="hl">naissance + 9 mois</td></tr>
+        <tr><td>Enfant né ou arrivé au foyer <strong>entre le 1er janvier et le 30 juin 2026</strong><br><span style="font-size:.85rem;color:var(--text-muted)">y compris naissances prématurées dont le terme était prévu à partir du 1er janvier 2026</span></td><td>dans les <strong>9 mois</strong> à compter du <strong>1er juillet 2026</strong></td><td class="hl">31 mars 2027</td></tr>
+    </tbody>
+</table>
+
+<div class="info-box green"><div class="icon">➕</div><div><h4>Le délai est prolongé si votre congé a été allongé</h4><p>Quand la durée du congé de maternité, de paternité ou d'adoption est augmentée — report d'une partie du congé prénatal sur le postnatal, naissances multiples, naissance à partir du 3e enfant, accouchement prématuré, congé pathologique, hospitalisation de l'enfant <em>(art. L. 1225-17 à L. 1225-22)</em> — <strong>ou par une convention ou un accord collectif</strong>, le délai de 9 mois est prolongé dans les mêmes proportions.</p></div></div>
+
+<div class="info-box blue"><div class="icon">🏛️</div><div><h4>À l'URSSAF, cela vous concerne directement</h4><p>L'article 46 de la convention collective allonge la durée du congé de maternité : votre délai de 9 mois est donc <strong>augmenté de la durée de votre congé conventionnel</strong>. Avec 3 mois de congé conventionnel, vous disposez de <strong>12 mois</strong> à compter de la naissance.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 6 : DEMANDE -->
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number">6</div><h2 class="section-title">Comment le demander</h2><p class="section-subtitle">Un formalisme précis, et un délai à respecter. L'employeur, lui, ne peut pas dire non.</p></div>
+
+<div class="card" style="margin-bottom:20px">
+    <div class="card-title">📮 La forme de la demande</div>
+    <ul>
+        <li><strong>Lettre recommandée avec avis de réception</strong>, ou <strong>remise contre récépissé</strong> — pas de mail, pas d'oral <em>(art. L. 1225-46-2 et D. 1225-11-4)</em></li>
+        <li>Indiquez la <strong>durée</strong> choisie, l'<strong>éventuel fractionnement</strong> et la <strong>date de prise</strong></li>
+        <li><strong>Gardez une copie</strong> et l'accusé de réception</li>
+    </ul>
+</div>
+
+<table class="styled-table">
+    <thead><tr><th>Situation</th><th>Délai de prévenance</th></tr></thead>
+    <tbody>
+        <tr><td>Cas général</td><td class="hl">1 mois avant le début du congé</td></tr>
+        <tr><td>Le congé <strong>suit immédiatement</strong> le congé de paternité ou d'adoption, <strong>et</strong> débute dans le mois suivant la naissance ou l'arrivée de l'enfant</td><td class="hl">15 jours</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ L'employeur ne peut pas refuser</h3><ul><li>Le refus n'est possible <strong>que</strong> si vous ne remplissez pas les conditions — c'est-à-dire si vous n'avez pas épuisé votre congé de maternité, de paternité ou d'adoption</li><li>Aucun motif d'organisation du service ne peut vous être opposé</li></ul></div>
+    <div class="def-card blue"><h3>🔁 Vous changez d'employeur ?</h3><ul><li>Si vous n'avez pas épuisé vos droits, informez votre <strong>nouvel employeur</strong> de la date de prise de la période restante</li><li><strong>Mêmes délais, mêmes formes</strong></li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">🔎</div><div><h4>Vérifiez que votre employeur a bien fait sa part — c'est elle qui déclenche votre paiement</h4><p>En 2026, c'est <strong>l'employeur</strong> qui adresse la demande d'ouverture des droits à votre CPAM, via un formulaire spécifique du « compte entreprise », mentionnant la <strong>date de votre dernier jour travaillé</strong> et accompagné de l'<strong>extrait d'acte de naissance</strong> de l'enfant. À partir d'<strong>octobre 2026</strong>, la déclaration pourra passer par la DSN. <strong>Si la démarche n'est pas faite, vous n'êtes pas indemnisé.</strong> Réclamez-en la confirmation écrite, et alertez vos délégués FO en cas de silence.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 7 : INDEMNISATION -->
+<section class="section" id="s7"><div class="container"><div class="section-header"><div class="section-number">7</div><h2 class="section-title">Combien vous touchez — et ce que le congé vous coûte</h2><p class="section-subtitle">C'est la Sécurité sociale qui paie, pas l'employeur. La différence est de taille.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Période</th><th>Taux d'indemnisation</th></tr></thead>
+    <tbody>
+        <tr><td><strong>1er mois</strong></td><td class="hl">70 % du salaire net</td></tr>
+        <tr><td><strong>2e mois</strong></td><td class="hl">60 % du salaire net</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>📋 Les conditions</h3><ul><li>Les <strong>mêmes</strong> que pour les indemnités journalières de maternité, paternité ou adoption</li><li><strong>6 mois d'affiliation</strong> à la Sécurité sociale à la date de début du congé</li><li>Les conditions d'activité minimales de l'assurance maladie</li><li>En cas de fractionnement, chaque mois est calculé sur la période de référence précédant <strong>sa</strong> fraction</li></ul></div>
+    <div class="def-card red-c"><h3>💸 Aucun maintien de salaire</h3><ul><li>L'employeur <strong>ne verse rien</strong> : le congé emporte les effets d'un <strong>congé sans solde</strong></li><li><strong>Pas de subrogation</strong> — la CPAM vous verse directement les indemnités</li><li>Anticipez la <strong>baisse de revenu</strong> et le <strong>décalage de trésorerie</strong></li></ul></div>
+</div>
+
+<div class="alert-box"><h4>⚠️ Une absence qui pénalise plusieurs de vos droits</h4><p>Cette période d'absence est <strong>pénalisante</strong> pour l'<strong>intéressement</strong>, la <strong>gratification annuelle</strong>, l'<strong>allocation vacances</strong>, les <strong>congés payés</strong> et les <strong>JRTT</strong>. À prendre en compte avant de choisir 1 ou 2 mois.</p></div>
+
+<div class="info-box green"><div class="icon">🩺</div><div><h4>Votre mutuelle, elle, est maintenue</h4><p>La <strong>Commission Paritaire de Pilotage</strong> du régime de complémentaire santé a acté le <strong>maintien des garanties et de la participation employeur</strong> pendant toute la durée du congé supplémentaire de naissance.</p></div></div>
+
+<div class="card" style="margin-top:20px">
+    <div class="card-title">🚫 Ce avec quoi l'indemnisation ne se cumule pas</div>
+    <ul>
+        <li>La <strong>PreParE à taux plein</strong> — mais les deux prestations peuvent être prises <strong>l'une après l'autre</strong></li>
+        <li>Le <strong>complément libre choix du mode de garde</strong> au titre du même enfant</li>
+        <li>L'<strong>allocation journalière de présence parentale</strong> (AJPP) et l'<strong>allocation journalière de proche aidant</strong> (AJPA)</li>
+        <li>L'allocation versée aux <strong>femmes dispensées de travail pendant leur grossesse</strong></li>
+        <li>Les <strong>indemnités journalières maladie</strong>, celles des congés de <strong>maternité, paternité et accueil de l'enfant, ou adoption</strong>, celles du <strong>congé de deuil</strong>, et celles d'<strong>accident du travail ou de maladie professionnelle</strong></li>
+        <li>Les <strong>allocations chômage</strong></li>
+    </ul>
+</div>
+
+</div></section>
+
+<!-- SECTION 8 : GARANTIES -->
+<section class="section" id="s8"><div class="container"><div class="section-header"><div class="section-number">8</div><h2 class="section-title">Vos garanties pendant et après le congé</h2><p class="section-subtitle">Le contrat est suspendu, mais vous ne perdez ni votre ancienneté, ni vos droits, ni votre poste.</p></div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Ce que vous conservez</h3><ul><li>La durée du congé est <strong>assimilée à du travail effectif</strong> pour tous les droits liés à votre <strong>ancienneté</strong></li><li>Vous conservez <strong>tous les avantages acquis</strong> avant le début du congé <em>(art. L. 1225-46-3)</em></li><li><strong>Retraite</strong> : période assimilée à une période de cotisation dès lors qu'elle a donné lieu à indemnités journalières — <strong>1 trimestre par période de 58 jours</strong> d'indemnisation, continue ou non</li><li><strong>Compte personnel de formation</strong> : la période est <strong>intégralement</strong> prise en compte</li></ul></div>
+    <div class="def-card amber"><h3>⚠️ Ce à quoi vous vous engagez</h3><ul><li>Votre <strong>contrat de travail est suspendu</strong> <em>(art. L. 1225-46-2, al. 3)</em></li><li>Vous ne pouvez <strong>exercer aucune autre activité professionnelle</strong> pendant le congé <em>(art. L. 1225-46-4)</em></li></ul></div>
+</div>
+
+<div class="info-box green"><div class="icon">🛡️</div><div><h4>Vous êtes protégé contre la rupture de votre contrat</h4><p>Pendant le congé, l'employeur ne peut rompre votre contrat que s'il justifie d'une <strong>faute grave</strong> ou de l'<strong>impossibilité de maintenir le contrat pour un motif étranger</strong> à la naissance ou à l'arrivée de l'enfant <em>(art. L. 1225-4-5)</em>. Cette protection ne fait toutefois pas obstacle à l'échéance du terme d'un <strong>CDD</strong>.</p></div></div>
+
+<div class="def-grid">
+    <div class="def-card blue"><h3>↩️ Interrompre le congé plus tôt</h3><ul><li>Possible en cas de <strong>décès de l'enfant</strong> ou de <strong>diminution importante des ressources du foyer</strong> <em>(art. L. 1225-46-5)</em></li><li>Prévenir l'employeur par <strong>LRAR ou remise contre récépissé</strong>, au moins <strong>8 jours</strong> avant la reprise souhaitée</li><li><strong>Justificatifs à joindre</strong> <em>(art. R. 1225-11-6)</em></li></ul></div>
+    <div class="def-card purple"><h3>🔙 À votre retour</h3><ul><li>Vous retrouvez votre <strong>précédent emploi ou un emploi similaire</strong>, avec une <strong>rémunération au moins équivalente</strong> <em>(art. L. 1225-46-6)</em></li><li>Vous avez droit à un <strong>entretien professionnel</strong>, s'il n'a pas déjà eu lieu à l'issue de votre congé de maternité ou d'adoption <em>(art. L. 1225-46-7)</em></li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 9 : POSITION FO -->
+<section class="section" id="s9"><div class="container"><div class="section-header"><div class="section-number red">9</div><h2 class="section-title">Ce qu'en dit Force Ouvrière</h2></div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Une avancée réelle, et nous la saluons</h3><ul><li>Jusqu'à <strong>4 mois de présence parentale</strong> supplémentaires à deux</li><li>Ouvert aux <strong>deux parents</strong>, sans distinction</li><li>Ancienneté, avantages acquis, retraite, formation : <strong>tout est préservé</strong></li><li>Une <strong>protection contre le licenciement</strong> pendant toute la durée</li></ul></div>
+    <div class="def-card red-c"><h3>⚠️ Mais un droit qui coûte</h3><ul><li>L'employeur ne verse rien : <strong>70 % puis 60 %</strong> du net, par la Sécurité sociale</li><li>Une absence qui <strong>pénalise l'intéressement, la gratification annuelle, l'allocation vacances, les congés payés et les JRTT</strong></li><li>Pour beaucoup d'agents, l'obstacle sera <strong>financier</strong>, pas juridique</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">✊</div><div><h4>Ce que Force Ouvrière porte au CSE</h4><p><strong>1.</strong> Quel circuit de demande la direction a-t-elle mis en place depuis le 1er juillet 2026, et <strong>quelle information a été donnée aux agents</strong> ? Le dispositif est applicable, et le compte à rebours de 9 mois court déjà pour les naissances de ce début d'année.<br><strong>2.</strong> Comment les absences au titre de ce congé sont-elles traitées pour <strong>l'intéressement, les congés payés et les JRTT</strong> ? Nous demandons une règle écrite, connue de tous.</p></div></div>
+
+<div class="golden-rule" style="border-radius:14px;margin-top:24px"><span class="gr-icon">📞</span><p>Une naissance, une adoption, un doute sur l'ordre de vos congés ? <strong>Il n'est jamais trop tôt pour contacter Force Ouvrière.</strong> Un droit mal demandé est un droit perdu.</p></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Loi n° 2025-1403 du 30 décembre 2025 (LFSS 2026) • Décrets n° 2026-419 et n° 2026-425 du 30 mai 2026 • Code du travail, art. L. 1225-46-2 à L. 1225-46-7 • Convention collective du 8 février 1957, art. 45, 46, 46 bis et 46 ter</p><p style="margin-top:8px;font-size:.8rem;opacity:.55">Document d'information syndicale — à jour au 24 août 2026. Ne se substitue pas aux textes officiels.</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<style>@media print{#home-fab{display:none!important}}</style>
+<a id="home-fab" href="../index.html" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:inline-flex;align-items:center;gap:7px;background:#203A5E;color:#fff;padding:11px 20px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.28)">← Accueil</a>
+</body>
+</html>
