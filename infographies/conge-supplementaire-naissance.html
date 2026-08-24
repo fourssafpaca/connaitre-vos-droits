@@ -32,6 +32,7 @@
 
         .steps{counter-reset:step;margin:24px 0}.step{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1.5px solid var(--border)}.step:last-child{border-bottom:none}.step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}.step-num.red{background:var(--red)}.step-num.green{background:var(--green)}.step-body h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:3px}.step-body p{font-size:.9rem;color:var(--text-secondary);line-height:1.6}
 
+        .flow{margin:24px 0}.flow-track{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.flow-label{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:12px}.flow-chain{display:flex;align-items:stretch;gap:8px}.flow-step{flex:1;min-width:0;border-radius:12px;padding:14px 16px;border:1.5px solid;display:flex;flex-direction:column;gap:4px}.flow-step .fs-ref{font-size:.68rem;font-weight:800;letter-spacing:.4px;text-transform:uppercase;opacity:.85}.flow-step strong.fs-name{font-size:.92rem;font-weight:700;line-height:1.3;color:var(--text)}.flow-step .fs-detail{font-size:.8rem;color:var(--text-secondary);line-height:1.5}.flow-step.navy{background:var(--blue-bg);border-color:var(--blue-light)}.flow-step.navy .fs-ref{color:var(--navy)}.flow-step.amber{background:var(--amber-bg);border-color:var(--amber-light)}.flow-step.amber .fs-ref{color:var(--amber)}.flow-step.green{background:var(--green-bg);border-color:var(--green-light)}.flow-step.green .fs-ref{color:var(--green)}.flow-arrow{align-self:center;font-size:1.4rem;color:var(--text-muted);font-weight:700;flex-shrink:0}.flow-note{font-size:.82rem;color:var(--text-secondary);margin-top:10px;line-height:1.55}.flow-legend{background:var(--amber-bg);border:1.5px solid var(--amber-light);border-radius:12px;padding:14px 18px;font-size:.85rem;color:var(--text-secondary);line-height:1.6}@media(max-width:768px){.flow-chain{flex-direction:column}.flow-arrow{transform:rotate(90deg)}}@media print{.flow-track{break-inside:avoid}}
         .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
 
         @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
@@ -83,14 +84,45 @@
 
 <div class="alert-box"><h4>Demander le congé supplémentaire de naissance trop tôt vous fait perdre le congé supplémentaire de l'article 46</h4><p>Le congé de maternité supplémentaire de l'<strong>article 46</strong> de la convention collective du 8 février 1957 doit être <strong>impérativement accolé</strong> au congé légal de maternité de l'<strong>article 45</strong>. Si vous intercalez le congé supplémentaire de naissance entre les deux, l'accolement est rompu — et le bénéfice de l'article 46 est perdu.</p></div>
 
-<div class="card" style="margin:24px 0">
-    <div class="card-title">✅ La bonne séquence</div>
-    <div class="steps">
-        <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Congé légal de maternité — article 45</h4><p>16, 26, 34 ou 46 semaines selon votre situation, à plein traitement.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Congé supplémentaire conventionnel — article 46</h4><p>3 mois à demi-traitement, ou 1 mois et demi à plein traitement, à votre choix. <strong>Accolé au précédent, sans interruption.</strong></p></div></div>
-        <div class="step"><div class="step-num green">3</div><div class="step-body"><h4>Congé supplémentaire de naissance</h4><p>1 ou 2 mois, indemnisés par la CPAM. <strong>C'est seulement maintenant qu'il faut le demander.</strong></p></div></div>
+<h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:28px 0 6px">✅ L'ordre à respecter, selon votre situation</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:4px">Trois parcours, une seule règle : le congé supplémentaire de naissance vient <strong>toujours en dernier</strong>.</p>
+
+<div class="flow">
+
+    <div class="flow-track">
+        <div class="flow-label">🤱 Vous êtes la mère</div>
+        <div class="flow-chain">
+            <div class="flow-step navy"><span class="fs-ref">Article 45 · CCN</span><strong class="fs-name">Congé légal de maternité</strong><span class="fs-detail">16 à 46 semaines selon votre situation — salaire maintenu intégralement</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step amber"><span class="fs-ref">Article 46 · CCN ⚠️</span><strong class="fs-name">Congé conventionnel supplémentaire</strong><span class="fs-detail">3 mois à demi-traitement <em>ou</em> 1 mois et demi à plein traitement — <strong>accolé au précédent, sans interruption</strong></span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step green"><span class="fs-ref">Code du travail</span><strong class="fs-name">Congé supplémentaire de naissance</strong><span class="fs-detail">1 ou 2 mois — indemnisé par la CPAM, 70 % puis 60 % du net</span></div>
+        </div>
     </div>
-    <p style="font-size:.9rem;color:var(--text-secondary);margin-top:8px">La même règle vaut pour le <strong>congé d'adoption (article 46 bis)</strong> et le <strong>congé de paternité (article 46 ter)</strong> : ils doivent être pris <strong>avant</strong> le congé supplémentaire de naissance.</p>
+
+    <div class="flow-track">
+        <div class="flow-label">👨 Vous êtes le père, le conjoint, le partenaire de PACS ou le concubin</div>
+        <div class="flow-chain">
+            <div class="flow-step navy"><span class="fs-ref">Code du travail · art. 46 ter CCN</span><strong class="fs-name">Congé de naissance, puis congé de paternité</strong><span class="fs-detail">3 jours ouvrables + 25 jours calendaires (32 en cas de naissances multiples) — salaire maintenu par la convention collective</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step green"><span class="fs-ref">Code du travail</span><strong class="fs-name">Congé supplémentaire de naissance</strong><span class="fs-detail">1 ou 2 mois — indemnisé par la CPAM, 70 % puis 60 % du net</span></div>
+        </div>
+        <p class="flow-note">✅ <strong>Pas de piège ici.</strong> L'article 46 ter ne crée <strong>aucun congé conventionnel supplémentaire</strong> : il se borne à maintenir votre salaire pendant le congé légal. Il n'y a donc rien à intercaler, et rien à perdre — il suffit d'avoir épuisé votre congé de paternité.</p>
+    </div>
+
+    <div class="flow-track">
+        <div class="flow-label">🏠 Vous adoptez</div>
+        <div class="flow-chain">
+            <div class="flow-step navy"><span class="fs-ref">Code du travail</span><strong class="fs-name">Congé légal d'adoption</strong><span class="fs-detail">16, 18 ou 22 semaines selon votre situation — salaire maintenu intégralement</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step amber"><span class="fs-ref">Article 46 bis · CCN ⚠️</span><strong class="fs-name">Congé conventionnel supplémentaire</strong><span class="fs-detail">3 mois à demi-traitement <em>ou</em> 1 mois et demi à plein traitement — <strong>accolé au précédent, sans interruption</strong></span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step green"><span class="fs-ref">Code du travail</span><strong class="fs-name">Congé supplémentaire de naissance</strong><span class="fs-detail">1 ou 2 mois — indemnisé par la CPAM, 70 % puis 60 % du net</span></div>
+        </div>
+    </div>
+
+    <div class="flow-legend">⚠️ <strong>Le maillon à ne pas rompre.</strong> Les articles 46 et 46 bis ouvrent le droit « à l'expiration » du congé légal, et « successivement » : le congé conventionnel doit suivre <strong>immédiatement</strong>. Si vous intercalez le congé supplémentaire de naissance avant lui, l'enchaînement est rompu — et le congé conventionnel est perdu.</div>
+
 </div>
 
 <div class="def-grid">
@@ -98,7 +130,7 @@
     <div class="def-card green"><h3>🎁 Bonne nouvelle n° 2 — votre indemnité n'est pas rabotée</h3><ul><li>Le congé de l'article 46 à demi-traitement est une <strong>absence autorisée par l'employeur</strong>, équivalant à un rétablissement de salaire</li><li>Votre indemnité journalière est donc calculée <strong>sur le salaire plein</strong>, et non sur le demi-traitement</li></ul></div>
 </div>
 
-<div class="info-box blue"><div class="icon">📌</div><div><h4>D'où vient cette règle</h4><p>C'est la lecture retenue par l'<strong>UCANSS</strong> dans la note technique annexée à sa lettre circulaire du 30 juin 2026 — donc <strong>la position que la direction appliquera</strong>. Avant de poser votre demande, <strong>faites-la confirmer par écrit par votre service RH</strong>, et prévenez vos délégués FO.</p></div></div>
+<div class="info-box blue"><div class="icon">📌</div><div><h4>D'où vient cette règle</h4><p>Elle est d'abord dans le <strong>texte de la convention collective</strong> : l'article 46 ouvre le droit « à l'expiration du congé prévu à l'article précédent », et « successivement ». C'est aussi la lecture retenue par l'<strong>UCANSS</strong> dans la note technique annexée à sa lettre circulaire du 30 juin 2026 — donc <strong>la position que la direction appliquera</strong>. Avant de poser votre demande, <strong>faites-la confirmer par écrit par votre service RH</strong>, et prévenez vos délégués FO.</p></div></div>
 
 </div></section>
 
