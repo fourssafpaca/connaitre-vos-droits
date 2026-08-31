@@ -62,12 +62,22 @@
         .footer{background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:#fff;padding:50px 0 40px;margin-top:30px}.footer .container{text-align:center}.footer-logo{width:80px;margin-bottom:18px}.footer p{opacity:.8;font-size:.88rem;margin:4px 0}.footer-contact{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}.footer-contact a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:600}
 
         @media print{body{background:#fff}.nav-bar{display:none}.hero{padding:40px 0 30px}.section{padding:30px 0}.acteur-item,.dispositif-item,.card,.pilier{break-inside:avoid}}
+    
+        /* --- Identite FO (passe du 31/08/2026) ---------------------------
+           Le logo reel remplace la signature textuelle. Il repose sur une
+           pastille BLANCHE : le logo est rouge + navy sur fond transparent,
+           donc sur le navy de la barre la moitie "URSSAF PACA" disparaitrait.
+           Meme fichier que la page d'accueil (assets/ partage). */
+        .nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px;flex-shrink:0;transition:box-shadow .2s}
+        .nav-logo img{display:block;height:30px;width:auto}
+        .nav-logo:hover{box-shadow:0 0 0 2px rgba(255,255,255,.45)}
+        @media(max-width:600px){.nav-logo{padding:4px 8px}.nav-logo img{height:22px}}
     </style>
 </head>
 <body>
 
 <!-- HERO -->
-<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#beneficiaires" class="nav-top-link">Bénéficiaires</a><a href="#acteurs" class="nav-top-link">Acteurs</a><a href="#managers" class="nav-top-link">Managers</a><a href="#prevention" class="nav-top-link">Prévention</a><a href="#conciliation" class="nav-top-link">Vie pro/perso</a><a href="#expression" class="nav-top-link">Expression</a><a href="#handicap" class="nav-top-link">Handicap</a><a href="#numerique" class="nav-top-link">Numérique</a></div></div></nav>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="../index.html" aria-label="Accueil — Force Ouvrière URSSAF PACA"><img src="../assets/logo-fo-urssaf-paca.png" alt="Force Ouvrière — URSSAF PACA"></a><div class="nav-links"><a href="#beneficiaires" class="nav-top-link">Bénéficiaires</a><a href="#acteurs" class="nav-top-link">Acteurs</a><a href="#managers" class="nav-top-link">Managers</a><a href="#prevention" class="nav-top-link">Prévention</a><a href="#conciliation" class="nav-top-link">Vie pro/perso</a><a href="#expression" class="nav-top-link">Expression</a><a href="#handicap" class="nav-top-link">Handicap</a><a href="#numerique" class="nav-top-link">Numérique</a></div></div></nav>
 <div class="hero"><div class="container"><div class="hero-content">
     <div class="hero-badge">🌟 Bien-être au travail</div>
     <h1>Qualité de Vie et Conditions de Travail<span>Accord QVCT — 4 ans à compter du 1er février 2026 — URSSAF PACA</span></h1>

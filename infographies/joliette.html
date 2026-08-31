@@ -54,11 +54,21 @@
         .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
 
         @media print{body{background:#fff}.nav{display:none}.hero{margin-top:0}.section{padding:30px 0}}
+    
+        /* --- Identite FO (passe du 31/08/2026) ---------------------------
+           Le logo reel remplace la signature textuelle. Il repose sur une
+           pastille BLANCHE : le logo est rouge + navy sur fond transparent,
+           donc sur le navy de la barre la moitie "URSSAF PACA" disparaitrait.
+           Meme fichier que la page d'accueil (assets/ partage). */
+        .nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px;flex-shrink:0;transition:box-shadow .2s}
+        .nav-logo img{display:block;height:30px;width:auto}
+        .nav-logo:hover{box-shadow:0 0 0 2px rgba(255,255,255,.45)}
+        @media(max-width:600px){.nav-logo{padding:4px 8px}.nav-logo img{height:22px}}
     </style>
 </head>
 <body>
 
-<nav class="nav"><div class="nav-inner"><div class="nav-brand">Force <em>Ouvrière</em> — URSSAF PACA</div><div class="nav-links"><a href="#contexte" class="nav-top-link">Contexte</a><a href="#organisation" class="nav-top-link">Organisation</a><a href="#transports" class="nav-top-link">Transports</a><a href="#parking" class="nav-top-link">Parking</a><a href="#tunnel" class="nav-top-link">Tunnel</a><a href="#duree" class="nav-top-link">Durée</a></div></div></nav>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="../index.html" aria-label="Accueil — Force Ouvrière URSSAF PACA"><img src="../assets/logo-fo-urssaf-paca.png" alt="Force Ouvrière — URSSAF PACA"></a><div class="nav-links"><a href="#contexte" class="nav-top-link">Contexte</a><a href="#organisation" class="nav-top-link">Organisation</a><a href="#transports" class="nav-top-link">Transports</a><a href="#parking" class="nav-top-link">Parking</a><a href="#tunnel" class="nav-top-link">Tunnel</a><a href="#duree" class="nav-top-link">Durée</a></div></div></nav>
 
 <div class="hero"><div class="container hero-content"><div class="hero-badge">🏗️ Projet immobilier Marseille</div><h1>Accompagnement à la mobilité Joliette<span>Les mesures pour les salariés redéployés du site Viton vers La Joliette</span></h1><p class="hero-subtitle">Accord du 25 octobre 2022, durée 3 ans. Toutes les mesures d'accompagnement pour les salariés impactés par le projet immobilier des sites de Marseille.</p><div class="hero-fo">✊ Réalisé par <strong>FO URSSAF PACA</strong> — Votre syndicat vous informe et vous défend</div></div></div>
 
