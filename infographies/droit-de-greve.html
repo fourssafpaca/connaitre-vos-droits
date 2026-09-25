@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le droit de grève — FO URSSAF PACA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#203A5E;--navy-dark:#172a45;--navy-light:#2c5282;--red:#8B1B1A;--red-dark:#6b1413;--red-light:#fde8e8;--red-muted:#fef2f2;--green:#276749;--green-light:#c6f6d5;--green-bg:#f0fff4;--amber:#92400e;--amber-light:#fef3c7;--amber-bg:#fffbeb;--blue-light:#dbeafe;--blue-bg:#eff6ff;--purple:#553c9a;--purple-light:#e9d8fd;--purple-bg:#faf5ff;--pink:#9d174d;--pink-light:#fce7f3;--pink-bg:#fdf2f8;--bg:#f8fafc;--white:#fff;--text:#1a202c;--text-secondary:#4a5568;--text-muted:#718096;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07),0 2px 4px -1px rgba(0,0,0,.04)}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        .golden-rule{background:linear-gradient(135deg,#6b1413,#8B1B1A);color:#fff;padding:18px 30px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 15px rgba(139,27,26,.35)}.golden-rule .gr-icon{font-size:2rem;flex-shrink:0}.golden-rule p{font-size:1rem;font-weight:500;text-align:center;line-height:1.5}
+
+        .section{padding:50px 0}.section:nth-child(even){background:#fff}.section-header{margin-bottom:32px}.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--navy);color:#fff;border-radius:10px;font-size:.85rem;font-weight:800;margin-bottom:12px}.section-number.red{background:var(--red)}.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.25}.section-subtitle{font-size:.95rem;color:var(--text-muted);margin-top:8px;max-width:700px}
+
+        .card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.card-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}.card p,.card ul{font-size:.92rem;color:var(--text-secondary);line-height:1.7}.card ul{list-style:none;padding:0}.card ul li{padding:5px 0;padding-left:20px;text-indent:-20px}.card ul li::before{content:'→';font-weight:600;color:var(--navy);margin-right:8px}
+        .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.def-grid{grid-template-columns:1fr}}
+        .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:768px){.tri-grid{grid-template-columns:1fr}}
+        .def-card{border-radius:14px;padding:28px;border:1.5px solid}.def-card.green{background:var(--green-bg);border-color:#c6f6d5}.def-card.green h3{color:var(--green)}.def-card.blue{background:var(--blue-bg);border-color:var(--blue-light)}.def-card.blue h3{color:var(--navy)}.def-card.amber{background:var(--amber-bg);border-color:var(--amber-light)}.def-card.amber h3{color:var(--amber)}.def-card.purple{background:var(--purple-bg);border-color:var(--purple-light)}.def-card.purple h3{color:var(--purple)}.def-card.pink{background:var(--pink-bg);border-color:var(--pink-light)}.def-card.pink h3{color:var(--pink)}.def-card.red-c{background:var(--red-muted);border-color:#fecaca}.def-card.red-c h3{color:var(--red)}
+        .def-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}.def-card ul{list-style:none;padding:0}.def-card ul li{padding:5px 0;font-size:.92rem;color:var(--text-secondary);padding-left:20px;text-indent:-20px}.def-card ul li::before{content:'→';font-weight:600;margin-right:8px}
+
+        .key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}@media(max-width:768px){.key-numbers{grid-template-columns:1fr 1fr}}.key-num{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.key-num .value{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy)}.key-num .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}.key-num.red .value{color:var(--red)}.key-num.green .value{color:var(--green)}
+
+        .styled-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.styled-table th{background:var(--navy);color:#fff;padding:14px 18px;text-align:center;font-weight:700;font-size:.88rem}.styled-table td{padding:14px 18px;border-bottom:1.5px solid var(--border);font-size:.92rem;background:#fff;text-align:center}.styled-table .hl{color:var(--red);font-weight:800;font-size:1.1rem}.styled-table td:first-child{text-align:left}
+        @media(max-width:560px){.styled-table th,.styled-table td{padding:10px 10px;font-size:.84rem}.styled-table .hl{font-size:.98rem}}
+
+        .info-box{border-radius:14px;padding:22px 26px;display:flex;gap:14px;align-items:flex-start;margin:20px 0}.info-box.blue{background:var(--blue-bg);border:1.5px solid var(--blue-light)}.info-box.amber{background:var(--amber-bg);border:1.5px solid var(--amber-light)}.info-box.green{background:var(--green-bg);border:1.5px solid var(--green-light)}.info-box.pink{background:var(--pink-bg);border:1.5px solid var(--pink-light)}.info-box .icon{font-size:1.4rem;flex-shrink:0}.info-box h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}.info-box p{font-size:.88rem;color:var(--text-secondary);line-height:1.65}
+        .alert-box{background:var(--red);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0}.alert-box h4{font-size:.95rem;font-weight:700;margin-bottom:6px}.alert-box p{font-size:.88rem;opacity:.9;line-height:1.6}
+
+        .quote{background:#fff;border-left:5px solid var(--red);border-radius:0 14px 14px 0;padding:20px 26px;margin:20px 0;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}.quote p{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--navy);line-height:1.5}.quote cite{display:block;margin-top:8px;font-size:.82rem;font-style:normal;color:var(--text-muted)}
+
+        .footer{background:var(--navy-dark);color:#fff;padding:40px 0;text-align:center}.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:8px}.footer p{opacity:.7;font-size:.85rem;margin:4px 0}
+
+        @media print{body{background:#fff}.section{padding:30px 0}}
+
+        /* ============ BANDEAU-TITRE — grammaire reprise de la page d'accueil ====
+           Identite sur BLANC, outillage sur NAVY, contenu ensuite. Le fond blanc
+           n'est pas un choix esthetique : le logo est rouge et navy sur fond
+           transparent, sur navy la moitie "URSSAF PACA" disparaitrait. Le filet
+           vertical n'est pas un ornement : sans lui le logo flotte et parait
+           timide quelle que soit sa taille, c'est la colonne qui le fait lire
+           comme une identite. Classes prefixees mh-/tb- pour ne heurter aucune
+           regle propre a la page. */
+        body{--rub:#276749}
+        html{scroll-behavior:smooth;scroll-padding-top:76px}
+
+        .mh{background:#fff;padding:30px 24px 26px}
+        .mh-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:30px}
+        .mh-logo{flex-shrink:0;display:block}
+        .mh-logo img{display:block;height:120px;width:auto}
+        .mh-rule{width:1.5px;align-self:stretch;flex-shrink:0;
+                 background:linear-gradient(180deg,transparent,#c9d6e8 18%,#c9d6e8 82%,transparent)}
+        .mh-txt{min-width:0}
+        .mh-sur{font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+                color:var(--rub);margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .mh-mark{background:#fdf2f2;border:1.5px solid #fecaca;color:#8B1B1A;letter-spacing:.04em;
+                 padding:2px 10px;border-radius:50px;font-size:.68rem}
+        .mh h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.2vw,2.6rem);font-weight:900;
+               line-height:1.12;color:#203A5E;margin:0 0 8px}
+        .mh h1 .mh-ref{display:block;font-family:'DM Sans',sans-serif;font-size:.4em;font-weight:500;
+                       color:#6b7280;margin-top:10px;line-height:1.45;letter-spacing:0}
+        .mh h1 .mh-acc{color:var(--rub)}
+        .mh p{font-size:1rem;color:#6b7280;font-weight:400;max-width:680px;margin:0 0 13px;line-height:1.6}
+        .mh-fo{display:inline-flex;align-items:center;gap:7px;background:#8B1B1A;color:#fff;
+               padding:7px 18px;border-radius:50px;font-size:.78rem;font-weight:700;line-height:1.45}
+
+        /* Barre des sections — l'equivalent de la barre de recherche de l'accueil :
+           c'est elle qui reste collee en haut et separe l'identite du contenu. */
+        .tb{position:sticky;top:0;z-index:300;padding:12px 24px;
+            background:linear-gradient(100deg,#172a45 0%,#203A5E 55%,#2c5282 100%);
+            box-shadow:0 3px 14px rgba(23,42,69,.22)}
+        .tb-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .tb a{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:50px;
+              font-family:inherit;font-size:.83rem;font-weight:700;text-decoration:none;white-space:nowrap;
+              border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;
+              transition:background .18s,color .18s,transform .18s,border-color .18s}
+        .tb a:hover{background:#fff;border-color:#fff;color:var(--rub);transform:translateY(-1px)}
+        .tb a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+        @media(max-width:1080px){.mh-logo img{height:104px}}
+        @media(max-width:900px){.mh-logo img{height:88px}.mh-in{gap:24px}}
+        /* Sous 680 px les deux colonnes s'empilent et le filet devient horizontal. */
+        @media(max-width:680px){
+            .mh{padding:24px 22px 22px}
+            .mh-in{flex-direction:column;align-items:flex-start;gap:16px}
+            .mh-logo img{height:78px}
+            .mh-rule{width:100%;height:1.5px;align-self:auto;background:linear-gradient(90deg,#c9d6e8,transparent)}
+        }
+        /* La barre est collante : sur petit ecran les ancres defilent
+           horizontalement au lieu de manger la hauteur d'ecran. */
+        @media(max-width:620px){
+            .tb{padding:10px 16px}
+            .tb-in{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+            .tb-in::-webkit-scrollbar{display:none}
+            .tb a{flex:0 0 auto;padding:7px 13px;font-size:.79rem}
+            .tb a:hover{transform:none}
+        }
+        @media(max-width:520px){.mh-logo img{height:68px}}
+        @media print{.tb{display:none}.mh{padding:0 0 14px}.mh-logo img{height:64px}.mh-in{gap:18px}}
+    </style>
+</head>
+<body>
+
+<div class="mh">
+    <div class="mh-in">
+        <a class="mh-logo" href="../index.html" aria-label="Accueil — Connaître vos droits"><img src="../assets/logo-fo-urssaf-paca.png" alt="Force Ouvrière — URSSAF PACA"></a>
+        <div class="mh-rule"></div>
+        <div class="mh-txt">
+            <div class="mh-sur"><span>⚖️ Droits &amp; procédures</span></div>
+            <h1>Le droit de grève à l'URSSAF<span class="mh-ref">Code du travail, art. L. 2511-1 et L. 2512-1 à L. 2512-5 — convention collective du 8 février 1957, art. 22 bis</span></h1>
+            <p>L'URSSAF est un organisme de droit privé chargé d'un service public. Vous êtes salarié de droit privé, mais la grève y suit les règles propres aux services publics. Voici ce que vous pouvez faire, ce que votre manager ne peut pas exiger, et ce que la grève coûte vraiment.</p>
+            <span class="mh-fo">✊ Réalisé par FO URSSAF PACA — Votre syndicat vous informe et vous défend</span>
+        </div>
+    </div>
+</div>
+
+<nav class="tb" aria-label="Sections de la page">
+    <div class="tb-in"><a href="#s1">Essentiel</a><a href="#s2">Le préavis</a><a href="#s3">Prévenir ?</a><a href="#s4">Comment</a><a href="#s5">La retenue</a><a href="#s6">Vos autres droits</a><a href="#s7">Protections</a><a href="#s8">FO</a></div>
+</nav>
+
+<div class="golden-rule"><span class="gr-icon">✊</span><p><strong>Vous n'avez rien à déclarer à l'avance.</strong> Le préavis est déposé par le syndicat ; la grève, c'est vous qui l'exercez. <strong>Personne ne peut vous demander à l'avance si vous ferez grève.</strong> Vous saisirez votre temps de grève dans Groom RH, à votre retour.</p></div>
+
+<!-- SECTION 1 : L'ESSENTIEL -->
+<section class="section" id="s1"><div class="container"><div class="section-header"><div class="section-number">1</div><h2 class="section-title">L'essentiel en un coup d'œil</h2><p class="section-subtitle">Un droit constitutionnel, qui obéit à l'URSSAF à des règles particulières — ni celles du privé ordinaire, ni celles des fonctionnaires.</p></div>
+
+<div class="key-numbers">
+    <div class="key-num green"><div class="value">0</div><div class="label">déclaration à faire<br>avant la grève</div></div>
+    <div class="key-num"><div class="value">5 jours</div><div class="label">francs de préavis,<br>déposé par le syndicat</div></div>
+    <div class="key-num red"><div class="value">1/160ᵉ</div><div class="label">du salaire retenu<br>pour une heure ou moins</div></div>
+    <div class="key-num red"><div class="value">2 dates</div><div class="label">31 mai et 30 septembre :<br>à éviter pour l'allocation vacances</div></div>
+</div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Ce que vous pouvez faire</h3><ul><li>Faire grève <strong>syndiqué ou non</strong></li><li>Faire grève <strong>seul</strong>, même si personne d'autre ne suit dans votre service</li><li>Faire grève <strong>le temps que vous voulez</strong> — une heure, une demi-journée, une journée — à l'intérieur de la période couverte par le préavis</li><li>Ne <strong>rien dire à personne</strong> avant de cesser le travail</li></ul></div>
+    <div class="def-card amber"><h3>⚠️ Les deux conditions</h3><ul><li>Un <strong>préavis</strong> déposé par un syndicat représentatif doit couvrir la date et l'heure de votre arrêt</li><li>La grève doit porter des <strong>revendications professionnelles collectives</strong> — salaires, conditions de travail, emploi…</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">💡</div><div><h4>Pourquoi des règles particulières ?</h4><p>Le Code du travail soumet à un régime propre le personnel des organismes « publics ou privés » <strong>chargés de la gestion d'un service public</strong> <em>(art. L. 2512-1)</em>. C'est le cas des organismes de Sécurité sociale. Conséquence principale : <strong>la grève doit être précédée d'un préavis</strong>, ce qui n'est pas exigé dans le privé ordinaire.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 2 : LE PRÉAVIS -->
+<section class="section" id="s2"><div class="container"><div class="section-header"><div class="section-number">2</div><h2 class="section-title">Le préavis : l'affaire du syndicat, pas la vôtre</h2><p class="section-subtitle">Avant la grève, c'est la seule formalité exigée dans un service public — et elle pèse entièrement sur le syndicat.</p></div>
+
+<div class="card" style="margin-bottom:20px">
+    <div class="card-title">📮 Ce que dit le Code du travail <em style="font-weight:500;font-size:.85rem;color:var(--text-muted)">(art. L. 2512-2)</em></div>
+    <ul>
+        <li>Le préavis émane d'une <strong>organisation syndicale représentative</strong> — au niveau national, dans la catégorie professionnelle ou dans l'organisme</li>
+        <li>Il précise les <strong>motifs</strong> de la grève, son <strong>champ géographique</strong>, l'<strong>heure de début</strong> et la <strong>durée</strong>, limitée ou non</li>
+        <li>Il doit parvenir à la direction <strong>5 jours francs</strong> avant le début de la grève</li>
+        <li>Pendant le préavis, les parties sont <strong>tenues de négocier</strong></li>
+    </ul>
+</div>
+
+<table class="styled-table">
+    <thead><tr><th colspan="2">Un exemple : une grève le mardi 29 septembre 2026</th></tr></thead>
+    <tbody>
+        <tr><td><strong>Jour de la grève</strong> — ne compte pas</td><td>mardi 29</td></tr>
+        <tr><td><strong>Les 5 jours francs</strong></td><td>jeudi 24, vendredi 25, samedi 26, dimanche 27, lundi 28</td></tr>
+        <tr><td><strong>Réception du préavis</strong> par la direction — ne compte pas</td><td class="hl">au plus tard le mercredi 23</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✅ Pour vous, rien à faire avant</h3><ul><li>Vous n'avez <strong>rien à signer, rien à déclarer</strong> avant la grève</li><li>Vous n'avez pas à être adhérent du syndicat qui a déposé le préavis</li><li>Le préavis ouvre une période : <strong>vous n'êtes pas tenu de faire grève pendant toute sa durée</strong></li></ul></div>
+    <div class="def-card amber"><h3>🔎 Une seule vérification à faire</h3><ul><li>Un préavis <strong>couvre-t-il bien</strong> votre site, la date et l'heure où vous comptez vous arrêter ?</li><li>Si vous avez un doute, <strong>demandez à vos délégués FO</strong> avant de cesser le travail</li><li>Un préavis irrégulier expose les grévistes, pas seulement le syndicat : c'est pourquoi FO le vérifie avant chaque mouvement</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 3 : PRÉVENIR ? -->
+<section class="section" id="s3"><div class="container"><div class="section-header"><div class="section-number red">3</div><h2 class="section-title">Faut-il prévenir son manager ? Non.</h2><p class="section-subtitle">C'est la question la plus fréquente, et la réponse de la plus haute formation de la Cour de cassation est nette.</p></div>
+
+<div class="quote"><p>« Il ne peut être imposé à un salarié d'indiquer à son employeur, avant le déclenchement de la grève, qu'il participera au mouvement. »</p><cite>Cour de cassation, assemblée plénière, 23 juin 2006, n° 04-40.289</cite></div>
+
+<div class="def-grid">
+    <div class="def-card red-c"><h3>🚫 Ce que votre manager ne peut pas exiger</h3><ul><li>Que vous <strong>déclariez à l'avance</strong> votre intention de faire grève</li><li>Que vous <strong>fassiez « en amont »</strong> le travail du jour de grève : rien ne vous y oblige</li><li>Que vous <strong>récupériez</strong> ensuite les heures de grève : la loi ne permet de récupérer que les heures perdues pour des causes limitativement énumérées — intempéries, force majeure, inventaire, pont… <strong>La grève n'en fait pas partie</strong> <em>(art. L. 3121-50)</em></li></ul></div>
+    <div class="def-card blue"><h3>📌 Et les « 48 heures avant » ?</h3><ul><li>L'obligation de se déclarer gréviste 48 heures à l'avance <strong>existe</strong>… mais seulement là où une loi l'a créée : <strong>transports de voyageurs</strong>, transport aérien, accueil des élèves</li><li><strong>Aucune loi ne la prévoit pour les organismes de Sécurité sociale</strong></li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>Si on vous le demande quand même</h4><p>Vous n'avez pas à répondre. Et si la demande est faite par écrit — mail, message Teams — <strong>conservez-la et transmettez-la à vos délégués FO</strong>.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 4 : COMMENT -->
+<section class="section" id="s4"><div class="container"><div class="section-header"><div class="section-number">4</div><h2 class="section-title">Seul, une heure, une journée : c'est vous qui choisissez</h2><p class="section-subtitle">Le préavis appartient au syndicat ; le droit de grève appartient à chaque salarié.</p></div>
+
+<div class="tri-grid">
+    <div class="def-card green"><h3>🙋 Seul, c'est une grève</h3><ul><li>Dans un service public, le salarié qui s'arrête dans le cadre d'un préavis syndical <strong>est gréviste même s'il est le seul</strong></li><li><em>Cass. soc. 21 avril 2022, n° 20-18.402</em></li></ul></div>
+    <div class="def-card blue"><h3>⏱️ La durée que vous voulez</h3><ul><li>Les salariés, « seuls titulaires du droit de grève », <strong>ne sont pas tenus de cesser le travail pendant toute la durée</strong> indiquée par le préavis</li><li><em>Cass. soc. 4 juillet 2012, n° 11-18.404 — repris en 2022</em></li></ul></div>
+    <div class="def-card purple"><h3>🏁 Qui arrête la grève ?</h3><ul><li><strong>Seul le syndicat</strong> qui a déposé le préavis peut décider que le mouvement est terminé</li><li>Tant que le préavis court, vous pouvez vous en saisir</li></ul></div>
+</div>
+
+<div class="def-grid" style="margin-top:20px">
+    <div class="def-card red-c"><h3>⛔ Ce qui est interdit</h3><ul><li>Les grèves <strong>tournantes organisées</strong> : arrêts échelonnés, par roulement, entre les services ou les sites d'un même organisme <em>(art. L. 2512-3)</em></li><li>Le non-respect de ces règles expose à des <strong>sanctions</strong> <em>(art. L. 2512-4)</em></li></ul></div>
+    <div class="def-card amber"><h3>🚫 Ce qui n'est pas une grève</h3><ul><li>Un arrêt de travail <strong>sans revendication professionnelle collective</strong> n'est pas une grève : il n'est pas protégé et peut être sanctionné</li><li>Un mot d'ordre national — salaires, valeur du point — est bien une revendication professionnelle collective</li></ul></div>
+</div>
+
+<div class="info-box green"><div class="icon">🖥️</div><div><h4>Au retour : posez votre temps de grève dans Groom RH</h4><p>À l'URSSAF PACA, c'est la seule démarche du gréviste : saisir dans <strong>Groom RH</strong> la durée de sa grève — <strong>55 minutes, une demi-journée ou une journée</strong>. Vous le faites <strong>après coup</strong>, à votre retour. <strong>Vous n'avez aucune obligation de la poser avant</strong> : ce serait déclarer votre grève à l'avance, ce que personne ne peut exiger de vous.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 5 : LA RETENUE -->
+<section class="section" id="s5"><div class="container"><div class="section-header"><div class="section-number red">5</div><h2 class="section-title">Ce que coûte la grève sur votre salaire</h2><p class="section-subtitle">Pas de proportionnalité à la minute : la retenue suit un barème par tranches, propre aux services publics.</p></div>
+
+<table class="styled-table">
+    <thead><tr><th>Durée de votre grève</th><th>Retenue</th><th>Exemple : 2 400 € de salaire fixe brut</th></tr></thead>
+    <tbody>
+        <tr><td><strong>1 heure ou moins</strong></td><td class="hl">1/160ᵉ</td><td class="hl">15 €</td></tr>
+        <tr><td><strong>Plus d'1 heure</strong>, jusqu'à une demi-journée</td><td class="hl">1/50ᵉ</td><td class="hl">48 €</td></tr>
+        <tr><td><strong>Plus d'une demi-journée</strong>, jusqu'à une journée</td><td class="hl">1/30ᵉ</td><td class="hl">80 €</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>💡 D'où les grèves de 55 minutes</h3><ul><li>Sous le seuil d'une heure, la retenue tombe à <strong>1/160ᵉ</strong> du salaire mensuel</li><li>À <strong>1 h 01</strong>, elle passe à 1/50ᵉ : plus de trois fois plus</li></ul></div>
+    <div class="def-card blue"><h3>📋 Sur quoi est calculée la retenue</h3><ul><li>Sur le <strong>salaire fixe</strong>, pas sur les primes mensuelles</li><li>Retenue sur le traitement et ses compléments, <strong>hors suppléments pour charges de famille</strong> <em>(art. L. 2512-5)</em></li></ul></div>
+</div>
+
+<div class="info-box amber"><div class="icon">⚠️</div><div><h4>1/50ᵉ n'est pas une demi-journée</h4><p>On entend souvent qu'au-delà d'une heure « on perd la demi-journée ». C'est plus que ça : si une journée coûte 1/30ᵉ, une demi-journée exacte coûterait 1/60ᵉ. Le barème retient <strong>1/50ᵉ</strong>, soit <strong>60 % d'une journée</strong> pour une grève d'1 h 01.</p></div></div>
+
+<div class="info-box blue"><div class="icon">📌</div><div><h4>D'où vient ce barème</h4><p>L'article L. 2512-5 renvoie à l'<strong>article 2 de la loi n° 82-889 du 19 octobre 1982</strong>. La Cour de cassation juge qu'il s'applique « de manière générale » aux personnels des <strong>établissements privés chargés d'un service public</strong> <em>(Cass. soc. 8 juillet 2020, n° 19-13.767)</em>. Le « trentième indivisible » — une journée retenue pour toute absence, même d'une heure — est le régime des <strong>fonctionnaires de l'État</strong>, <strong>pas le vôtre</strong>.</p></div></div>
+
+</div></section>
+
+<!-- SECTION 6 : VOS AUTRES DROITS -->
+<section class="section" id="s6"><div class="container"><div class="section-header"><div class="section-number">6</div><h2 class="section-title">L'effet sur vos autres droits</h2><p class="section-subtitle">Le salaire n'est pas le seul poste. Voici, droit par droit, ce que la grève touche — et ce qu'elle ne touche pas.</p></div>
+
+<div class="alert-box"><h4>🏖️ L'allocation vacances : deux dates à ne pas manquer, le 31 mai et le 30 septembre</h4><p>L'allocation vacances est payée en deux versements. Chacun est réservé aux agents dont le contrat n'est pas <strong>suspendu</strong> à une date précise : le <strong>31 mai</strong> pour le premier, le <strong>30 septembre</strong> pour le second <em>(convention collective, art. 22 bis)</em>. Or <strong>la grève suspend le contrat</strong>.</p><p style="margin-top:10px"><strong>Être en grève le 30 septembre fait perdre le second versement ; être en grève le 31 mai, le premier.</strong> À l'URSSAF PACA, le second versement est payé avec le salaire de septembre : un agent en grève le 30 le touche, puis le voit <strong>repris sur la paie d'octobre</strong>.</p></div>
+
+<div class="info-box green"><div class="icon">✅</div><div><h4>Un jour de grève à une autre date ne coûte rien sur l'allocation vacances</h4><p>On ne perd pas « l'allocation vacances » : on perd le versement attaché à la date, <strong>et seulement si l'on est en grève ce jour-là</strong>. Un congé payé pris le 30 septembre, lui, ne suspend pas le contrat.</p></div></div>
+
+<table class="styled-table">
+    <thead><tr><th>Votre droit</th><th>Effet de la grève</th></tr></thead>
+    <tbody>
+        <tr><td><strong>RTT</strong> — grève d'une <strong>demi-journée ou plus</strong></td><td class="hl">Réduit vos RTT</td></tr>
+        <tr><td><strong>Intéressement</strong></td><td class="hl">Réduit</td></tr>
+        <tr><td><strong>Allocation vacances</strong></td><td class="hl">Versement perdu si grève le 31/05 ou le 30/09</td></tr>
+        <tr><td><strong>Gratification annuelle</strong> (13ᵉ mois)</td><td style="color:var(--green);font-weight:700">Aucun effet</td></tr>
+    </tbody>
+</table>
+
+<div class="def-grid">
+    <div class="def-card amber"><h3>🗓️ Les RTT, en pratique à l'URSSAF PACA</h3><ul><li>Les RTT se décomptent <strong>à la demi-journée</strong> : c'est une grève d'une <strong>demi-journée ou d'une journée</strong> qui réduit votre droit annuel à RTT</li><li>Les RTT s'acquièrent sur le temps de travail effectif : comme la maladie ou un congé sans solde, la grève fait partie des absences qui les réduisent</li></ul></div>
+    <div class="def-card blue"><h3>💶 Intéressement et gratification</h3><ul><li><strong>Intéressement</strong> : il tient compte de la durée de présence, il est donc réduit — seules certaines absences (maternité, paternité, accident du travail…) sont assimilées à de la présence <em>(art. L. 3314-5)</em></li><li><strong>Gratification annuelle</strong> : <strong>aucun effet</strong>, confirmé par la direction</li></ul></div>
+</div>
+
+<div class="info-box blue"><div class="icon">⚖️</div><div><h4>Pourquoi ces effets ne sont pas discriminatoires</h4><p>La loi interdit toute mesure discriminatoire contre les grévistes, notamment en matière de rémunération et d'avantages sociaux <em>(art. L. 2511-1)</em>. Mais l'employeur peut tenir compte d'une absence pour grève <strong>à condition que toutes les absences non assimilées à du travail effectif entraînent les mêmes conséquences</strong> <em>(Cass. soc. 23 juin 2009, n° 08-42.154)</em>. C'est le cas ici : maladie, congé sans solde, grève sont traités de la même façon. <strong>Si vous constatez qu'une grève a été traitée plus durement qu'une autre absence, signalez-le à FO.</strong></p></div></div>
+
+</div></section>
+
+<!-- SECTION 7 : PROTECTIONS -->
+<section class="section" id="s7"><div class="container"><div class="section-header"><div class="section-number">7</div><h2 class="section-title">Vos protections de gréviste</h2><p class="section-subtitle">La grève suspend le contrat de travail. Elle ne le rompt pas, et elle ne peut pas vous être reprochée.</p></div>
+
+<div class="quote"><p>« L'exercice du droit de grève ne peut justifier la rupture du contrat de travail, sauf faute lourde imputable au salarié. »</p><cite>Code du travail, art. L. 2511-1</cite></div>
+
+<div class="tri-grid">
+    <div class="def-card green"><h3>🛡️ Pas de sanction</h3><ul><li>Aucune <strong>mesure discriminatoire</strong>, notamment en matière de rémunération et d'avantages sociaux</li><li>Tout licenciement prononcé sans faute lourde est <strong>nul de plein droit</strong></li><li>Un licenciement pour « abandon de poste » d'un gréviste est <strong>nul</strong> <em>(Cass. soc. 2022)</em></li></ul></div>
+    <div class="def-card blue"><h3>🚷 Pas de remplacement</h3><ul><li>L'employeur ne peut pas vous remplacer par un <strong>CDD</strong> <em>(art. L. 1242-6)</em></li><li>…ni par un <strong>intérimaire</strong> <em>(art. L. 1251-10)</em></li></ul></div>
+    <div class="def-card amber"><h3>⚠️ La seule limite</h3><ul><li>La <strong>faute lourde</strong> — une faute commise avec l'intention de nuire à l'employeur</li><li>Faire grève n'en est jamais une</li></ul></div>
+</div>
+
+</div></section>
+
+<!-- SECTION 8 : FO -->
+<section class="section" id="s8"><div class="container"><div class="section-header"><div class="section-number red">8</div><h2 class="section-title">Avant, pendant, après : Force Ouvrière</h2></div>
+
+<div class="def-grid">
+    <div class="def-card green"><h3>✊ Ce que fait FO</h3><ul><li><strong>Déposer le préavis</strong> et vérifier qu'il couvre bien tous les sites et toutes les heures</li><li><strong>Négocier</strong> pendant le préavis, comme la loi l'impose</li><li><strong>Intervenir</strong> si un manager exige une déclaration préalable, un travail « en amont » ou une récupération</li></ul></div>
+    <div class="def-card blue"><h3>📋 Ce que vous pouvez vérifier</h3><ul><li>Sur votre bulletin : la retenue correspond-elle au <strong>barème</strong> (1/160ᵉ, 1/50ᵉ, 1/30ᵉ) ?</li><li>Si vous êtes en grève un 31 mai ou un 30 septembre : la reprise de l'allocation vacances apparaît sur la paie <strong>du mois suivant</strong></li><li>Une anomalie ? Vos délégués FO la font corriger</li></ul></div>
+</div>
+
+<div class="golden-rule" style="border-radius:14px;margin-top:24px"><span class="gr-icon">📞</span><p>Un doute sur un préavis, une pression de votre hiérarchie, une retenue qui ne correspond pas au barème ? <strong>Contactez Force Ouvrière.</strong> Le droit de grève ne se défend bien que si on le connaît.</p></div>
+
+</div></section>
+
+<!-- FOOTER -->
+<div class="footer"><div class="container"><div class="footer-logo">FO</div><p><strong>Force Ouvrière — URSSAF PACA</strong></p><p>Code du travail, art. L. 2511-1, L. 2512-1 à L. 2512-5, L. 1242-6, L. 1251-10, L. 3121-50 et L. 3314-5 • Loi n° 82-889 du 19 octobre 1982, art. 2 • Convention collective du 8 février 1957, art. 22 bis • Cass. ass. plén. 23 juin 2006, n° 04-40.289 • Cass. soc. 23 juin 2009, n° 08-42.154 ; 4 juillet 2012, n° 11-18.404 ; 8 juillet 2020, n° 19-13.767 ; 21 avril 2022, n° 20-18.402</p><p style="margin-top:8px;font-size:.8rem;opacity:.55">Document d'information syndicale — à jour au 23 septembre 2026. Ne se substitue pas aux textes officiels.</p><p style="margin-top:12px;font-weight:700;">Vos délégués syndicaux FO</p><p>👤 Antoine Chessa · 👤 Stéphane Imbert · 👤 Jean-Philippe Musso</p></div></div>
+
+<script data-goatcounter="https://fourssafpaca.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<style>@media print{#home-fab{display:none!important}}</style>
+<a id="home-fab" href="../index.html" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:inline-flex;align-items:center;gap:7px;background:#203A5E;color:#fff;padding:11px 20px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.28)">← Accueil</a>
+</body>
+</html>
